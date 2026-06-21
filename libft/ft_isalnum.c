@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_m.c                                           :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/14 20:31:01 by marapovi          #+#    #+#             */
-/*   Updated: 2026/06/14 20:42:06 by marapovi         ###   ########.fr       */
+/*   Created: 2025/04/24 09:48:45 by marapovi          #+#    #+#             */
+/*   Updated: 2025/04/24 09:49:01 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **av)
+int	ft_isalnum(int i)
 {
-	// validate input
-	// init structs
-	// setup map
-	// 
+	unsigned char	c;
+
+	c = (unsigned char)i;
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
+		return (1);
+	return (0);
 }
