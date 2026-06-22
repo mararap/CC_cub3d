@@ -6,7 +6,7 @@
 #    By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/22 14:00:13 by marapovi         ###   ########.fr        #
+#    Updated: 2026/06/22 15:10:09 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CFLAGS		:=	-Wall -Wextra -Werror
 LDFLAGS		:=	-L libft
 
 # Libraries to pass to the linker
-LDLIBS 		:=	-lft -lreadline
+LDLIBS 		:=	-lft -lmlx -lX11 -lXext -lm
 
 # set RM to remove directories and containing files recursiveley
 RM			:=	rm -rf
@@ -77,7 +77,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(NAME): $(OBJ) $(LIBFT)
 	@echo "     🛠️  Linking executable..."
 	@$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $(NAME)
-	@printf "\n%b\n\n" "$$(cat docs/banner_v4.txt)"
+	@printf "\n%b\n\n" "$$(cat docs/banner_refined.txt)"
 
 clean:
 	@$(RM) $(OBJ_DIR)
