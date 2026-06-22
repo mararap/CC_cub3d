@@ -6,7 +6,7 @@
 #    By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/21 17:27:50 by marapovi         ###   ########.fr        #
+#    Updated: 2026/06/22 14:00:13 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(NAME): $(OBJ) $(LIBFT)
 	@echo "     🛠️  Linking executable..."
 	@$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $(NAME)
-	@printf "\n%b\n\n" "$$(cat docs/banner.txt)"
+	@printf "\n%b\n\n" "$$(cat docs/banner_v4.txt)"
 
 clean:
 	@$(RM) $(OBJ_DIR)
