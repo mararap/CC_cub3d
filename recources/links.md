@@ -20,6 +20,12 @@
 	https://www.youtube.com/watch?v=2IEUa2gYJHQ
 
 
+- Ray-Casting Tutorial For Game Development And Other Purposes
+	by F. Permadi
+
+	https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/
+
+
 ## MiniLibX
 
 - MiniLibX 42 Documentation:
