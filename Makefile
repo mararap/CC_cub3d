@@ -6,7 +6,7 @@
 #    By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/22 15:10:09 by marapovi         ###   ########.fr        #
+#    Updated: 2026/06/25 19:32:17 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #                                 VARIABLES                                    #
 # **************************************************************************** #
 
-NAME		:=	cub3d
+NAME		:=	cub3D
 
 HEADER		:=	./include/cub3d.h
 
@@ -81,13 +81,13 @@ $(NAME): $(OBJ) $(LIBFT)
 
 clean:
 	@$(RM) $(OBJ_DIR)
-	@echo "     🧽 cub3d	= clean."
+	@echo "     🧽 cub3D	= clean."
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) clean
 	@echo "     🧽 LIBFT 		= clean."
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "     🧹 cub3d executable removed."
+	@echo "     🧹 cub3D executable removed."
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) fclean
 	@echo "     🧹 LIBFT library removed."
 
