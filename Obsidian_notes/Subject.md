@@ -13,13 +13,21 @@ _Summary: This project is inspired by the world-famous Wolfenstein 3D game, whic
 ## Contents
 
 I Foreword
+
 II Goals
+
 III Common Instructions
+
 IV AI Instructions
+
 V Mandatory part - cub3D
+
 VI Readme Requirements
+
 VII Bonus part
+
 VIII Examples
+
 IX Submission and peer-evaluation
 
 <br>
@@ -97,15 +105,15 @@ During your learning journey, AI can assist with many different tasks. Take the 
 
 ### ● Main message
 
-☛ Use AI to reduce repetitive or tedious tasks.
+☛ Use AI to reduce repetitive or tedious tasks.<br>
 
-☛ Develop prompting skills — both coding and non-coding — that will benefit your future career.
+☛ Develop prompting skills — both coding and non-coding — that will benefit your future career.<br>
 
-☛ Learn how AI systems work to better anticipate and avoid common risks, biases, and ethical issues.
+☛ Learn how AI systems work to better anticipate and avoid common risks, biases, and ethical issues.<br>
 
-☛ Continue building both technical and power skills by working with your peers.
+☛ Continue building both technical and power skills by working with your peers.<br>
 
-☛ Only use AI-generated content that you fully understand and can take responsibility for. 
+☛ Only use AI-generated content that you fully understand and can take responsibility for.<br>
 
 
 ### ● Learner rules:
@@ -137,6 +145,8 @@ During your learning journey, AI can assist with many different tasks. Take the 
 - AI tools often lack your specific context and tend to provide generic responses. Your peers, who share your environment, can offer more relevant and accurate insights.
 
 - Where AI tends to generate the most likely answer, your peers can provide alter- native perspectives and valuable nuance. Rely on them as a quality checkpoint.
+
+<br>
 
 ✓ Good practice: I ask AI: “How do I test a sorting function?” It gives me a few ideas. I try them out and review the results with a peer. We refine the approach together.
 
@@ -200,7 +210,8 @@ The constraints are as follows:
 	111111
 	```
 
-	<br><br>
+	<br>
+	
 	- The map must be closed/surrounded by walls, if not the program must return an error.
 	
 	- Except for the map content, each type of element can be separated by one or more empty lines.
