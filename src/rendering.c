@@ -38,3 +38,10 @@ C 225,30,0
 · identifier: C
 · R,G,B colors in range [0,255]: 0, 255, 255
 */
+
+set_north_texture();
+set_south_texture();
+set_west_texture();
+set_east_texture();
+set_floor_color();
+set_ceiling_texture();
