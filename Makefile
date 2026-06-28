@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+         #
+#    By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/25 19:32:17 by marapovi         ###   ########.fr        #
+#    Updated: 2026/06/28 13:03:17 by jatanaso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,8 @@ SRC_DIR			:=		src
 LIBFT_DIR		:=		libft
 LIBFT			:=		$(LIBFT_DIR)/libft.a
 
-SRC 	:= 		main.c \
+SRC 	:= 		main.c draw.c error.c get_next_line.c keys.c parsing.c \
+				rendering.c setup.c
 				
 
 
