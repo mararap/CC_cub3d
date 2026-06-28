@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 20:31:01 by marapovi          #+#    #+#             */
-/*   Updated: 2026/06/21 17:14:36 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/06/28 12:48:53 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,15 @@ int	on_loop_tick(t_app_state *state)
 	return (0);
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
-	(void)ac;
-	(void)av;
-
 	t_app_state	app;
 
-	if (!parse_map(ac, av, &app))
-	{
-		print_usage();
-		return (1);
-	}
+	ft_bzero(&app, sizeof(t_app_state));
+	if (!parse_map(argc, argv, &app))
+		return (destroy_app_state(&app), 1);
 	if (!initialize_app(&app))
-	{
-		destroy_app_state(&app);
-		return (1);
-	}
+		return (destroy_app_state(&app), 1);
 	mlx_hook(app.window, 2, 1L << 0, &on_key_press, &app);
 	mlx_hook(app.window, 17, 0, &on_close, &app);
 	mlx_loop_hook(app.mlx, &on_loop_tick, &app);

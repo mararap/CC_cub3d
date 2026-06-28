@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-char	*read_until_newline(int fd, char *buffer)
+static char	*read_until_newline(int fd, char *buffer)
 {
 	char	*temp_buf;
 	ssize_t	bytes_read;
@@ -21,6 +21,12 @@ char	*read_until_newline(int fd, char *buffer)
 	temp_buf = (char *)ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!temp_buf)
 		return (NULL);
+	if (!buffer)
+	{
+		buffer = ft_strdup("");
+		if (!buffer)
+			return (free(temp_buf), NULL);
+	}
 	bytes_read = 1;
 	while (bytes_read > 0 && !ft_strchr(buffer, '\n'))
 	{
@@ -38,7 +44,7 @@ char	*read_until_newline(int fd, char *buffer)
 	return (buffer);
 }
 
-char	*substr_buffer(char *buffer)
+static char	*substr_buffer(char *buffer)
 {
 	char	*new_line_char;
 	char	*new_buf;
@@ -58,10 +64,10 @@ char	*substr_buffer(char *buffer)
 	return (NULL);
 }
 
-char	*extract_line(char *buffer)
+static char	*extract_line(char *buffer)
 {
 	size_t	i;
-	char	*extract_line;
+	char	*line;
 
 	i = 0;
 	if (!buffer || buffer[0] == '\0')
@@ -70,10 +76,10 @@ char	*extract_line(char *buffer)
 		i++;
 	if (buffer[i] == '\n')
 		i++;
-	extract_line = ft_substr(buffer, 0, i);
-	if (!extract_line)
+	line = ft_substr(buffer, 0, i);
+	if (!line)
 		return (NULL);
-	return (extract_line);
+	return (line);
 }
 
 char	*get_next_line(int fd)

@@ -1,3 +1,4 @@
+#include "cub3d.h"
 //Maria
 
 // create frame content (corridors, walls, floor, ceiling...)
@@ -39,9 +40,33 @@ C 225,30,0
 · R,G,B colors in range [0,255]: 0, 255, 255
 */
 
-set_north_texture();
-set_south_texture();
-set_west_texture();
-set_east_texture();
-set_floor_color();
-set_ceiling_texture();
+void	set_north_texture(char *line)
+{
+    line = "N";
+    write(1, "north color is set", 18);
+}
+void	set_south_texture(char *line)
+{
+    line = "S";
+    write(1, "south color is set", 18);
+}
+void	set_west_texture(char *line)
+{
+    line = "W";
+    write(1, "west color is set", 17);
+}
+void	set_east_texture(char *line)
+{
+    line = "E";
+    write(1, "east color is set", 17);
+}
+void	set_floor_color(char *line)
+{
+    line = "F";
+    write(1, "floor color is set", 18);
+}
+void	set_ceiling_color(char *line)
+{
+    line = "C";
+    write(1, "ceiling color is set", 20);
+}

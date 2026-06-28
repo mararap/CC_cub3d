@@ -1,0 +1,6 @@
+.obsidian/
+.vscode
+obj/
+.clangd
+libft/*.o
+libft/*.a

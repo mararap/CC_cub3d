@@ -1,18 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/28 12:34:03 by jatanaso          #+#    #+#             */
+/*   Updated: 2026/06/28 12:34:03 by jatanaso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
-
-double	smooth_iter(int iter, double mag, int max)
-{
-	double	log_zn;
-	double	nu;
-
-	if (iter == max)
-		return ((double)iter);
-	if (mag <= 1.0)
-		mag = 1.0000001;
-	log_zn = log(mag * mag) / 2.0;
-	nu = log(log_zn / log(2.0)) / log(2.0);
-	return (iter + 1.0 - nu);
-}
 
 void	put_pixel(t_image_buffer *image, int x, int y, int color)
 {
@@ -26,52 +24,119 @@ void	put_pixel(t_image_buffer *image, int x, int y, int color)
 	*(unsigned int *)ptr = (unsigned int)color;
 }
 
-static void	draw_pixel(t_app_state *state, int x, int y)
+static int	get_map_width(t_app_state *state)
 {
-	double	coord_x;
-	double	coord_y;
-	int		iter;
-	double	smooth;
-	int		color;
+	int	width;
+	int	row;
+	int	len;
 
-	coord_x = state->viewport.x_min
-		+ (state->viewport.x_max - state->viewport.x_min)
-		* (double)x / (state->image.width - 1);
-	coord_y = state->viewport.y_min
-		+ (state->viewport.y_max - state->viewport.y_min)
-		* (double)y / (state->image.height - 1);
-	if (state->set == 'm')
-		iter = mandelbrot_iter(coord_x, coord_y, state, &smooth);
-	else
-		iter = julia_iter(coord_x, coord_y, state, &smooth);
-	smooth = smooth_iter(iter, smooth, state->max_iterations);
-	if (smooth >= (double)state->max_iterations)
-		color = 0x000000;
-	else
-		color = get_smooth_color(state, smooth);
-	put_pixel(&state->image, x, y, color);
+	width = 0;
+	row = 0;
+	while (row < state->map_height)
+	{
+		len = (int)ft_strlen(state->map[row]);
+		if (len > width)
+			width = len;
+		row++;
+	}
+	return (width);
 }
 
-static void	draw_row(t_app_state *state, int y)
+static int	get_cell_size(t_app_state *state, int map_width)
+{
+	int	cell_w;
+	int	cell_h;
+
+	if (map_width == 0 || state->map_height == 0)
+		return (1);
+	cell_w = WINDOW_WIDTH / map_width;
+	cell_h = WINDOW_HEIGHT / state->map_height;
+	if (cell_w < 1)
+		cell_w = 1;
+	if (cell_h < 1)
+		cell_h = 1;
+	if (cell_w < cell_h)
+		return (cell_w);
+	return (cell_h);
+}
+
+static int	get_color(char c)
+{
+	if (c == '1')
+		return (0x003C3C3C);
+	if (c == '0')
+		return (0x00D8D2C4);
+	if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
+		return (0x00E63946);
+	return (0x00111111);
+}
+
+static char	get_map_cell(t_app_state *state, int row, int col)
+{
+	if (row >= state->map_height)
+		return (' ');
+	if (col >= (int)ft_strlen(state->map[row]))
+		return (' ');
+	return (state->map[row][col]);
+}
+
+static void	fill_image(t_image_buffer *image, int color)
 {
 	int	x;
+	int	y;
 
-	x = 0;
-	while (x < state->image.width)
+	y = 0;
+	while (y < image->height)
 	{
-		draw_pixel(state, x, y);
-		x++;
+		x = 0;
+		while (x < image->width)
+		{
+			put_pixel(image, x, y, color);
+			x++;
+		}
+		y++;
+	}
+}
+
+static void	draw_cell(t_app_state *state, int row, int col, int size)
+{
+	int	x;
+	int	y;
+	int	color;
+
+	color = get_color(get_map_cell(state, row, col));
+	y = row * size;
+	while (y < (row + 1) * size)
+	{
+		x = col * size;
+		while (x < (col + 1) * size)
+		{
+			put_pixel(&state->image, x, y, color);
+			x++;
+		}
+		y++;
 	}
 }
 
 void	render_frame(t_app_state *state)
 {
-	int	y;
+	int	row;
+	int	col;
+	int	width;
+	int	size;
 
-	y = 0;
-	while (y < state->image.height)
+	fill_image(&state->image, 0x00111111);
+	width = get_map_width(state);
+	size = get_cell_size(state, width);
+	row = 0;
+	while (row < state->map_height)
 	{
-		draw_row(state, y);
-		y++;
+		col = 0;
+		while (col < width)
+		{
+			draw_cell(state, row, col, size);
+			col++;
+		}
+		row++;
 	}
 }
