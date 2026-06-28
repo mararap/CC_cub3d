@@ -4,5 +4,6 @@
   "obsidian-excalidraw-plugin",
   "obsidian-kanban",
   "advanced-canvas",
-  "callout-manager"
+  "callout-manager",
+  "code-emitter"
 ]
