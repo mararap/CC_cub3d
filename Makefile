@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+         #
+#    By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/28 13:03:17 by jatanaso         ###   ########.fr        #
+#    Updated: 2026/06/29 10:48:23 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ clean:
 	@$(RM) $(OBJ_DIR)
 	@echo "     🧽 cub3D	= clean."
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) clean
-	@echo "     🧽 LIBFT 		= clean."
+	@echo "     🧽 LIBFT 	= clean."
 
 fclean: clean
 	@$(RM) $(NAME)
