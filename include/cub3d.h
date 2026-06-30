@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/06/28 12:57:42 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:43:01 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,16 @@ typedef struct s_image_buffer
 	int		width;
 	int		height;
 }	t_image_buffer;
+
+typedef	struct s_player
+{
+	double	x_position;
+	double	y_position;
+	double	x_dir;
+	double	y_dir;
+	double	x_plane;
+	double	y_plane;
+};
 
 typedef struct s_viewport
 {

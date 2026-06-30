@@ -11,10 +11,12 @@
             "id": "42862acbba5248a6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "excalidraw",
+              "state": {
+                "file": "Obsidian_notes/sine-cosine-tangent.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "sine-cosine-tangent.excalidraw"
             }
           }
         ]
@@ -173,11 +175,14 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
   "active": "42862acbba5248a6",
   "lastOpenFiles": [
+    "Obsidian_notes/sine-cosine-tangent.excalidraw.md",
+    "Obsidian_notes/sine, cosine and tangent.md",
     "docs/discord-agreements.md"
   ]
 }
