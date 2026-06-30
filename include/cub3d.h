@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/06/30 13:43:01 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/06/30 20:56:40 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# define WINDOW_WIDTH 400
-# define WINDOW_HEIGHT 400
-# define WINDOW_TITLE "CUB3D"
+# define WINDOW_WIDTH 1280		// ratio 16:9 -> looks good; Intel UHD 770 (as
+# define WINDOW_HEIGHT 720		// integrated in c3r8p8) should be able to handle
+# define WINDOW_TITLE "CUB3D"	// that easily; adapt based on CPU performance.
 
 # define KEY_ESC 65307
 # define KEY_W 119
@@ -53,15 +53,26 @@ typedef struct s_image_buffer
 	int		height;
 }	t_image_buffer;
 
-typedef	struct s_player
+typedef	struct s_pos_dir		// positions and directions
 {
-	double	x_position;
-	double	y_position;
+	double	x_pos;
+	double	y_pos;
 	double	x_dir;
 	double	y_dir;
 	double	x_plane;
 	double	y_plane;
-};
+}			t_pos_dir;
+
+typedef struct s_scene			// textures/colors
+{
+	char	*tex_no;
+	char	*tex_so;
+	char	*tex_we;
+	char	*tex_ea;
+	int		color_floor;
+	int		color_ceil;
+}			t_scene;
+
 
 typedef struct s_viewport
 {
@@ -77,7 +88,9 @@ typedef struct s_app_state
 	void			*window;
 	t_image_buffer	image;
 	char			set;
+	t_pos_dir		pos_dir;	
 	t_viewport		viewport;
+	t_scene			scene;
 	int				max_iterations;
 	int				needs_redraw;
 	long			last_frame_time_us;
