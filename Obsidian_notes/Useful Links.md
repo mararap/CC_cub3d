@@ -1,4 +1,3 @@
-
 <br>
 
 ## [[Ray Casting]]
@@ -35,7 +34,7 @@
 - Interactive [[DDA]] Tutorial:
 	https://aaaa.sh/creatures/dda-algorithm-interactive/
 
-<br><br>
+<br>
 
 ## [[MiniLibX]]
 
