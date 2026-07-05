@@ -6,7 +6,7 @@
 /*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/06/28 13:01:02 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/07/02 15:53:31 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,22 @@ static int	looks_like_map_line(char *line)
 	return (has_content);
 }
 
+static void check_first_last_line(char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] != ' ' && line[i] != '1')
+		{
+			write(2, "Error\nFirst and last map rows must contain only '1'\n", 53);
+			exit(1);
+		}
+		i++;
+	}
+}
+
 static void	check_map_line(char *line)
 {
 	int	i;
@@ -149,6 +165,26 @@ static void	handle_config_line(char *line)
 		return (write(2, "Error\nInvalid cub file line\n", 28), exit(1));
 }
 
+static void	trim_map_line(char *line)
+{
+	size_t	start;
+	size_t	end;
+	size_t	i;
+
+	start = 0;
+	while (line[start] && ft_isspace(line[start]))
+		start++;
+
+	end = ft_strlen(line);
+	while (end > start && ft_isspace(line[end - 1]))
+		end--;
+
+	i = 0;
+	while (start < end)
+		line[i++] = line[start++];
+	line[i] = '\0';
+}
+
 static void	read_cub_lines(int fd, t_app_state *state)
 {
 	char	*line;
@@ -164,12 +200,50 @@ static void	read_cub_lines(int fd, t_app_state *state)
 			if (!in_map && looks_like_map_line(line))
 				in_map = 1;
 			if (in_map)
-				(check_map_line(line), add_map_line(state, line));
+			{
+				trim_map_line(line);
+				check_map_line(line);
+				add_map_line(state, line);
+			}
 			else
 				handle_config_line(line);
 		}
 		free(line);
 		line = get_next_line(fd);
+	}
+}
+
+static int is_open_tile(char c)
+{
+	return (c == '0' || c == 'N' || c == 'S'
+		|| c == 'E' || c == 'W');
+}
+
+static void check_map_closed(char **map, int height)
+{
+	int x;
+	int y;
+
+	y = 0;
+	while (y < height)
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (is_open_tile(map[y][x]))
+			{
+				if (x == 0 || map[y][x - 1] == ' ' || map[y][x + 1] == '\0' 
+					|| map[y][x + 1] == ' ' || y == 0 || y == height - 1
+					|| x >= (int)ft_strlen(map[y - 1]) || map[y - 1][x] == ' ' 
+					|| x >= (int)ft_strlen(map[y + 1]) || map[y + 1][x] == ' ')
+				{
+					write(2, "Error \nMap is not closed\n", 24);
+					exit(1);
+				}
+			}
+			x++;
+		}
+		y++;
 	}
 }
 
@@ -188,5 +262,8 @@ int	parse_map(int argc, char **argv, t_app_state *state)
 	close(fd);
 	if (state->map_height == 0)
 		return (write(2, "Error\nMissing map\n", 18), exit(1), 0);
+	check_first_last_line(state->map[0]);
+	check_first_last_line(state->map[state->map_height - 1]);
+	check_map_closed(state->map, state->map_height);
 	return (1);
 }
