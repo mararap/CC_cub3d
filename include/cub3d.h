@@ -6,7 +6,7 @@
 /*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/06/28 12:57:42 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/07/19 16:24:49 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,16 @@ typedef struct s_viewport
 	long double	y_max;
 }	t_viewport;
 
+typedef struct	s_textures
+{
+	int no_set;
+	int so_set;
+    int we_set;
+    int ea_set;
+    int f_set;
+    int c_set;
+} t_textures;
+
 typedef struct s_app_state
 {
 	void			*mlx;
@@ -73,6 +83,7 @@ typedef struct s_app_state
 	long			last_frame_time_us;
 	char			**map;
 	int				map_height;
+	t_textures		textures;
 }	t_app_state;
 
 char	*get_next_line(int fd);

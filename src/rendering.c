@@ -42,31 +42,48 @@ C 225,30,0
 
 void	set_north_texture(char *line)
 {
-    line = "N";
-    write(1, "north color is set", 18);
+    //printf("%s\n", ft_substr(line, 3, ft_strlen(line) - 3));
+    int fd;
+
+    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
+	if (fd == -1)
+		return (perror("Error\nopen"), exit(1));
+    close(fd);
 }
 void	set_south_texture(char *line)
 {
-    line = "S";
-    write(1, "south color is set", 18);
+    int fd;
+
+    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
+	if (fd == -1)
+		return (perror("Error\nopen"), exit(1));
+    close(fd);
 }
 void	set_west_texture(char *line)
 {
-    line = "W";
-    write(1, "west color is set", 17);
+    int fd;
+
+    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
+	if (fd == -1)
+		return (perror("Error\nopen"), exit(1));
+    close(fd);
 }
 void	set_east_texture(char *line)
 {
-    line = "E";
-    write(1, "east color is set", 17);
+    int fd;
+
+    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
+	if (fd == -1)
+		return (perror("Error\nopen"), exit(1));
+    close(fd);
 }
 void	set_floor_color(char *line)
 {
     line = "F";
-    write(1, "floor color is set", 18);
+    //write(1, "floor color is set", 18);
 }
 void	set_ceiling_color(char *line)
 {
     line = "C";
-    write(1, "ceiling color is set", 20);
+    //write(1, "ceiling color is set", 20);
 }

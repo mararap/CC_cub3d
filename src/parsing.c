@@ -6,7 +6,7 @@
 /*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/07/02 15:53:31 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/07/19 16:35:18 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,20 +147,50 @@ static void	add_map_line(t_app_state *state, char *line)
 	state->map_height++;
 }
 
-static void	handle_config_line(char *line)
+static void	handle_config_line(t_app_state *state, char* line)
 {
-	if (line[0] == 'N')
+	if (line[0] == 'N' && line[1] == 'O')
+	{
+		if (state->textures.no_set)
+			return (write(2, "Error\nDuplicate NO texture\n", 27), exit(1));
+		state->textures.no_set = 1;
 		set_north_texture(line);
-	else if (line[0] == 'S')
+	}
+	else if (line[0] == 'S' && line[1] == 'O')
+	{
+		if (state->textures.so_set)
+			return (write(2, "Error\nDuplicate SO texture\n", 27), exit(1));
+		state->textures.so_set = 1;
 		set_south_texture(line);
-	else if (line[0] == 'W')
+	}
+	else if (line[0] == 'W' && line[1] == 'E')
+	{
+		if (state->textures.we_set)
+			return (write(2, "Error\nDuplicate WE texture\n", 27), exit(1));
+		state->textures.we_set = 1;
 		set_west_texture(line);
-	else if (line[0] == 'E')
+	}
+	else if (line[0] == 'E' && line[1] == 'A')
+	{
+		if (state->textures.ea_set)
+			return (write(2, "Error\nDuplicate EA texture\n", 27), exit(1));
+		state->textures.ea_set = 1;
 		set_east_texture(line);
+	}
 	else if (line[0] == 'F')
+	{
+		if (state->textures.f_set)
+			return (write(2, "Error\nDuplicate F texture\n", 26), exit(1));
+		state->textures.f_set = 1;
 		set_floor_color(line);
+	}
 	else if (line[0] == 'C')
+	{
+		if (state->textures.c_set)
+			return (write(2, "Error\nDuplicate C texture\n", 26), exit(1));
+		state->textures.c_set = 1;
 		set_ceiling_color(line);
+	}
 	else
 		return (write(2, "Error\nInvalid cub file line\n", 28), exit(1));
 }
@@ -198,7 +228,16 @@ static void	read_cub_lines(int fd, t_app_state *state)
 		if (!is_empty_line(line))
 		{
 			if (!in_map && looks_like_map_line(line))
-				in_map = 1;
+			{
+				if (!state->textures.no_set || !state->textures.so_set ||
+					!state->textures.we_set || !state->textures.ea_set ||
+					!state->textures.f_set || !state->textures.c_set)
+				{
+					write(2, "Error\nMissing configuration\n", 28);
+					exit(1);
+				}
+				in_map = 1;				
+			}
 			if (in_map)
 			{
 				trim_map_line(line);
@@ -206,7 +245,10 @@ static void	read_cub_lines(int fd, t_app_state *state)
 				add_map_line(state, line);
 			}
 			else
-				handle_config_line(line);
+			{
+				trim_map_line(line);
+				handle_config_line(state, line);
+			}
 		}
 		free(line);
 		line = get_next_line(fd);
@@ -247,6 +289,33 @@ static void check_map_closed(char **map, int height)
 	}
 }
 
+static void check_single_player(char **map, int height)
+{
+	int x;
+	int y;
+	int player_count;
+
+	y = 0;
+	player_count = 0;
+	while (y < height)
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == 'N' || map[y][x] == 'S' || 
+				map[y][x] == 'E' || map[y][x] == 'W')
+				player_count++;
+			x++;
+		}
+		y++;
+	}
+	if (player_count != 1)
+	{
+		write(2, "Error\nMap must contain exactly one player\n", 42);
+		exit(1);
+	}
+}
+
 int	parse_map(int argc, char **argv, t_app_state *state)
 {
 	int	fd;
@@ -265,5 +334,6 @@ int	parse_map(int argc, char **argv, t_app_state *state)
 	check_first_last_line(state->map[0]);
 	check_first_last_line(state->map[state->map_height - 1]);
 	check_map_closed(state->map, state->map_height);
+	check_single_player(state->map, state->map_height);
 	return (1);
 }
