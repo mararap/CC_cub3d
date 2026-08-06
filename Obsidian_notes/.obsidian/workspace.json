@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sine, cosine and tangent.md",
+                "file": "cub3D KANBAN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sine, cosine and tangent"
+              "title": "cub3D KANBAN"
             }
           }
         ]
@@ -186,8 +186,8 @@
   },
   "active": "d8d1958d812b7d05",
   "lastOpenFiles": [
-    "sine-cosine-tangent.excalidraw.md",
     "sine, cosine and tangent.md",
+    "sine-cosine-tangent.excalidraw.md",
     "Useful Links.md"
   ]
 }
