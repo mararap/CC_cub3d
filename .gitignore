@@ -1,6 +1,10 @@
-/.obsidian/workspace.json
-/.vscode
-/obj/
-/.clangd
-/libft/*.o
-/libft/*.a
+# Ignore local workspace layouts and caches
+Obsidian_Notes/.obsidian/workspace.json
+Obsidian_Notes/.obsidian/workspace-mobile.json
+Obsidian_Notes/.obsidian/plugins/*/.trash/
+Obsidian_Notes/.obsidian/plugins/*/.cashe/
+.vscode
+obj/
+.clangd
+libft/*.o
+libft/*.a
