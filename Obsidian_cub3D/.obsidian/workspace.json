@@ -8,17 +8,44 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d4df1b106f4617b6",
+            "id": "96f68b31a49244d0",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Subject.md",
-                "mode": "source",
-                "source": false
+                "file": "HOME.md",
+                "mode": "preview",
+                "source": true
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Subject"
+              "title": "HOME"
+            }
+          },
+          {
+            "id": "7084d59380442ded",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "cub3D KANBAN.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    true,
+                    true,
+                    true,
+                    false,
+                    true
+                  ]
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-trello",
+              "title": "cub3D KANBAN"
             }
           }
         ]
@@ -83,7 +110,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 250.5
   },
   "right": {
     "id": "e156e29d0a7e4d1a",
@@ -190,13 +217,17 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "d4df1b106f4617b6",
+  "active": "96f68b31a49244d0",
   "lastOpenFiles": [
-    "Digital Differential Analysis.md",
-    "Euclidean geometry.md",
+    "cub3D KANBAN.md",
+    "HOME.md",
+    "Task Priority.md",
     "Untitled.base",
+    "Inbox.md",
+    "Digital Differential Analysis.md",
+    "Subject.md",
+    "Euclidean geometry.md",
     "Useful Links.md",
-    "Understanding Ray casting.md",
-    "Subject.md"
+    "Understanding Ray casting.md"
   ]
 }
