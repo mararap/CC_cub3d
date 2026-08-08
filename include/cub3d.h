@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/06/30 20:56:40 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 16:06:58 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,16 @@ typedef struct s_viewport
 	long double	y_max;
 }	t_viewport;
 
+typedef struct	s_textures
+{
+	int no_set;
+	int so_set;
+    int we_set;
+    int ea_set;
+    int f_set;
+    int c_set;
+} t_textures;
+
 typedef struct s_app_state
 {
 	void			*mlx;
@@ -96,6 +106,7 @@ typedef struct s_app_state
 	long			last_frame_time_us;
 	char			**map;
 	int				map_height;
+	t_textures		textures;
 }	t_app_state;
 
 char	*get_next_line(int fd);

@@ -6,7 +6,7 @@
 /*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 20:31:01 by marapovi          #+#    #+#             */
-/*   Updated: 2026/07/02 15:39:38 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/08/08 16:23:34 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 		return (destroy_app_state(&app), 1);
 	if (!initialize_app(&app))
 		return (destroy_app_state(&app), 1);
+	printf("pos_x %f, pos_y %f", app.pos_dir.x_pos, app.pos_dir.y_pos);
 	mlx_hook(app.window, 2, 1L << 0, &on_key_press, &app);
 	mlx_hook(app.window, 17, 0, &on_close, &app);
 	mlx_loop_hook(app.mlx, &on_loop_tick, &app);
