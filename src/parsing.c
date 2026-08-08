@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 16:31:49 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/08/08 20:02:11 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -306,6 +306,26 @@ static void check_single_player(char **map, int height, t_app_state *state)
 			if (map[y][x] == 'N' || map[y][x] == 'S' || 
 				map[y][x] == 'E' || map[y][x] == 'W')
 			{
+				if (map[y][x] == 'N')
+				{
+					state->pos_dir.x_dir = 0;
+					state->pos_dir.y_dir = -1;
+				}
+				if (map[y][x] == 'S')
+				{
+					state->pos_dir.x_dir = 0;
+					state->pos_dir.y_dir = 1;
+				}
+				if (map[y][x] == 'E')
+				{	
+					state->pos_dir.x_dir = 1;
+					state->pos_dir.y_dir = 0;
+				}
+				if (map[y][x] == 'W')
+				{
+					state->pos_dir.x_dir = -1;
+					state->pos_dir.y_dir = 0;					
+				}
 				player_count++;
 				state->pos_dir.x_pos = (double)x;
 				state->pos_dir.y_pos = (double)y;

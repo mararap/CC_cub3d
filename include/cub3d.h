@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 16:06:58 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/08/08 20:22:21 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,15 @@
 # include "libft.h"
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+# 	define BUFFER_SIZE 42
 # endif
 
 # define WINDOW_WIDTH 1280		// ratio 16:9 -> looks good; Intel UHD 770 (as
 # define WINDOW_HEIGHT 720		// integrated in c3r8p8) should be able to handle
 # define WINDOW_TITLE "CUB3D"	// that easily; adapt based on CPU performance.
+
+# define PI 3.14159265359
+# define ROT_SPEED 0.05
 
 # define KEY_ESC 65307
 # define KEY_W 119

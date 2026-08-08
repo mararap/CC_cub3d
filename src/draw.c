@@ -125,6 +125,7 @@ static void	draw_player(t_app_state *state, int size)
 	int	r;
 	int	x;
 	int	y;
+	int	i;
 
 	px = (int)(state->pos_dir.x_pos * size);
 	py = (int)(state->pos_dir.y_pos * size);
@@ -140,6 +141,17 @@ static void	draw_player(t_app_state *state, int size)
 		}
 		y++;
 	}
+	i = 0;
+	while (i <= size)
+	{
+		put_pixel(&state->image,
+			px + (int)(state->pos_dir.x_dir * i),
+			py + (int)(state->pos_dir.y_dir * i),
+			0x0000FF00);
+		i++;
+	}
+//	put_pixel(&state->image, state->pos_dir.x_pos + state->pos_dir.x_dir * 5,
+//				 state->pos_dir.y_pos + state->pos_dir.y_dir * 5, 0x0000FF00);
 }
 
 void	render_frame(t_app_state *state)

@@ -52,14 +52,23 @@
             "id": "b21083a3a992719b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "Understanding Ray casting.md",
-                "mode": "source",
-                "source": false
+                "file": "cub3D KANBAN.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    true,
+                    true,
+                    true,
+                    false,
+                    true
+                  ]
+                }
               },
-              "icon": "lucide-file",
-              "title": "Understanding Ray casting"
+              "icon": "lucide-trello",
+              "title": "cub3D KANBAN"
             }
           }
         ],
@@ -234,6 +243,7 @@
   },
   "active": "b21083a3a992719b",
   "lastOpenFiles": [
+    "Understanding Ray casting.md",
     "Ray casting.md",
     "sine-cosine-tangent.excalidraw.md",
     "sine, cosine and tangent.md",
@@ -245,7 +255,6 @@
     "Inbox.md",
     "Digital Differential Analysis.md",
     "Subject.md",
-    "Useful Links.md",
-    "Understanding Ray casting.md"
+    "Useful Links.md"
   ]
 }

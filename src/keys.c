@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 13:00:12 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 17:56:21 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 20:06:15 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ quit the program cleanly.*/
 
 int	on_key_press(int keycode, t_app_state *state)
 {
+	double	old_xdir;
+	
 	if (keycode == KEY_ESC)
 		return (on_close(state));
 	if (keycode == KEY_W)
@@ -35,9 +37,17 @@ int	on_key_press(int keycode, t_app_state *state)
 	if (keycode == KEY_D)
 		state->pos_dir.x_pos += 0.1;
 	if (keycode == KEY_LEFT)
-		return (0);
+	{
+		old_xdir = state->pos_dir.x_dir;
+		state->pos_dir.x_dir = old_xdir * cos(-ROT_SPEED) - state->pos_dir.y_dir * sin(-ROT_SPEED);
+		state->pos_dir.y_dir = old_xdir * sin(-ROT_SPEED) + state->pos_dir.y_dir * cos(-ROT_SPEED);
+	}	
 	if (keycode == KEY_RIGHT)
-		return (0);
+	{
+		old_xdir = state->pos_dir.x_dir;
+		state->pos_dir.x_dir = old_xdir * cos(ROT_SPEED) - state->pos_dir.y_dir * sin(ROT_SPEED);
+		state->pos_dir.y_dir = old_xdir * sin(ROT_SPEED) + state->pos_dir.y_dir * cos(ROT_SPEED);
+	}	
 	//printf("pos_dir x %f, pos_dir y %f\n", state->pos_dir.x_pos, state->pos_dir.y_pos);
 	state->needs_redraw = 1;
 	return (0);
