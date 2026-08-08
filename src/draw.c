@@ -64,10 +64,10 @@ static int	get_color(char c)
 {
 	if (c == '1')
 		return (0x003C3C3C);
-	if (c == '0')
+	if (c == '0' || c == 'N' || c == 'S' || c == 'E' || c == 'W')
 		return (0x00D8D2C4);
-	if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
-		return (0x00E63946);
+	//if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
+	//	return (0x00E63946);
 	return (0x00111111);
 }
 
@@ -118,6 +118,30 @@ static void	draw_cell(t_app_state *state, int row, int col, int size)
 	}
 }
 
+static void	draw_player(t_app_state *state, int size)
+{
+	int	px;
+	int	py;
+	int	r;
+	int	x;
+	int	y;
+
+	px = (int)(state->pos_dir.x_pos * size);
+	py = (int)(state->pos_dir.y_pos * size);
+	r = size / 4;
+	y = py - r;
+	while (y <= py + r)
+	{
+		x = px - r;
+		while (x <= px + r)
+		{
+			put_pixel(&state->image, x, y, 0x0000FF00);
+			x++;
+		}
+		y++;
+	}
+}
+
 void	render_frame(t_app_state *state)
 {
 	int	row;
@@ -139,4 +163,5 @@ void	render_frame(t_app_state *state)
 		}
 		row++;
 	}
+	draw_player(state, size);
 }

@@ -52,12 +52,14 @@
             "id": "b21083a3a992719b",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "sine-cosine-tangent.excalidraw.md"
+                "file": "Understanding Ray casting.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "sine-cosine-tangent.excalidraw"
+              "icon": "lucide-file",
+              "title": "Understanding Ray casting"
             }
           }
         ],
@@ -233,6 +235,8 @@
   "active": "b21083a3a992719b",
   "lastOpenFiles": [
     "Ray casting.md",
+    "sine-cosine-tangent.excalidraw.md",
+    "sine, cosine and tangent.md",
     "Euclidean geometry.md",
     "HOME.md",
     "cub3D KANBAN.md",

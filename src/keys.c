@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 13:00:12 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/06/28 13:00:27 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/08/08 17:56:21 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,19 @@ int	on_key_press(int keycode, t_app_state *state)
 	if (keycode == KEY_ESC)
 		return (on_close(state));
 	if (keycode == KEY_W)
-		return (0);
+		state->pos_dir.y_pos -= 0.1;
 	if (keycode == KEY_A)
-		return (0);
+		state->pos_dir.x_pos -= 0.1;
 	if (keycode == KEY_S)
-		return (0);
+		state->pos_dir.y_pos += 0.1;
 	if (keycode == KEY_D)
-		return (0);
+		state->pos_dir.x_pos += 0.1;
 	if (keycode == KEY_LEFT)
 		return (0);
 	if (keycode == KEY_RIGHT)
 		return (0);
+	//printf("pos_dir x %f, pos_dir y %f\n", state->pos_dir.x_pos, state->pos_dir.y_pos);
+	state->needs_redraw = 1;
 	return (0);
 }
 
