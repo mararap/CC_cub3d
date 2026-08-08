@@ -1,0 +1,11 @@
+
+- [ ] The Math Bridge: Create function `void raycaster(t_app_state *state)` that takes player state and returns a 1D array of wall distances (one per screen column) inside a new file raycast.c.
+- [ ] write loop across window width (`0` to `WINDOW_WIDTH` / 1280). For every individual column x:
+	- [ ] calculate the ray position and vector direction based on the currend camera plane
+	- [ ] step through grid (`mapX`, `mapY`) using DDA until you hit a '1', store distance in `state->map`
+	- [ ] calculate straight-line distance (`perpWallDist`)
+- [ ] Test: Print distances for 5 columns to debug
+- [ ] Replace the 2D map drawing in `render_frame()` with a simple version that loops through every column x on the screen, calculate `line-height` unsing `perpWallDist`, and call juliyan's pixel driver:
+	- [ ] draw ceiling color (`state->scene.color_ceil`) from pixel row `0` to `draw_start`
+	- [ ] draw a solid wall color (e.g., green `0x00FF00`) from `draw_start` to `draw_end`
+	- [ ] draw floor color (`state->scene.color_floor`) from `draw_end` to `WINDOW_HEIGHT` (720)
