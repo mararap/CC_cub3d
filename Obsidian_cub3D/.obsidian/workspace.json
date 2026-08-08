@@ -47,8 +47,21 @@
               "icon": "lucide-trello",
               "title": "cub3D KANBAN"
             }
+          },
+          {
+            "id": "b21083a3a992719b",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "sine-cosine-tangent.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "sine-cosine-tangent.excalidraw"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -217,16 +230,17 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "96f68b31a49244d0",
+  "active": "b21083a3a992719b",
   "lastOpenFiles": [
-    "cub3D KANBAN.md",
+    "Ray casting.md",
+    "Euclidean geometry.md",
     "HOME.md",
+    "cub3D KANBAN.md",
     "Task Priority.md",
     "Untitled.base",
     "Inbox.md",
     "Digital Differential Analysis.md",
     "Subject.md",
-    "Euclidean geometry.md",
     "Useful Links.md",
     "Understanding Ray casting.md"
   ]
