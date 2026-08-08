@@ -1,0 +1,6 @@
+ - [x] Data Hookup): Rewrite the 6 stubs in `rendering.c` using the `extract_path` method (google AI mode), so paths are saved into `state->scene.tex_no`, `tex_so`, etc. ✅ 2026-08-08
+ - [x] Implement `init_player()` to scan map, find N/S/E/W, ✅ 2026-08-08
+	 - [x] Set positions: `state->pos_dir.x_pos = x + 0.5;` and `state->pos_dir.y_pos = y + 0.5;` ✅ 2026-08-08
+	 - [x] Set the initial camera direction vector fields: `x_dir` and `y_dir`. ✅ 2026-08-08
+	 - [x] **Crucial Step:** Initialize your **camera plane vectors** (`x_plane` and `y_plane`) to determine your Field of View (FOV). For a standard 66° FOV, if facing North (`x_dir = 0, y_dir = -1`), your plane should be (`x_plane = 0.66, y_plane = 0`). ✅ 2026-08-08
+ - [x] Test: Print player position to verify it's not (0, 0) ✅ 2026-08-08

@@ -1,0 +1,9 @@
+- [ ] Subject requirements?
+- [ ] no segfaults, no crashes?
+- [ ] error handling
+- [ ] moves without clipping?
+- [ ] textures don't flip or shimmer
+- [ ] fish-eye correction
+- [ ] filenames, directories
+- [ ] Norminette 
+- [ ] Pushed to Vogsphere?
