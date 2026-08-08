@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 20:02:11 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 21:06:53 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,25 +310,33 @@ static void check_single_player(char **map, int height, t_app_state *state)
 				{
 					state->pos_dir.x_dir = 0;
 					state->pos_dir.y_dir = -1;
+					state->pos_dir.x_plane = 0.66;
+					state->pos_dir.y_plane = 0.0;
 				}
 				if (map[y][x] == 'S')
 				{
 					state->pos_dir.x_dir = 0;
 					state->pos_dir.y_dir = 1;
+					state->pos_dir.x_plane = -0.66;
+					state->pos_dir.y_plane = 0.0;
 				}
 				if (map[y][x] == 'E')
 				{	
 					state->pos_dir.x_dir = 1;
 					state->pos_dir.y_dir = 0;
+					state->pos_dir.x_plane = 0.0;
+					state->pos_dir.y_plane = 0.66;
 				}
 				if (map[y][x] == 'W')
 				{
 					state->pos_dir.x_dir = -1;
-					state->pos_dir.y_dir = 0;					
+					state->pos_dir.y_dir = 0;
+					state->pos_dir.x_plane = 0.0;
+					state->pos_dir.y_plane = -0.66;					
 				}
 				player_count++;
-				state->pos_dir.x_pos = (double)x;
-				state->pos_dir.y_pos = (double)y;
+				state->pos_dir.x_pos = (double)x + 0.5;
+				state->pos_dir.y_pos = (double)y + 0.5;
 			}
 			x++;
 		}
