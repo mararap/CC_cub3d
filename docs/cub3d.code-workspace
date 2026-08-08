@@ -2,15 +2,7 @@
 	"folders": [
 		{
 			"path": ".."
-		},
-		{
-			"path": "../../CC_MS00-03/02_fract_ol"
-		},
-		{
-			"path": "../../42_private/CommonCore_Documents/Circle_04"
 		}
 	],
-	"settings": {
-		"ansiViewer.escapeSequenceDisplay": "normal"
-	}
+	"settings": {}
 }

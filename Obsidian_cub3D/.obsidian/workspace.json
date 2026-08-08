@@ -1,20 +1,51 @@
 {
   "main": {
-    "id": "5a33074e0b14c8f6",
+    "id": "d13b1f9112f7efae",
     "type": "split",
     "children": [
       {
-        "id": "f41e29c605b39c6d",
+        "id": "830514f42a906b59",
         "type": "tabs",
         "children": [
           {
-            "id": "42862acbba5248a6",
+            "id": "96f68b31a49244d0",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "HOME.md",
+                "mode": "preview",
+                "source": true
+              },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "HOME"
+            }
+          },
+          {
+            "id": "7084d59380442ded",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "cub3D KANBAN.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    true,
+                    true,
+                    true,
+                    false,
+                    true
+                  ]
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-trello",
+              "title": "cub3D KANBAN"
             }
           }
         ]
@@ -23,28 +54,30 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b9355b7edb84c882",
+    "id": "b5e570d9eb29884b",
     "type": "split",
     "children": [
       {
-        "id": "41b665ee45de2e4d",
+        "id": "f4f65dfeaf64acf2",
         "type": "tabs",
         "children": [
           {
-            "id": "91c3f8e1fc2119c8",
+            "id": "2d9c367c586d382e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
             }
           },
           {
-            "id": "d1a39087e4810d67",
+            "id": "c764eba5b57b95c9",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,11 +94,14 @@
             }
           },
           {
-            "id": "c2fe3b110d9be0ad",
+            "id": "e50837e62f0fcca8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -74,22 +110,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 250.5
   },
   "right": {
-    "id": "d9f06f0b81daadca",
+    "id": "e156e29d0a7e4d1a",
     "type": "split",
     "children": [
       {
-        "id": "f108da8b56ce7f68",
+        "id": "93ddbb42853d6f22",
         "type": "tabs",
         "children": [
           {
-            "id": "b656094e5b82917d",
+            "id": "df8dca2941ed7172",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "sine-cosine-tangent.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,24 +136,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for sine-cosine-tangent.excalidraw"
             }
           },
           {
-            "id": "e791ae2ebb0e6083",
+            "id": "1e05349a5dab80ff",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "sine-cosine-tangent.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from sine-cosine-tangent.excalidraw"
             }
           },
           {
-            "id": "79b3e65bd19a09af",
+            "id": "e1bc10bc2c9d98b7",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +169,7 @@
             }
           },
           {
-            "id": "2d8ed78228c14c63",
+            "id": "2ae0c15ed0b65f8e",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -145,17 +183,18 @@
             }
           },
           {
-            "id": "0f7080625068b2b1",
+            "id": "61c75fc651fbba66",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "sine-cosine-tangent.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of sine-cosine-tangent.excalidraw"
             }
           }
         ]
@@ -173,11 +212,22 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false
     }
   },
-  "active": "42862acbba5248a6",
+  "active": "96f68b31a49244d0",
   "lastOpenFiles": [
-    "docs/discord-agreements.md"
+    "cub3D KANBAN.md",
+    "HOME.md",
+    "Task Priority.md",
+    "Untitled.base",
+    "Inbox.md",
+    "Digital Differential Analysis.md",
+    "Subject.md",
+    "Euclidean geometry.md",
+    "Useful Links.md",
+    "Understanding Ray casting.md"
   ]
 }

@@ -7,3 +7,4 @@ SOH-CAH-TOA
 **C**osine = **A**djacent / **H**ypothenuse
 **T**angent = **O**pposite / **A**djacent
 
+[[sine-cosine-tangent.excalidraw]]

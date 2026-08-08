@@ -89,7 +89,7 @@ void drawRays2D()
   while(dof<8) 
   { 
    mx=(int)(rx)>>6; my=(int)(ry)>>6; mp=my*mapX+mx;                     
-   if(mp>0 && mp<mapX*mapY && map[mp]==1){ dof=8; disV=cos(degToRad(ra))*(rx-px)-sin(degToRad(ra))*(ry-py);}//hit         
+   if(mp>=0 && mp<mapX*mapY && map[mp]==1){ dof=8; disV=cos(degToRad(ra))*(rx-px)-sin(degToRad(ra))*(ry-py);}//hit         
    else{ rx+=xo; ry+=yo; dof+=1;}                                               //check next horizontal
   } 
   vx=rx; vy=ry;

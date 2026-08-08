@@ -25,7 +25,7 @@ It is incredibly fast. In 1992, computers lacked the processing power to render 
 - The player **cannot look up or down** or jump.
 
 ## Doom: [[BSP|Binary Space Partitioning]]
-For Doom, the developers wanted outdoor areas, non-orthogonal walls, varying light levels, and platforms at different heights. [[Understanding Ray casting]] on a flat grid made this mathematically impossible.
+For Doom, the developers wanted outdoor areas, non-orthogonal walls, varying light levels, and platforms at different heights. [[Ray casting]] on a flat grid made this mathematically impossible.
 
 ```
 Doom Top-Down View (BSP Tree Splitting):
