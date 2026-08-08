@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 20:22:21 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 20:44:11 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 
 # define PI 3.14159265359
 # define ROT_SPEED 0.05
+# define MOVE_SPEED 0.1
 
 # define KEY_ESC 65307
 # define KEY_W 119

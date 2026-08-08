@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 13:00:12 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 20:06:15 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 20:56:48 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,47 @@ quit the program cleanly.*/
 int	on_key_press(int keycode, t_app_state *state)
 {
 	double	old_xdir;
+	double	old_xplane;
 	
 	if (keycode == KEY_ESC)
 		return (on_close(state));
 	if (keycode == KEY_W)
-		state->pos_dir.y_pos -= 0.1;
-	if (keycode == KEY_A)
-		state->pos_dir.x_pos -= 0.1;
+	{
+		state->pos_dir.x_pos += state->pos_dir.x_dir * MOVE_SPEED;
+		state->pos_dir.y_pos += state->pos_dir.y_dir * MOVE_SPEED;
+	}
 	if (keycode == KEY_S)
-		state->pos_dir.y_pos += 0.1;
+	{
+		state->pos_dir.x_pos -= state->pos_dir.x_dir * MOVE_SPEED;
+		state->pos_dir.y_pos -= state->pos_dir.y_dir * MOVE_SPEED;
+	}
+	if (keycode == KEY_A)
+	{
+		state->pos_dir.x_pos += state->pos_dir.y_dir * MOVE_SPEED;
+		state->pos_dir.y_pos -= state->pos_dir.x_dir * MOVE_SPEED;
+	}
 	if (keycode == KEY_D)
-		state->pos_dir.x_pos += 0.1;
+	{
+		state->pos_dir.x_pos -= state->pos_dir.y_dir * MOVE_SPEED;
+		state->pos_dir.y_pos += state->pos_dir.x_dir * MOVE_SPEED;
+	}
 	if (keycode == KEY_LEFT)
 	{
 		old_xdir = state->pos_dir.x_dir;
 		state->pos_dir.x_dir = old_xdir * cos(-ROT_SPEED) - state->pos_dir.y_dir * sin(-ROT_SPEED);
 		state->pos_dir.y_dir = old_xdir * sin(-ROT_SPEED) + state->pos_dir.y_dir * cos(-ROT_SPEED);
+		old_xplane = state->pos_dir.x_plane;
+		state->pos_dir.x_plane = old_xplane * cos(-ROT_SPEED) - state->pos_dir.y_plane * sin(-ROT_SPEED);
+		state->pos_dir.y_plane = old_xplane * sin(-ROT_SPEED) + state->pos_dir.y_plane * cos(-ROT_SPEED);
 	}	
 	if (keycode == KEY_RIGHT)
 	{
 		old_xdir = state->pos_dir.x_dir;
 		state->pos_dir.x_dir = old_xdir * cos(ROT_SPEED) - state->pos_dir.y_dir * sin(ROT_SPEED);
 		state->pos_dir.y_dir = old_xdir * sin(ROT_SPEED) + state->pos_dir.y_dir * cos(ROT_SPEED);
+		old_xplane = state->pos_dir.x_plane;
+		state->pos_dir.x_plane = old_xplane * cos(ROT_SPEED) - state->pos_dir.y_plane * sin(ROT_SPEED);
+		state->pos_dir.y_plane = old_xplane * sin(ROT_SPEED) + state->pos_dir.y_plane * cos(ROT_SPEED);
 	}	
 	//printf("pos_dir x %f, pos_dir y %f\n", state->pos_dir.x_pos, state->pos_dir.y_pos);
 	state->needs_redraw = 1;

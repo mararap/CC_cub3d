@@ -111,7 +111,15 @@ static void	draw_cell(t_app_state *state, int row, int col, int size)
 		x = col * size;
 		while (x < (col + 1) * size)
 		{
-			put_pixel(&state->image, x, y, color);
+			if (y == row * size || y == ((row + 1) * size) - 1 ||
+				x == col * size || x == ((col + 1) * size) - 1)
+			{
+				put_pixel(&state->image, x, y, 0x00333333);
+			}
+			else
+			{
+				put_pixel(&state->image, x, y, color);
+			}
 			x++;
 		}
 		y++;
@@ -129,7 +137,7 @@ static void	draw_player(t_app_state *state, int size)
 
 	px = (int)(state->pos_dir.x_pos * size);
 	py = (int)(state->pos_dir.y_pos * size);
-	r = size / 4;
+	r = 6;
 	y = py - r;
 	while (y <= py + r)
 	{
@@ -142,7 +150,7 @@ static void	draw_player(t_app_state *state, int size)
 		y++;
 	}
 	i = 0;
-	while (i <= size)
+	while (i <= 20)
 	{
 		put_pixel(&state->image,
 			px + (int)(state->pos_dir.x_dir * i),
@@ -150,8 +158,6 @@ static void	draw_player(t_app_state *state, int size)
 			0x0000FF00);
 		i++;
 	}
-//	put_pixel(&state->image, state->pos_dir.x_pos + state->pos_dir.x_dir * 5,
-//				 state->pos_dir.y_pos + state->pos_dir.y_dir * 5, 0x0000FF00);
 }
 
 void	render_frame(t_app_state *state)
