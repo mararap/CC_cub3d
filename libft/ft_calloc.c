@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 10:32:54 by marapovi          #+#    #+#             */
-/*   Updated: 2025/10/05 13:37:18 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:02:16 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	i = 0;
 	total_size = 0;
-	if (size != 0 && nmemb < ((size_t) - 1) / size)
-		total_size = nmemb * size;
-	if (size != 0 && total_size / size != nmemb)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
+	if (nmemb > ((size_t) - 1) / size)
+		return (NULL);
+	total_size = nmemb * size;
 	ptr = malloc(total_size);
 	if (ptr == NULL)
 		return (NULL);
