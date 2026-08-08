@@ -42,39 +42,82 @@ C 225,30,0
 
 void	set_north_texture(char *line)
 {
-    //printf("%s\n", ft_substr(line, 3, ft_strlen(line) - 3));
-    int fd;
+    char    *path;
+    int     fd;
 
-    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
-	if (fd == -1)
-		return (perror("Error\nopen"), exit(1));
+    path = ft_strtrim(line + 2, " \t\n");
+    if (path == NULL)
+        exit(EXIT_FAILURE);
+
+    fd = open(path, O_RDONLY);
+    free(path);
+
+    if (fd == -1)
+    {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
     close(fd);
 }
 void	set_south_texture(char *line)
 {
-    int fd;
+    char    *path;
+    int     fd;
 
-    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
-	if (fd == -1)
-		return (perror("Error\nopen"), exit(1));
+    path = ft_strtrim(line + 2, " \t\n");
+    if (path == NULL)
+        exit(EXIT_FAILURE);
+
+    fd = open(path, O_RDONLY);
+    free(path);
+
+    if (fd == -1)
+    {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
     close(fd);
 }
 void	set_west_texture(char *line)
 {
-    int fd;
+    char    *path;
+    int     fd;
 
-    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
-	if (fd == -1)
-		return (perror("Error\nopen"), exit(1));
+    path = ft_strtrim(line + 2, " \t\n");
+    if (path == NULL)
+        exit(EXIT_FAILURE);
+
+    fd = open(path, O_RDONLY);
+    free(path);
+
+    if (fd == -1)
+    {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
     close(fd);
 }
 void	set_east_texture(char *line)
 {
-    int fd;
+    char    *path;
+    int     fd;
 
-    fd = open(ft_substr(line, 3, ft_strlen(line) - 3), O_RDONLY);
-	if (fd == -1)
-		return (perror("Error\nopen"), exit(1));
+    path = ft_strtrim(line + 2, " \t\n");
+    if (path == NULL)
+        exit(EXIT_FAILURE);
+
+    fd = open(path, O_RDONLY);
+    free(path);
+
+    if (fd == -1)
+    {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
     close(fd);
 }
 void	set_floor_color(char *line)

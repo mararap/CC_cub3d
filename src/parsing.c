@@ -6,7 +6,7 @@
 /*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/07/19 16:35:18 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:25:30 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,7 +234,8 @@ static void	read_cub_lines(int fd, t_app_state *state)
 					!state->textures.f_set || !state->textures.c_set)
 				{
 					write(2, "Error\nMissing configuration\n", 28);
-					exit(1);
+					free(line);
+					ft_error_exit();
 				}
 				in_map = 1;				
 			}
@@ -325,8 +326,8 @@ int	parse_map(int argc, char **argv, t_app_state *state)
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		return (perror("Error\nopen"), exit(1), 0);
-	state->map = NULL;
-	state->map_height = 0;
+	//state->map = NULL;
+	//state->map_height = 0;
 	read_cub_lines(fd, state);
 	close(fd);
 	if (state->map_height == 0)
