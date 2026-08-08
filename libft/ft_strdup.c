@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 17:32:01 by marapovi          #+#    #+#             */
-/*   Updated: 2025/05/16 17:32:05 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/08 14:46:10 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ char	*ft_strdup(const char *s)
 		ptr[i] = s[i];
 		i++;
 	}
-	ptr[i] = '\0';
 	return (ptr);
 }
