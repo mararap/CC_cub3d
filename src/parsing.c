@@ -6,7 +6,7 @@
 /*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 15:25:30 by jatanaso         ###   ########.fr       */
+/*   Updated: 2026/08/08 16:31:49 by jatanaso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,7 +290,7 @@ static void check_map_closed(char **map, int height)
 	}
 }
 
-static void check_single_player(char **map, int height)
+static void check_single_player(char **map, int height, t_app_state *state)
 {
 	int x;
 	int y;
@@ -305,7 +305,11 @@ static void check_single_player(char **map, int height)
 		{
 			if (map[y][x] == 'N' || map[y][x] == 'S' || 
 				map[y][x] == 'E' || map[y][x] == 'W')
+			{
 				player_count++;
+				state->pos_dir.x_pos = (double)x;
+				state->pos_dir.y_pos = (double)y;
+			}
 			x++;
 		}
 		y++;
@@ -335,6 +339,6 @@ int	parse_map(int argc, char **argv, t_app_state *state)
 	check_first_last_line(state->map[0]);
 	check_first_last_line(state->map[state->map_height - 1]);
 	check_map_closed(state->map, state->map_height);
-	check_single_player(state->map, state->map_height);
+	check_single_player(state->map, state->map_height, state);
 	return (1);
 }
