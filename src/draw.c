@@ -160,12 +160,32 @@ static void	draw_player(t_app_state *state, int size)
 	}
 }
 
+static void	draw_ray_2d(t_app_state *state, t_ray *ray, int size)
+{
+    int	px;
+    int	py;
+    int	i;
+
+    px = (int)(state->pos_dir.x_pos * size);
+    py = (int)(state->pos_dir.y_pos * size);
+    i = 0;
+    while (i <= (int)(ray->wall_dist * size))
+    {
+        put_pixel(&state->image,
+            px + (int)(ray->ray_dir_x * i),
+            py + (int)(ray->ray_dir_y * i),
+            0x00FF0000);
+        i++;
+    }
+}
+
 void	render_frame(t_app_state *state)
 {
-	int	row;
-	int	col;
-	int	width;
-	int	size;
+	t_ray	ray;
+	int		row;
+	int		col;
+	int		width;
+	int		size;
 
 	fill_image(&state->image, 0x00111111);
 	width = get_map_width(state);
@@ -182,4 +202,6 @@ void	render_frame(t_app_state *state)
 		row++;
 	}
 	draw_player(state, size);
+	cast_ray(state, &ray, WINDOW_WIDTH / 2);
+	draw_ray_2d(state, &ray, size);
 }

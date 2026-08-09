@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 20:44:11 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/09 17:44:53 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,23 @@ typedef struct	s_textures
     int c_set;
 } t_textures;
 
+typedef struct s_ray
+{
+    double  ray_dir_x;
+    double  ray_dir_y;
+    int     map_x;
+    int     map_y;
+    int     step_x;
+    int     step_y;
+    double  delta_dist_x;
+    double  delta_dist_y;
+    double  side_dist_x;
+    double  side_dist_y;
+    double  wall_dist;
+    int     side;
+    int     hit;
+}   t_ray;
+
 typedef struct s_app_state
 {
 	void			*mlx;
@@ -132,5 +149,8 @@ void	set_west_texture(char *line);
 void	set_east_texture(char *line);
 void	set_floor_color(char *line);
 void	set_ceiling_color(char *line);
+
+void    cast_ray(t_app_state *app, t_ray *ray, int screen_x);
+
 
 #endif

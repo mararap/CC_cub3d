@@ -6,7 +6,7 @@
 #    By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/29 10:48:23 by marapovi         ###   ########.fr        #
+#    Updated: 2026/08/09 17:46:05 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ LIBFT_DIR		:=		libft
 LIBFT			:=		$(LIBFT_DIR)/libft.a
 
 SRC 	:= 		main.c draw.c error.c get_next_line.c keys.c parsing.c \
-				rendering.c setup.c
+				rendering.c setup.c raycast.c
 				
 
 
