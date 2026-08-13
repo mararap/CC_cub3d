@@ -6,5 +6,7 @@ Obsidian_cub3D/.obsidian/plugins/*/.cache/
 #.vscode
 obj/
 .clangd
+.github
+.claude
 libft/*.o
 libft/*.a
