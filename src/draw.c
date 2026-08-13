@@ -179,9 +179,22 @@ static void	draw_ray_2d(t_app_state *state, t_ray *ray, int size)
     }
 }
 
-void	render_frame(t_app_state *state)
+static void	cast_ray_fan(t_app_state *state, int size)
 {
 	t_ray	ray;
+	int		screen_x;
+
+	screen_x = 0;
+	while (screen_x <= WINDOW_WIDTH)
+	{
+		cast_ray(state, &ray, screen_x);
+		draw_ray_2d(state, &ray, size);
+		screen_x += 1;
+	}
+}
+
+void	render_frame(t_app_state *state)
+{
 	int		row;
 	int		col;
 	int		width;
@@ -202,6 +215,5 @@ void	render_frame(t_app_state *state)
 		row++;
 	}
 	draw_player(state, size);
-	cast_ray(state, &ray, WINDOW_WIDTH / 2);
-	draw_ray_2d(state, &ray, size);
+	cast_ray_fan(state, size);
 }
