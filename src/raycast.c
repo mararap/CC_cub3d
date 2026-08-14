@@ -6,13 +6,13 @@
 /*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/08/13 16:52:35 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/14 16:38:50 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// ~15 lines — ray direction and delta distances
+// lines — ray direction and delta distances
 static void	init_ray(t_app_state *app, t_ray *ray, int screen_x)
 {
 	double	camera_x;
@@ -32,7 +32,7 @@ static void	init_ray(t_app_state *app, t_ray *ray, int screen_x)
 		ray->delta_dist_y = fabs(1.0 / ray->ray_dir_y);
 }
 
-// ~20 lines — step direction and distance to first grid crossing
+// step direction and distance to first grid crossing
 static void	set_ray_steps(t_app_state *app, t_ray *ray)
 {
 	if (ray->ray_dir_x < 0)
@@ -61,7 +61,7 @@ static void	set_ray_steps(t_app_state *app, t_ray *ray)
 	}
 }
 
-// ~15 lines — DDA walk until wall hit
+// DDA walk until wall hit
 static void	dda_walk(t_app_state *app, t_ray *ray)
 {
 	ray->hit = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/09 17:44:53 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/14 17:00:27 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,13 @@ typedef struct s_scene			// textures/colors
 }			t_scene;
 
 
-typedef struct s_viewport
+/* typedef struct s_viewport (unused/fractol-remainder?)
 {
 	long double	x_min;
 	long double	x_max;
 	long double	y_min;
 	long double	y_max;
-}	t_viewport;
+}	t_viewport; */
 
 typedef struct	s_textures
 {
@@ -111,20 +111,29 @@ typedef struct s_ray
     double  wall_dist;
     int     side;
     int     hit;
+
 }   t_ray;
+
+typedef struct s_draw_column
+{
+	t_ray	ray;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+}	t_draw_column;
 
 typedef struct s_app_state
 {
 	void			*mlx;
 	void			*window;
 	t_image_buffer	image;
-	char			set;
+//	char			set; (unused?)
 	t_pos_dir		pos_dir;	
-	t_viewport		viewport;
+//	t_viewport		viewport;
 	t_scene			scene;
-	int				max_iterations;
+//	int				max_iterations; (unused/fractol-remainder?)
 	int				needs_redraw;
-	long			last_frame_time_us;
+//	long			last_frame_time_us; (unused?)
 	char			**map;
 	int				map_height;
 	t_textures		textures;
