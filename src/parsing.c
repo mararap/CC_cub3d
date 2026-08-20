@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 12:51:43 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 21:06:53 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/20 17:44:38 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,8 @@ static void	add_map_line(t_app_state *state, char *line)
 	new_map[i] = ft_strdup(line);
 	if (!new_map[i])
 		return (perror("Error\nmalloc"), exit(1));
+	if ((int)ft_strlen(line) > state->map_width)
+		state->map_width = (int)ft_strlen(line);
 	free(state->map);
 	state->map = new_map;
 	state->map_height++;
