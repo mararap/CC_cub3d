@@ -6,7 +6,7 @@
 #    By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/08/20 17:50:39 by marapovi         ###   ########.fr        #
+#    Updated: 2026/08/21 14:56:26 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ SRC 	:= 		main.c \
 				pixel.c \
 				draw_cell.c \
 				draw_2d.c \
-				render.c				
+				draw_3d.c				
 
 
 SRC				:=		$(addprefix $(SRC_DIR)/,$(SRC))

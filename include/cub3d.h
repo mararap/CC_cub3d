@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/20 17:49:55 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/21 17:43:50 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ typedef struct s_scene			// textures/colors
 	int		color_floor;
 	int		color_ceil;
 }			t_scene;
-
 
 /* typedef struct s_viewport (unused/fractol-remainder?)
 {
@@ -151,11 +150,12 @@ int		on_loop_tick(t_app_state *state);
 void	destroy_app_state(t_app_state *state);
 
 void	put_pixel(t_image_buffer *image, int x, int y, int color);
-void	draw_cell(t_app_state *state, int row, int col, int size);
 
 void	fill_image(t_image_buffer *image, int color);
-void	draw_player(t_app_state *state, int size);
-void	cast_ray_fan(t_app_state *state, int size);
+
+void	draw_cell(t_app_state *state, int row, int col, int size);
+
+void	render_minimap(t_app_state *state);
 
 void	redraw_frame(t_app_state *state);
 void	render_frame(t_app_state *state);
