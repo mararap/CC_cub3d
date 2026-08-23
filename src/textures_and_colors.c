@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rendering.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 10:38:20 by marapovi          #+#    #+#             */
-/*   Updated: 2026/06/29 10:38:22 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/09 22:44:55 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,11 +135,11 @@ void	set_east_texture(char *line)
 }
 void	set_floor_color(char *line)
 {
-    line = "F";
-    //write(1, "floor color is set", 18);
+    (void)line;
+    // parse line and set state->scene.color_floor
 }
 void	set_ceiling_color(char *line)
 {
-    line = "C";
-    //write(1, "ceiling color is set", 20);
+    (void)line;
+    // parse line and set state->scene.color_ceiling
 }

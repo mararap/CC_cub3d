@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 20:31:01 by marapovi          #+#    #+#             */
-/*   Updated: 2026/08/08 17:24:08 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/21 17:27:28 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ int	on_loop_tick(t_app_state *state)
 
 int	main(int argc, char **argv)
 {
-	t_app_state	app;
+	t_app_state	state;
 
-	ft_bzero(&app, sizeof(t_app_state));
-	if (!parse_map(argc, argv, &app))
-		return (destroy_app_state(&app), 1);
-	if (!initialize_app(&app))
-		return (destroy_app_state(&app), 1);
-	printf("pos_x %f, pos_y %f", app.pos_dir.x_pos, app.pos_dir.y_pos);
-	mlx_hook(app.window, 2, 1L << 0, &on_key_press, &app);
-	mlx_hook(app.window, 17, 0, &on_close, &app);
-	mlx_loop_hook(app.mlx, &on_loop_tick, &app);
-	redraw_frame(&app);
-	mlx_loop(app.mlx);
-	destroy_app_state(&app);
+	ft_bzero(&state, sizeof(t_app_state));
+	if (!parse_map(argc, argv, &state))
+		return (destroy_app_state(&state), 1);
+	if (!initialize_app(&state))
+		return (destroy_app_state(&state), 1);
+	printf("pos_x %f, pos_y %f", state.pos_dir.x_pos, state.pos_dir.y_pos);
+	mlx_hook(state.window, 2, 1L << 0, &on_key_press, &state);
+	mlx_hook(state.window, 17, 0, &on_close, &state);
+	mlx_loop_hook(state.mlx, &on_loop_tick, &state);
+	redraw_frame(&state);
+	mlx_loop(state.mlx);
+	destroy_app_state(&state);
 	return (0);
 }

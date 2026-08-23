@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/08 20:44:11 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/21 17:43:50 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,13 @@ typedef struct s_scene			// textures/colors
 	int		color_ceil;
 }			t_scene;
 
-
-typedef struct s_viewport
+/* typedef struct s_viewport (unused/fractol-remainder?)
 {
 	long double	x_min;
 	long double	x_max;
 	long double	y_min;
 	long double	y_max;
-}	t_viewport;
+}	t_viewport; */
 
 typedef struct	s_textures
 {
@@ -96,20 +95,47 @@ typedef struct	s_textures
     int c_set;
 } t_textures;
 
+typedef struct s_ray
+{
+    double  ray_dir_x;
+    double  ray_dir_y;
+    int     map_x;
+    int     map_y;
+    int     step_x;
+    int     step_y;
+    double  delta_dist_x;
+    double  delta_dist_y;
+    double  side_dist_x;
+    double  side_dist_y;
+    double  wall_dist;
+    int     side;
+    int     hit;
+
+}   t_ray;
+
+typedef struct s_draw_column
+{
+	t_ray	ray;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+}	t_draw_column;
+
 typedef struct s_app_state
 {
 	void			*mlx;
 	void			*window;
 	t_image_buffer	image;
-	char			set;
+//	char			set; (unused?)
 	t_pos_dir		pos_dir;	
-	t_viewport		viewport;
+//	t_viewport		viewport;
 	t_scene			scene;
-	int				max_iterations;
+//	int				max_iterations; (unused/fractol-remainder?)
 	int				needs_redraw;
-	long			last_frame_time_us;
+//	long			last_frame_time_us; (unused?)
 	char			**map;
 	int				map_height;
+	int				map_width;
 	t_textures		textures;
 }	t_app_state;
 
@@ -122,9 +148,17 @@ int		on_close(t_app_state *state);
 int		on_loop_tick(t_app_state *state);
 
 void	destroy_app_state(t_app_state *state);
+
+void	put_pixel(t_image_buffer *image, int x, int y, int color);
+
+void	fill_image(t_image_buffer *image, int color);
+
+void	draw_cell(t_app_state *state, int row, int col, int size);
+
+void	render_minimap(t_app_state *state);
+
 void	redraw_frame(t_app_state *state);
 void	render_frame(t_app_state *state);
-void	put_pixel(t_image_buffer *image, int x, int y, int color);
 
 void	set_north_texture(char *line);
 void	set_south_texture(char *line);
@@ -132,5 +166,8 @@ void	set_west_texture(char *line);
 void	set_east_texture(char *line);
 void	set_floor_color(char *line);
 void	set_ceiling_color(char *line);
+
+void    cast_ray(t_app_state *app, t_ray *ray, int screen_x);
+
 
 #endif
