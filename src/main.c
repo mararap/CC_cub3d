@@ -27,6 +27,18 @@ static void	free_map(char **map)
 	free(map);
 }
 
+static void	free_scene(t_scene *scene)
+{
+	free(scene->tex_no);
+	free(scene->tex_so);
+	free(scene->tex_we);
+	free(scene->tex_ea);
+	scene->tex_no = NULL;
+	scene->tex_so = NULL;
+	scene->tex_we = NULL;
+	scene->tex_ea = NULL;
+}
+
 void	destroy_app_state(t_app_state *state)
 {
 	if (!state)
@@ -36,6 +48,7 @@ void	destroy_app_state(t_app_state *state)
 		free_map(state->map);
 		state->map = NULL;
 	}
+	free_scene(&state->scene);
 	if (state->mlx && state->image.handle)
 	{
 		mlx_destroy_image(state->mlx, state->image.handle);

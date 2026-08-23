@@ -56,7 +56,14 @@ SRC 	:= 		main.c \
 				error.c \
 				get_next_line.c \
 				keys.c \
-				parsing.c \
+				parsing/parsing.c \
+				parsing/parsing_error.c \
+				parsing/parsing_config.c \
+				parsing/parsing_texture.c \
+				parsing/parsing_color.c \
+				parsing/parsing_map.c \
+				parsing/parsing_validate.c \
+				parsing/parsing_player.c \
 				textures_and_colors.c \
 				setup.c \
 				raycast.c \

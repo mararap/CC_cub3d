@@ -142,6 +142,17 @@ typedef struct s_app_state
 char	*get_next_line(int fd);
 
 int		parse_map(int argc, char **argv, t_app_state *state);
+int		parser_error(char *message);
+int		parser_is_blank(char *line);
+void	parser_strip_newline(char *line);
+int		parser_is_map_line(char *line);
+int		parser_add_map_line(t_app_state *state, char *line);
+int		parser_all_config(t_app_state *state);
+int		parser_parse_config(t_app_state *state, char *line);
+int		parser_set_texture(char *value, char **slot, int *is_set);
+int		parser_set_color(char *value, int *slot, int *is_set);
+int		parser_validate_map(t_app_state *state);
+int		parser_find_player(t_app_state *state);
 int		initialize_app(t_app_state *state);
 int		on_key_press(int keycode, t_app_state *state);
 int		on_close(t_app_state *state);
