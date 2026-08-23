@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+         #
+#    By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/06/29 10:48:23 by marapovi         ###   ########.fr        #
+#    Updated: 2026/08/21 14:56:26 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,9 +52,18 @@ SRC_DIR			:=		src
 LIBFT_DIR		:=		libft
 LIBFT			:=		$(LIBFT_DIR)/libft.a
 
-SRC 	:= 		main.c draw.c error.c get_next_line.c keys.c parsing.c \
-				rendering.c setup.c
-				
+SRC 	:= 		main.c \
+				error.c \
+				get_next_line.c \
+				keys.c \
+				parsing.c \
+				textures_and_colors.c \
+				setup.c \
+				raycast.c \
+				pixel.c \
+				draw_cell.c \
+				draw_2d.c \
+				draw_3d.c				
 
 
 SRC				:=		$(addprefix $(SRC_DIR)/,$(SRC))

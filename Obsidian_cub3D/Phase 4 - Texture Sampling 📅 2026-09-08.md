@@ -1,0 +1,3 @@
+- [ ] Load textures with `mlx_xpm_file_to_image()` at startup
+- [ ] For each wall column, calculate which pixel in the texture to sample (hit_x_offset)
+- [ ] Sample that column from the texture image and draw it

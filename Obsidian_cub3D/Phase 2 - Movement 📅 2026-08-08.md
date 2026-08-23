@@ -1,0 +1,2 @@
+- [x] **Task 1 (Linear Step Processing):**  modify `on_key_press()` in `keys.c`. When `KEY_W` or `KEY_S` is caught, modify `state->pos_dir.x_pos` and `y_pos` by adding or subtracting a fraction of `x_dir` and `y_dir` vectors. ✅ 2026-08-08
+- [x] **Task 2 (The Rotation Matrix):** When `KEY_LEFT` or `KEY_RIGHT` is pressed, use basic trigonometric rotation formulas to spin both your direction vectors (`x_dir`/`y_dir`) and camera plane vectors (`x_plane`/`y_plane`) using a small angle configuration variable (like `0.05` radians). ✅ 2026-08-08
