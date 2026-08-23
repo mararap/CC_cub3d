@@ -12,10 +12,30 @@
 
 #include "cub3d.h"
 
+static void	free_map(char **map)
+{
+	int	i;
+
+	if (!map)
+		return ;
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+}
+
 void	destroy_app_state(t_app_state *state)
 {
 	if (!state)
 		return ;
+	if (state->map)
+	{
+		free_map(state->map);
+		state->map = NULL;
+	}
 	if (state->mlx && state->image.handle)
 	{
 		mlx_destroy_image(state->mlx, state->image.handle);

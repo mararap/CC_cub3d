@@ -93,8 +93,7 @@ static void check_first_last_line(char *line)
 	{
 		if (line[i] != ' ' && line[i] != '1')
 		{
-			write(2, "Error\nFirst and last map rows must contain only '1'\n", 53);
-			exit(1);
+			return (error_msg("Error\nFirst and last map rows must contain only '1'\n"), 1);
 		}
 		i++;
 	}
@@ -113,14 +112,14 @@ static void	check_map_line(char *line)
 	while (last >= 0 && line[last] == ' ')
 		last--;
 	if (last < first || line[first] != '1')
-		return (write(2, "Error\nMap row must start with 1\n", 32), exit(1));
+		return (error_msg("Error\nMap row must start with 1\n"), 1);
 	if (line[last] != '1')
-		return (write(2, "Error\nMap row must end with 1\n", 30), exit(1));
+		return (error_msg("Error\nMap row must end with 1\n"), 1);
 	i = 0;
 	while (line[i])
 	{
 		if (!is_map_char(line[i]))
-			return (write(2, "Error\nInvalid map character\n", 28), exit(1));
+			return (error_msg("Error\nInvalid map character\n"), 1);
 		i++;
 	}
 }
@@ -154,50 +153,50 @@ static void	handle_config_line(t_app_state *state, char* line)
 	if (line[0] == 'N' && line[1] == 'O')
 	{
 		if (state->textures.no_set)
-			return (write(2, "Error\nDuplicate NO texture\n", 27), exit(1));
+			return (error_msg("Error\nDuplicate NO texture\n"), 1);
 		state->textures.no_set = 1;
 		set_north_texture(line);
 	}
 	else if (line[0] == 'S' && line[1] == 'O')
 	{
 		if (state->textures.so_set)
-			return (write(2, "Error\nDuplicate SO texture\n", 27), exit(1));
+			return (error_msg("Error\nDuplicate SO texture\n"), 1);
 		state->textures.so_set = 1;
 		set_south_texture(line);
 	}
 	else if (line[0] == 'W' && line[1] == 'E')
 	{
 		if (state->textures.we_set)
-			return (write(2, "Error\nDuplicate WE texture\n", 27), exit(1));
+			return (error_msg("Error\nDuplicate WE texture\n"), 1);
 		state->textures.we_set = 1;
 		set_west_texture(line);
 	}
 	else if (line[0] == 'E' && line[1] == 'A')
 	{
 		if (state->textures.ea_set)
-			return (write(2, "Error\nDuplicate EA texture\n", 27), exit(1));
+			return (error_msg("Error\nDuplicate EA texture\n"), 1);
 		state->textures.ea_set = 1;
 		set_east_texture(line);
 	}
 	else if (line[0] == 'F')
 	{
 		if (state->textures.f_set)
-			return (write(2, "Error\nDuplicate F texture\n", 26), exit(1));
+			return (error_msg("Error\nDuplicate F texture\n"), 1);
 		state->textures.f_set = 1;
 		set_floor_color(line);
 	}
 	else if (line[0] == 'C')
 	{
 		if (state->textures.c_set)
-			return (write(2, "Error\nDuplicate C texture\n", 26), exit(1));
+			return (error_msg("Error\nDuplicate C texture\n"), 1);
 		state->textures.c_set = 1;
 		set_ceiling_color(line);
 	}
 	else
-		return (write(2, "Error\nInvalid cub file line\n", 28), exit(1));
+		return (error_msg("Error\nInvalid cub file line\n"), 1);
 }
 
-static void	trim_map_line(char *line)
+static void	trim_config_line(char *line)
 {
 	size_t	start;
 	size_t	end;
@@ -235,21 +234,23 @@ static void	read_cub_lines(int fd, t_app_state *state)
 					!state->textures.we_set || !state->textures.ea_set ||
 					!state->textures.f_set || !state->textures.c_set)
 				{
-					write(2, "Error\nMissing configuration\n", 28);
 					free(line);
-					ft_error_exit();
+					return (error_msg("Error\nMissing configuration\n)", 1);
 				}
 				in_map = 1;				
 			}
 			if (in_map)
 			{
-				trim_map_line(line);
-				check_map_line(line);
+				if (!check_map_line(line))
+				{
+					free(line);
+					return (0);
+				}
 				add_map_line(state, line);
 			}
 			else
 			{
-				trim_map_line(line);
+				trim_config_line(line);
 				handle_config_line(state, line);
 			}
 		}
@@ -282,8 +283,7 @@ static void check_map_closed(char **map, int height)
 					|| x >= (int)ft_strlen(map[y - 1]) || map[y - 1][x] == ' ' 
 					|| x >= (int)ft_strlen(map[y + 1]) || map[y + 1][x] == ' ')
 				{
-					write(2, "Error \nMap is not closed\n", 24);
-					exit(1);
+					return (error_msg(2, "Error \nMap is not closed\n", 24), 1);
 				}
 			}
 			x++;
@@ -346,9 +346,20 @@ static void check_single_player(char **map, int height, t_app_state *state)
 	}
 	if (player_count != 1)
 	{
-		write(2, "Error\nMap must contain exactly one player\n", 42);
-		exit(1);
+		return (error_msg("Error\nMap must contain exactly one player\n)", 1);
 	}
+}
+
+static int	has_cub_extension(char *filename)
+{
+	size_t	len;
+
+	if (!filename)
+		return (0);
+	len = ft_strlen(filename);
+	if (len < 5)
+		return (0);
+	return (ft_strncmp(filename + len - 4, ".cub", 4) == 0);
 }
 
 int	parse_map(int argc, char **argv, t_app_state *state)
@@ -356,16 +367,22 @@ int	parse_map(int argc, char **argv, t_app_state *state)
 	int	fd;
 
 	if (argc != 2)
-		return (write(2, "Error\nNo scene file specified\n", 30), exit(1), 0);
+		return (error_msg("Expected one .cub scene file"), 0);
+	if (!has_cub_extension(argv[1]))
+		return (error_msg("Scene file must have .cub extension"), 0);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		return (perror("Error\nopen"), exit(1), 0);
 	//state->map = NULL;
 	//state->map_height = 0;
-	read_cub_lines(fd, state);
+	if (!read_cub_lines(fd, state))
+	{
+		close(fd);
+		return (0);
+	}
 	close(fd);
 	if (state->map_height == 0)
-		return (write(2, "Error\nMissing map\n", 18), exit(1), 0);
+		return (error_msg("Error\nMissing map\n", 18), 0);
 	check_first_last_line(state->map[0]);
 	check_first_last_line(state->map[state->map_height - 1]);
 	check_map_closed(state->map, state->map_height);
