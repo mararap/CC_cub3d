@@ -22,6 +22,46 @@ the maze.
 ◦ Clicking on the red cross on the window’s frame must close the window and
 quit the program cleanly.*/
 
+static int	is_walkable(double x, double y, t_app_state *state)
+{
+	int		map_x;
+	int		map_y;
+	char	tile;
+
+	if (x < 0 || y < 0)
+		return (0);
+	map_x = (int)x;
+	map_y = (int)y;
+	if (map_y >= state->map_height)
+		return (0);
+	if (map_x >= (int)ft_strlen(state->map[map_y]))
+		return (0);
+	tile = state->map[map_y][map_x];
+	return (ft_strchr("0NSEW", tile) != NULL);
+}
+
+static int	try_move(t_app_state *state, double move_x, double move_y)
+{
+	double	new_x;
+	double	new_y;
+	int		moved;
+
+	moved = 0;
+	new_x = state->pos_dir.x_pos + move_x;
+	new_y = state->pos_dir.y_pos + move_y;
+	if (is_walkable(new_x, state->pos_dir.y_pos, state))
+	{
+		state->pos_dir.x_pos = new_x;
+		moved = 1;
+	}
+	if (is_walkable(state->pos_dir.x_pos, new_y, state))
+	{
+		state->pos_dir.y_pos = new_y;
+		moved = 1;
+	}
+	return (moved);
+}
+
 int	on_key_press(int keycode, t_app_state *state)
 {
 	double	old_xdir;
@@ -32,29 +72,21 @@ int	on_key_press(int keycode, t_app_state *state)
 	if (keycode == KEY_ESC)
 		return (on_close(state));
 	if (keycode == KEY_W)
-	{
-		state->pos_dir.x_pos += state->pos_dir.x_dir * MOVE_SPEED;
-		state->pos_dir.y_pos += state->pos_dir.y_dir * MOVE_SPEED;
-		changed = 1;
-	}
+		changed = try_move(state,
+				state->pos_dir.x_dir * MOVE_SPEED,
+				state->pos_dir.y_dir * MOVE_SPEED);
 	if (keycode == KEY_S)
-	{
-		state->pos_dir.x_pos -= state->pos_dir.x_dir * MOVE_SPEED;
-		state->pos_dir.y_pos -= state->pos_dir.y_dir * MOVE_SPEED;
-		changed = 1;
-	}
+		changed = try_move(state,
+				-state->pos_dir.x_dir * MOVE_SPEED,
+				-state->pos_dir.y_dir * MOVE_SPEED);
 	if (keycode == KEY_A)
-	{
-		state->pos_dir.x_pos += state->pos_dir.y_dir * MOVE_SPEED;
-		state->pos_dir.y_pos -= state->pos_dir.x_dir * MOVE_SPEED;
-		changed = 1;
-	}
+		changed = try_move(state,
+				state->pos_dir.y_dir * MOVE_SPEED,
+				-state->pos_dir.x_dir * MOVE_SPEED);
 	if (keycode == KEY_D)
-	{
-		state->pos_dir.x_pos -= state->pos_dir.y_dir * MOVE_SPEED;
-		state->pos_dir.y_pos += state->pos_dir.x_dir * MOVE_SPEED;
-		changed = 1;
-	}
+		changed = try_move(state,
+				-state->pos_dir.y_dir * MOVE_SPEED,
+				state->pos_dir.x_dir * MOVE_SPEED);
 	if (keycode == KEY_LEFT)
 	{
 		old_xdir = state->pos_dir.x_dir;
