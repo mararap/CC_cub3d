@@ -50,7 +50,6 @@ void	render_frame(t_app_state *state)
 	t_draw_column	col;
 	int				screen_x;
 
-	fill_image(&state->image, 0x00111111);
 	screen_x = 0;
  	while (screen_x < WINDOW_WIDTH)
 	{

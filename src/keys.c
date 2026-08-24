@@ -26,28 +26,34 @@ int	on_key_press(int keycode, t_app_state *state)
 {
 	double	old_xdir;
 	double	old_xplane;
+	int 	changed;
 	
+	changed = 0;
 	if (keycode == KEY_ESC)
 		return (on_close(state));
 	if (keycode == KEY_W)
 	{
 		state->pos_dir.x_pos += state->pos_dir.x_dir * MOVE_SPEED;
 		state->pos_dir.y_pos += state->pos_dir.y_dir * MOVE_SPEED;
+		changed = 1;
 	}
 	if (keycode == KEY_S)
 	{
 		state->pos_dir.x_pos -= state->pos_dir.x_dir * MOVE_SPEED;
 		state->pos_dir.y_pos -= state->pos_dir.y_dir * MOVE_SPEED;
+		changed = 1;
 	}
 	if (keycode == KEY_A)
 	{
 		state->pos_dir.x_pos += state->pos_dir.y_dir * MOVE_SPEED;
 		state->pos_dir.y_pos -= state->pos_dir.x_dir * MOVE_SPEED;
+		changed = 1;
 	}
 	if (keycode == KEY_D)
 	{
 		state->pos_dir.x_pos -= state->pos_dir.y_dir * MOVE_SPEED;
 		state->pos_dir.y_pos += state->pos_dir.x_dir * MOVE_SPEED;
+		changed = 1;
 	}
 	if (keycode == KEY_LEFT)
 	{
@@ -57,6 +63,7 @@ int	on_key_press(int keycode, t_app_state *state)
 		old_xplane = state->pos_dir.x_plane;
 		state->pos_dir.x_plane = old_xplane * cos(-ROT_SPEED) - state->pos_dir.y_plane * sin(-ROT_SPEED);
 		state->pos_dir.y_plane = old_xplane * sin(-ROT_SPEED) + state->pos_dir.y_plane * cos(-ROT_SPEED);
+		changed = 1;
 	}	
 	if (keycode == KEY_RIGHT)
 	{
@@ -66,9 +73,11 @@ int	on_key_press(int keycode, t_app_state *state)
 		old_xplane = state->pos_dir.x_plane;
 		state->pos_dir.x_plane = old_xplane * cos(ROT_SPEED) - state->pos_dir.y_plane * sin(ROT_SPEED);
 		state->pos_dir.y_plane = old_xplane * sin(ROT_SPEED) + state->pos_dir.y_plane * cos(ROT_SPEED);
+		changed = 1;
 	}	
 	//printf("pos_dir x %f, pos_dir y %f\n", state->pos_dir.x_pos, state->pos_dir.y_pos);
-	state->needs_redraw = 1;
+	if (changed == 1)
+		state->needs_redraw = 1;
 	return (0);
 }
 
