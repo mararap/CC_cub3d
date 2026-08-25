@@ -35,6 +35,28 @@ static int	init_window(t_app_state *state)
 	return (1);
 }
 
+static int	load_texture(t_app_state *state, t_image_buffer *texture, char *path)
+{
+	/* Load the XPM handle */
+	/* Get its pixel-data address */
+	/* Return 1 on success, 0 on failure */
+	texture->handle = mlx_xpm_file_to_image(state->mlx, path, 
+		&texture->width, &texture->height);
+	if (texture->handle == NULL)
+	{
+		parser_error("Texture loading failed");
+		return 0;
+	}
+	texture->pixels = mlx_get_data_addr(
+		texture->handle,
+		&texture->bits_per_pixel,
+		&texture->line_stride,
+		&texture->endian);
+	if (texture->pixels == NULL)
+		return 0;
+	return 1;
+}
+
 static int	init_image(t_app_state *state)
 {
 	state->image.handle = mlx_new_image(state->mlx, WINDOW_WIDTH,
@@ -64,6 +86,18 @@ int	initialize_app(t_app_state *state)
 	if (!init_image(state))
 		return (0);
 	state->needs_redraw = 1;
+	if (!load_texture(state, &state->wall_images.north,
+		state->scene.tex_no))
+		return (0);
+	if (!load_texture(state, &state->wall_images.south,
+		state->scene.tex_so))
+		return (0);
+	if (!load_texture(state, &state->wall_images.east,
+		state->scene.tex_ea))
+		return (0);
+	if (!load_texture(state, &state->wall_images.west,
+		state->scene.tex_we))
+		return (0);
 	return (1);
 }
 

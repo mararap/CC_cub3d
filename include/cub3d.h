@@ -57,6 +57,14 @@ typedef struct s_image_buffer
 	int		height;
 }	t_image_buffer;
 
+typedef struct s_wall_images
+{
+	t_image_buffer	north;
+	t_image_buffer	south;
+	t_image_buffer	east;
+	t_image_buffer	west;
+}	t_wall_images;
+
 typedef	struct s_pos_dir		// positions and directions
 {
 	double	x_pos;
@@ -85,7 +93,7 @@ typedef struct s_scene			// textures/colors
 	long double	y_max;
 }	t_viewport; */
 
-typedef struct	s_textures
+typedef struct	s_config_flags
 {
 	int no_set;
 	int so_set;
@@ -93,7 +101,7 @@ typedef struct	s_textures
     int ea_set;
     int f_set;
     int c_set;
-} t_textures;
+} t_config_flags;
 
 typedef struct s_ray
 {
@@ -115,10 +123,12 @@ typedef struct s_ray
 
 typedef struct s_draw_column
 {
-	t_ray	ray;
-	int		line_height;
-	int		draw_start;
-	int		draw_end;
+	t_ray			ray;
+	t_image_buffer	*texture;
+	int				line_height;
+	int				draw_start;
+	int				draw_end;
+	int				tex_x;
 }	t_draw_column;
 
 typedef struct s_app_state
@@ -136,7 +146,8 @@ typedef struct s_app_state
 	char			**map;
 	int				map_height;
 	int				map_width;
-	t_textures		textures;
+	t_config_flags	config_flags;
+	t_wall_images	wall_images;
 }	t_app_state;
 
 char	*get_next_line(int fd);
