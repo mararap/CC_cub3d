@@ -101,7 +101,7 @@ static void	draw_wall_column(t_app_state *state, t_draw_column *col, int scrn_x)
 	y = 0;
 	while (y < col->draw_start)
 	{
-		put_pixel(&state->image, scrn_x, y, 0x00222222);
+		put_pixel(&state->image, scrn_x, y, state->scene.color_ceil);
 		y++;
 	}
 	while (y >= col->draw_start && y <= col->draw_end)
@@ -111,7 +111,7 @@ static void	draw_wall_column(t_app_state *state, t_draw_column *col, int scrn_x)
 	}
 	while (y > col->draw_end && y < WINDOW_HEIGHT)
 	{
-		put_pixel(&state->image, scrn_x, y, 0xFF601A1E);
+		put_pixel(&state->image, scrn_x, y, state->scene.color_floor);
 		y++;
 	}
 }

@@ -39,6 +39,15 @@ static void	free_scene(t_scene *scene)
 	scene->tex_ea = NULL;
 }
 
+static void	destroy_image(t_app_state *state, t_image_buffer *image)
+{
+	if (!state->mlx || !image->handle)
+		return ;
+	mlx_destroy_image(state->mlx, image->handle);
+	image->handle = NULL;
+	image->pixels = NULL;
+}
+
 void	destroy_app_state(t_app_state *state)
 {
 	if (!state)
@@ -49,12 +58,11 @@ void	destroy_app_state(t_app_state *state)
 		state->map = NULL;
 	}
 	free_scene(&state->scene);
-	if (state->mlx && state->image.handle)
-	{
-		mlx_destroy_image(state->mlx, state->image.handle);
-		state->image.handle = NULL;
-		state->image.pixels = NULL;
-	}
+	destroy_image(state, &state->image);
+	destroy_image(state, &state->wall_images.north);
+	destroy_image(state, &state->wall_images.south);
+	destroy_image(state, &state->wall_images.east);
+	destroy_image(state, &state->wall_images.west);
 	if (state->mlx && state->window)
 	{
 		mlx_destroy_window(state->mlx, state->window);
