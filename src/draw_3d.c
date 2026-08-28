@@ -65,7 +65,7 @@ static void	calc_texture_x(t_app_state *state, t_draw_column *col)
 		col->tex_x = col->texture->width - col->tex_x - 1;
 }
 
-static void select_wall_texture(t_app_state *state, t_draw_column *col)
+static void	select_wall_texture(t_app_state *state, t_draw_column *col)
 {
 	if (col->ray.side == 0)
 	{
@@ -122,7 +122,7 @@ void	render_frame(t_app_state *state)
 	int				screen_x;
 
 	screen_x = 0;
- 	while (screen_x < WINDOW_WIDTH)
+	while (screen_x < WINDOW_WIDTH)
 	{
 		cast_ray(state, &col.ray, screen_x);
 		select_wall_texture(state, &col);
@@ -131,4 +131,5 @@ void	render_frame(t_app_state *state)
 		draw_wall_column(state, &col, screen_x);
 		screen_x++;
 	}
+	render_overlay(state);
 }

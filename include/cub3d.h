@@ -173,23 +173,10 @@ void	destroy_app_state(t_app_state *state);
 
 void	put_pixel(t_image_buffer *image, int x, int y, int color);
 
-void	fill_image(t_image_buffer *image, int color);
-
-void	draw_cell(t_app_state *state, int row, int col, int size);
-
-void	render_minimap(t_app_state *state);
-
 void	redraw_frame(t_app_state *state);
 void	render_frame(t_app_state *state);
+void	render_overlay(t_app_state *state);
 
-void	set_north_texture(char *line);
-void	set_south_texture(char *line);
-void	set_west_texture(char *line);
-void	set_east_texture(char *line);
-void	set_floor_color(char *line);
-void	set_ceiling_color(char *line);
-
-void    cast_ray(t_app_state *app, t_ray *ray, int screen_x);
-
+void	cast_ray(t_app_state *app, t_ray *ray, int screen_x);
 
 #endif
