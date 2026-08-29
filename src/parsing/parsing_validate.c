@@ -43,7 +43,7 @@ static int	validate_closed(t_app_state *state)
 					|| map_at(state, y + 1, x) == ' '
 					|| map_at(state, y, x - 1) == ' '
 					|| map_at(state, y, x + 1) == ' '))
-				return (parser_error("Map is not closed by walls"));
+				return (report_error("Map is not closed by walls"));
 		}
 	}
 	return (1);
@@ -54,6 +54,6 @@ int	parser_validate_map(t_app_state *state)
 	if (!validate_closed(state))
 		return (0);
 	if (parser_find_player(state) != 1)
-		return (parser_error("Map must contain exactly one player"));
+		return (report_error("Map must contain exactly one player"));
 	return (1);
 }

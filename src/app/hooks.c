@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pixel.c                                            :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/20 12:52:40 by marapovi          #+#    #+#             */
-/*   Updated: 2026/08/20 13:06:33 by marapovi         ###   ########.fr       */
+/*   Created: 2026/08/29 00:00:00 by marapovi          #+#    #+#             */
+/*   Updated: 2026/08/29 00:00:00 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	put_pixel(t_image_buffer *image, int x, int y, int color)
+static int	on_loop_tick(t_app_state *state)
 {
-	int		bpp;
-	char	*ptr;
+	if (state->needs_redraw)
+		redraw_frame(state);
+	return (0);
+}
 
-	if (x < 0 || x >= image->width || y < 0 || y >= image->height)
-		return ;
-	bpp = image->bits_per_pixel / 8;
-	ptr = image->pixels + y * image->line_stride + x * bpp;
-	*(unsigned int *)ptr = (unsigned int)color;
+static int	on_close(t_app_state *state)
+{
+	close_app(state);
+	return (0);
+}
+
+void	register_hooks(t_app_state *state)
+{
+	mlx_hook(state->window, 2, 1L << 0, &on_key_press, state);
+	mlx_hook(state->window, 17, 0, &on_close, state);
+	mlx_loop_hook(state->mlx, &on_loop_tick, state);
 }

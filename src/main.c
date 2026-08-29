@@ -12,13 +12,6 @@
 
 #include "cub3d.h"
 
-int	on_loop_tick(t_app_state *state)
-{
-	if (state->needs_redraw)
-		redraw_frame(state);
-	return (0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_app_state	state;
@@ -28,9 +21,7 @@ int	main(int argc, char **argv)
 		return (destroy_app_state(&state), 1);
 	if (!initialize_app(&state))
 		return (destroy_app_state(&state), 1);
-	mlx_hook(state.window, 2, 1L << 0, &on_key_press, &state);
-	mlx_hook(state.window, 17, 0, &on_close, &state);
-	mlx_loop_hook(state.mlx, &on_loop_tick, &state);
+	register_hooks(&state);
 	redraw_frame(&state);
 	mlx_loop(state.mlx);
 	destroy_app_state(&state);

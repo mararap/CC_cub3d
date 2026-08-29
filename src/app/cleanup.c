@@ -52,11 +52,8 @@ void	destroy_app_state(t_app_state *state)
 {
 	if (!state)
 		return ;
-	if (state->map)
-	{
-		free_map(state->map);
-		state->map = NULL;
-	}
+	free_map(state->map);
+	state->map = NULL;
 	free_scene(&state->scene);
 	destroy_image(state, &state->image);
 	destroy_image(state, &state->wall_images.north);
@@ -74,4 +71,10 @@ void	destroy_app_state(t_app_state *state)
 		free(state->mlx);
 		state->mlx = NULL;
 	}
+}
+
+void	close_app(t_app_state *state)
+{
+	destroy_app_state(state);
+	exit(0);
 }

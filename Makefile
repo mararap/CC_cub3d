@@ -19,6 +19,7 @@ MANDATORY_BIN	:=	.cub3D_mandatory
 BONUS_BIN	:=	.cub3D_bonus
 
 HEADER		:=	./include/cub3d.h
+BONUS_HEADER	:=	./include/minimap_bonus.h
 
 CC			:=	cc
 
@@ -54,25 +55,37 @@ SRC_DIR			:=		src
 LIBFT_DIR		:=		libft
 LIBFT			:=		$(LIBFT_DIR)/libft.a
 
-COMMON_SRC	:=	main.c \
-				cleanup.c \
-				get_next_line.c \
-				keys.c \
+APP_SRC		:=	app/setup.c \
+				app/cleanup.c \
+				app/hooks.c
+
+INPUT_SRC	:=	input/keys.c
+
+UTILS_SRC	:=	utils/error.c
+
+PARSING_SRC	:=	parsing/get_next_line.c \
 				parsing/parsing.c \
-				parsing/parsing_error.c \
 				parsing/parsing_config.c \
 				parsing/parsing_texture.c \
 				parsing/parsing_color.c \
 				parsing/parsing_map.c \
 				parsing/parsing_validate.c \
-				parsing/parsing_player.c \
-				setup.c \
-				raycast.c \
-				pixel.c \
-				draw_3d.c				
-MANDATORY_SRC	:=	draw_overlay.c
-BONUS_SRC		:=	draw_minimap_bonus.c \
-					draw_cell_bonus.c
+				parsing/parsing_player.c
+
+DRAWING_SRC	:=	drawing/raycast.c \
+				drawing/image.c \
+				drawing/draw_3d.c \
+				drawing/draw_texture.c
+
+COMMON_SRC	:=	main.c \
+				$(APP_SRC) \
+				$(INPUT_SRC) \
+				$(UTILS_SRC) \
+				$(PARSING_SRC) \
+				$(DRAWING_SRC)
+MANDATORY_SRC	:=	drawing/draw_overlay.c
+BONUS_SRC		:=	drawing/bonus/draw_minimap_bonus.c \
+					drawing/bonus/draw_cell_bonus.c
 
 
 COMMON_SRC		:=	$(addprefix $(SRC_DIR)/,$(COMMON_SRC))
@@ -103,6 +116,8 @@ libft:
 
 $(LIBFT):
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR)
+
+$(BONUS_OBJ): $(BONUS_HEADER)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 	@mkdir -p $(dir $@)

@@ -61,9 +61,9 @@ int	parser_set_color(char *value, int *slot, int *is_set)
 	int	rgb[3];
 
 	if (*is_set)
-		return (parser_error("Duplicate color identifier"));
+		return (report_error("Duplicate color identifier"));
 	if (!parse_rgb(value, rgb))
-		return (parser_error("Color must contain three values from 0 to 255"));
+		return (report_error("Color must contain three values from 0 to 255"));
 	*slot = (rgb[0] << 16) | (rgb[1] << 8) | rgb[2];
 	*is_set = 1;
 	return (1);

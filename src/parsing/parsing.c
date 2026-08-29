@@ -41,7 +41,7 @@ static int	consume_line(t_app_state *state, char *line, int *in_map)
 	if (!*in_map && parser_is_map_line(line))
 	{
 		if (!parser_all_config(state))
-			return (parser_error("Map appears before complete configuration"));
+			return (report_error("Map appears before complete configuration"));
 		*in_map = 1;
 	}
 	if (*in_map)
@@ -66,7 +66,7 @@ static int	read_scene(int fd, t_app_state *state)
 		if (in_map && line[0] == '\0')
 			map_ended = 1;
 		else if (map_ended && !parser_is_blank(line))
-			ok = parser_error("The map must be the last file element");
+			ok = report_error("The map must be the last file element");
 		else if (!parser_is_blank(line) || in_map)
 			ok = consume_line(state, line, &in_map);
 		free(line);
@@ -84,19 +84,19 @@ int	parse_map(int argc, char **argv, t_app_state *state)
 	int	ok;
 
 	if (argc != 2)
-		return (parser_error("Expected exactly one .cub scene file"));
+		return (report_error("Expected exactly one .cub scene file"));
 	if (!has_cub_extension(argv[1]))
-		return (parser_error("Scene file must have a .cub extension"));
+		return (report_error("Scene file must have a .cub extension"));
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (parser_error("Cannot open scene file"));
+		return (report_error("Cannot open scene file"));
 	ok = read_scene(fd, state);
 	if (close(fd) == -1 && ok)
-		ok = parser_error("Cannot close scene file");
+		ok = report_error("Cannot close scene file");
 	if (ok && !parser_all_config(state))
-		ok = parser_error("Missing scene configuration");
+		ok = report_error("Missing scene configuration");
 	if (ok && state->map_height == 0)
-		ok = parser_error("Missing map");
+		ok = report_error("Missing map");
 	if (ok)
 		ok = parser_validate_map(state);
 	return (ok);

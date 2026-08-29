@@ -58,14 +58,14 @@ int	parser_set_texture(char *value, char **slot, int *is_set)
 	char	*path;
 
 	if (*is_set)
-		return (parser_error("Duplicate texture identifier"));
+		return (report_error("Duplicate texture identifier"));
 	path = copy_path(value);
 	if (!path)
-		return (parser_error("Texture requires exactly one path"));
+		return (report_error("Texture requires exactly one path"));
 	if (!path_is_valid(path))
 	{
 		free(path);
-		return (parser_error("Texture path is not a readable file"));
+		return (report_error("Texture path is not a readable file"));
 	}
 	*slot = path;
 	*is_set = 1;

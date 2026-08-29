@@ -10,12 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
-#define MINIMAP_X 16
-#define MINIMAP_Y 16
-#define MINIMAP_MAX_WIDTH 320
-#define MINIMAP_MAX_HEIGHT 240
+#include "minimap_bonus.h"
 
 static int	get_color(char cell)
 {

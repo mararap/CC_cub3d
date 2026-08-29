@@ -16,26 +16,26 @@ static int	init_window(t_app_state *state)
 {
 	state->mlx = mlx_init();
 	if (!state->mlx)
-		return (parser_error("mlx_init failed"));
+		return (report_error("mlx_init failed"));
 	state->window = mlx_new_window(state->mlx, WINDOW_WIDTH,
 			WINDOW_HEIGHT, WINDOW_TITLE);
 	if (!state->window)
-		return (parser_error("mlx_new_window failed"));
+		return (report_error("mlx_new_window failed"));
 	return (1);
 }
 
 static int	load_texture(t_app_state *state,
-	t_image_buffer *texture, char *path)
+		t_image_buffer *texture, char *path)
 {
 	texture->handle = mlx_xpm_file_to_image(state->mlx, path,
 			&texture->width, &texture->height);
 	if (!texture->handle)
-		return (parser_error("Texture loading failed"));
+		return (report_error("Texture loading failed"));
 	texture->pixels = mlx_get_data_addr(texture->handle,
 			&texture->bits_per_pixel, &texture->line_stride,
 			&texture->endian);
 	if (!texture->pixels)
-		return (parser_error("Texture data address failed"));
+		return (report_error("Texture data address failed"));
 	return (1);
 }
 
@@ -44,13 +44,13 @@ static int	init_image(t_app_state *state)
 	state->image.handle = mlx_new_image(state->mlx, WINDOW_WIDTH,
 			WINDOW_HEIGHT);
 	if (!state->image.handle)
-		return (parser_error("mlx_new_image failed"));
+		return (report_error("mlx_new_image failed"));
 	state->image.pixels = mlx_get_data_addr(state->image.handle,
 			&state->image.bits_per_pixel,
 			&state->image.line_stride,
 			&state->image.endian);
 	if (!state->image.pixels)
-		return (parser_error("mlx_get_data_addr failed"));
+		return (report_error("mlx_get_data_addr failed"));
 	state->image.width = WINDOW_WIDTH;
 	state->image.height = WINDOW_HEIGHT;
 	return (1);
@@ -76,12 +76,4 @@ int	initialize_app(t_app_state *state)
 			state->scene.tex_we))
 		return (0);
 	return (1);
-}
-
-void	redraw_frame(t_app_state *state)
-{
-	render_frame(state);
-	mlx_put_image_to_window(state->mlx, state->window,
-		state->image.handle, 0, 0);
-	state->needs_redraw = 0;
 }

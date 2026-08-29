@@ -64,16 +64,16 @@ int	parser_add_map_line(t_app_state *state, char *line)
 	i = 0;
 	while (line[i])
 		if (!is_map_char(line[i++]))
-			return (parser_error("Map contains an invalid character"));
+			return (report_error("Map contains an invalid character"));
 	new_map = ft_calloc(state->map_height + 2, sizeof(char *));
 	if (!new_map)
-		return (parser_error("Memory allocation failed"));
+		return (report_error("Memory allocation failed"));
 	i = -1;
 	while (++i < state->map_height)
 		new_map[i] = state->map[i];
 	new_map[i] = ft_strdup(line);
 	if (!new_map[i])
-		return (free(new_map), parser_error("Memory allocation failed"));
+		return (free(new_map), report_error("Memory allocation failed"));
 	free(state->map);
 	state->map = new_map;
 	state->map_height++;

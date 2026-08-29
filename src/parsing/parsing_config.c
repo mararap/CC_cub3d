@@ -64,5 +64,5 @@ int	parser_parse_config(t_app_state *state, char *line)
 	if (is_identifier(line, "C", 1))
 		return (parser_set_color(line + 1, &state->scene.color_ceil,
 				&state->config_flags.c_set));
-	return (parser_error("Invalid scene configuration line"));
+	return (report_error("Invalid scene configuration line"));
 }

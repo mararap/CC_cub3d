@@ -10,14 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
-#define MINIMAP_X 16
-#define MINIMAP_Y 16
-#define MINIMAP_RAY_STEP 16
-
-int		minimap_cell_size(t_app_state *state);
-void	draw_minimap_cell(t_app_state *state, int row, int col, int size);
+#include "minimap_bonus.h"
 
 static void	draw_player_marker(t_app_state *state, int size)
 {
