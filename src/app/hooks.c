@@ -25,9 +25,19 @@ static int	on_close(t_app_state *state)
 	return (0);
 }
 
+static int	on_expose(void *param)
+{
+	t_app_state	*state;
+
+	state = (t_app_state *)param;
+	state->needs_redraw = 1;
+	return (0);
+}
+
 void	register_hooks(t_app_state *state)
 {
 	mlx_hook(state->window, 2, 1L << 0, &on_key_press, state);
 	mlx_hook(state->window, 17, 0, &on_close, state);
 	mlx_loop_hook(state->mlx, &on_loop_tick, state);
+	mlx_expose_hook(state->window, on_expose, state);
 }

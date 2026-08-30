@@ -24,9 +24,9 @@ static void	calc_texture_x(t_app_state *state, t_draw_column *column)
 			+ column->ray.wall_dist * column->ray.ray_dir_x;
 	wall_x -= floor(wall_x);
 	column->tex_x = (int)(wall_x * column->texture->width);
-	if (column->ray.side == 0 && column->ray.ray_dir_x > 0)
+	if (column->ray.side == 0 && column->ray.ray_dir_x < 0)
 		column->tex_x = column->texture->width - column->tex_x - 1;
-	if (column->ray.side == 1 && column->ray.ray_dir_y < 0)
+	if (column->ray.side == 1 && column->ray.ray_dir_y > 0)
 		column->tex_x = column->texture->width - column->tex_x - 1;
 }
 

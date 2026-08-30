@@ -12,34 +12,39 @@
 
 #include "cub3d.h"
 
-static char	*read_until_newline(int fd, char *buffer)
+static char	*fill_buffer(int fd, char *buffer, char *temp_buf)
 {
-	char	*temp_buf;
 	ssize_t	bytes_read;
 	char	*joined;
 
-	temp_buf = (char *)ft_calloc((BUFFER_SIZE + 1), sizeof(char));
-	if (!temp_buf)
-		return (NULL);
-	if (!buffer)
-	{
-		buffer = ft_strdup("");
-		if (!buffer)
-			return (free(temp_buf), NULL);
-	}
 	bytes_read = 1;
 	while (bytes_read > 0 && !ft_strchr(buffer, '\n'))
 	{
 		bytes_read = read(fd, temp_buf, BUFFER_SIZE);
 		if (bytes_read == -1)
-			return (free(buffer), free(temp_buf), NULL);
+			return (free(buffer), NULL);
 		temp_buf[bytes_read] = '\0';
 		joined = ft_strjoin(buffer, temp_buf);
 		if (!joined)
-			return (free(buffer), free(temp_buf), NULL);
+			return (free(buffer), NULL);
 		free(buffer);
 		buffer = joined;
 	}
+	return (buffer);
+}
+
+static char	*read_until_newline(int fd, char *buffer)
+{
+	char	*temp_buf;
+
+	temp_buf = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!temp_buf)
+		return (free(buffer), NULL);
+	if (!buffer)
+		buffer = ft_strdup("");
+	if (!buffer)
+		return (free(temp_buf), NULL);
+	buffer = fill_buffer(fd, buffer, temp_buf);
 	free(temp_buf);
 	return (buffer);
 }
