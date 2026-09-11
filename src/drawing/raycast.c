@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/08/14 16:38:50 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/11 20:08:05 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ static void	dda_walk(t_app_state *app, t_ray *ray)
 			ray->side = 1;
 		}
 		if (ray->map_y >= 0 && ray->map_y < app->map_height && ray->map_x >= 0
+			&& ray->map_x < (int)ft_strlen(app->map[ray->map_y])
 			&& app->map[ray->map_y] && app->map[ray->map_y][ray->map_x] == '1')
 			ray->hit = 1;
 	}
