@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pixel.c                                            :+:      :+:    :+:   */
+/*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 12:52:40 by marapovi          #+#    #+#             */
-/*   Updated: 2026/08/20 13:06:33 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/29 00:00:00 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 void	put_pixel(t_image_buffer *image, int x, int y, int color)
 {
-	int		bpp;
-	char	*ptr;
+	int		bytes_per_pixel;
+	char	*pixel;
 
 	if (x < 0 || x >= image->width || y < 0 || y >= image->height)
 		return ;
-	bpp = image->bits_per_pixel / 8;
-	ptr = image->pixels + y * image->line_stride + x * bpp;
-	*(unsigned int *)ptr = (unsigned int)color;
+	bytes_per_pixel = image->bits_per_pixel / 8;
+	pixel = image->pixels + y * image->line_stride
+		+ x * bytes_per_pixel;
+	*(unsigned int *)pixel = (unsigned int)color;
+}
+
+void	redraw_frame(t_app_state *state)
+{
+	render_frame(state);
+	mlx_put_image_to_window(state->mlx, state->window,
+		state->image.handle, 0, 0);
+	state->needs_redraw = 0;
 }

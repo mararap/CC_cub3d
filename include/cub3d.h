@@ -6,31 +6,27 @@
 /*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/21 17:43:50 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/08/29 00:00:00 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Juliyan
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <math.h>
 # include <fcntl.h>
-# include <stdio.h>
-# include <sys/time.h>
-# include "mlx.h"
+# include <math.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include "libft.h"
+# include "mlx.h"
 
 # ifndef BUFFER_SIZE
-# 	define BUFFER_SIZE 42
+#  define BUFFER_SIZE 42
 # endif
 
-# define WINDOW_WIDTH 1280		// ratio 16:9 -> looks good; Intel UHD 770 (as
-# define WINDOW_HEIGHT 720		// integrated in c3r8p8) should be able to handle
-# define WINDOW_TITLE "CUB3D"	// that easily; adapt based on CPU performance.
+# define WINDOW_WIDTH 1280
+# define WINDOW_HEIGHT 720
+# define WINDOW_TITLE "CUB3D"
 
 # define PI 3.14159265359
 # define ROT_SPEED 0.05
@@ -57,7 +53,15 @@ typedef struct s_image_buffer
 	int		height;
 }	t_image_buffer;
 
-typedef	struct s_pos_dir		// positions and directions
+typedef struct s_wall_images
+{
+	t_image_buffer	north;
+	t_image_buffer	south;
+	t_image_buffer	east;
+	t_image_buffer	west;
+}	t_wall_images;
+
+typedef struct s_pos_dir
 {
 	double	x_pos;
 	double	y_pos;
@@ -65,9 +69,9 @@ typedef	struct s_pos_dir		// positions and directions
 	double	y_dir;
 	double	x_plane;
 	double	y_plane;
-}			t_pos_dir;
+}	t_pos_dir;
 
-typedef struct s_scene			// textures/colors
+typedef struct s_scene
 {
 	char	*tex_no;
 	char	*tex_so;
@@ -75,50 +79,43 @@ typedef struct s_scene			// textures/colors
 	char	*tex_ea;
 	int		color_floor;
 	int		color_ceil;
-}			t_scene;
+}	t_scene;
 
-/* typedef struct s_viewport (unused/fractol-remainder?)
+typedef struct s_config_flags
 {
-	long double	x_min;
-	long double	x_max;
-	long double	y_min;
-	long double	y_max;
-}	t_viewport; */
-
-typedef struct	s_textures
-{
-	int no_set;
-	int so_set;
-    int we_set;
-    int ea_set;
-    int f_set;
-    int c_set;
-} t_textures;
+	int	no_set;
+	int	so_set;
+	int	we_set;
+	int	ea_set;
+	int	f_set;
+	int	c_set;
+}	t_config_flags;
 
 typedef struct s_ray
 {
-    double  ray_dir_x;
-    double  ray_dir_y;
-    int     map_x;
-    int     map_y;
-    int     step_x;
-    int     step_y;
-    double  delta_dist_x;
-    double  delta_dist_y;
-    double  side_dist_x;
-    double  side_dist_y;
-    double  wall_dist;
-    int     side;
-    int     hit;
-
-}   t_ray;
+	double	ray_dir_x;
+	double	ray_dir_y;
+	int		map_x;
+	int		map_y;
+	int		step_x;
+	int		step_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	wall_dist;
+	int		side;
+	int		hit;
+}	t_ray;
 
 typedef struct s_draw_column
 {
-	t_ray	ray;
-	int		line_height;
-	int		draw_start;
-	int		draw_end;
+	t_ray			ray;
+	t_image_buffer	*texture;
+	int				line_height;
+	int				draw_start;
+	int				draw_end;
+	int				tex_x;
 }	t_draw_column;
 
 typedef struct s_app_state
@@ -126,48 +123,54 @@ typedef struct s_app_state
 	void			*mlx;
 	void			*window;
 	t_image_buffer	image;
-//	char			set; (unused?)
-	t_pos_dir		pos_dir;	
-//	t_viewport		viewport;
+	t_pos_dir		pos_dir;
 	t_scene			scene;
-//	int				max_iterations; (unused/fractol-remainder?)
 	int				needs_redraw;
-//	long			last_frame_time_us; (unused?)
 	char			**map;
 	int				map_height;
 	int				map_width;
-	t_textures		textures;
+	t_config_flags	config_flags;
+	t_wall_images	wall_images;
 }	t_app_state;
 
+/* Error handling */
+
+int		report_error(char *message);
+
+/* Parsing */
+
 char	*get_next_line(int fd);
-
 int		parse_map(int argc, char **argv, t_app_state *state);
-int		initialize_app(t_app_state *state);
-int		on_key_press(int keycode, t_app_state *state);
-int		on_close(t_app_state *state);
-int		on_loop_tick(t_app_state *state);
+int		parser_is_blank(char *line);
+void	parser_strip_newline(char *line);
+int		parser_is_map_line(char *line);
+int		parser_add_map_line(t_app_state *state, char *line);
+int		parser_all_config(t_app_state *state);
+int		parser_parse_config(t_app_state *state, char *line);
+int		parser_set_texture(char *value, char **slot, int *is_set);
+int		parser_set_color(char *value, int *slot, int *is_set);
+int		parser_validate_map(t_app_state *state);
+int		parser_find_player(t_app_state *state);
 
+/* Application */
+
+int		initialize_app(t_app_state *state);
+void	register_hooks(t_app_state *state);
 void	destroy_app_state(t_app_state *state);
+void	close_app(t_app_state *state);
+
+/* Input */
+
+int		on_key_press(int keycode, t_app_state *state);
+
+/* Drawing */
 
 void	put_pixel(t_image_buffer *image, int x, int y, int color);
-
-void	fill_image(t_image_buffer *image, int color);
-
-void	draw_cell(t_app_state *state, int row, int col, int size);
-
-void	render_minimap(t_app_state *state);
-
 void	redraw_frame(t_app_state *state);
 void	render_frame(t_app_state *state);
-
-void	set_north_texture(char *line);
-void	set_south_texture(char *line);
-void	set_west_texture(char *line);
-void	set_east_texture(char *line);
-void	set_floor_color(char *line);
-void	set_ceiling_color(char *line);
-
-void    cast_ray(t_app_state *app, t_ray *ray, int screen_x);
-
+void	render_overlay(t_app_state *state);
+void	draw_textured_wall(t_app_state *state, t_draw_column *column,
+			int screen_x);
+void	cast_ray(t_app_state *state, t_ray *ray, int screen_x);
 
 #endif

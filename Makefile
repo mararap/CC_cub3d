@@ -15,8 +15,11 @@
 # **************************************************************************** #
 
 NAME		:=	cub3D
+MANDATORY_BIN	:=	.cub3D_mandatory
+BONUS_BIN	:=	.cub3D_bonus
 
 HEADER		:=	./include/cub3d.h
+BONUS_HEADER	:=	./include/minimap_bonus.h
 
 CC			:=	cc
 
@@ -52,41 +55,84 @@ SRC_DIR			:=		src
 LIBFT_DIR		:=		libft
 LIBFT			:=		$(LIBFT_DIR)/libft.a
 
-SRC 	:= 		main.c \
-				error.c \
-				get_next_line.c \
-				keys.c \
-				parsing.c \
-				textures_and_colors.c \
-				setup.c \
-				raycast.c \
-				pixel.c \
-				draw_cell.c \
-				draw_2d.c \
-				draw_3d.c				
+APP_SRC		:=	app/setup.c \
+				app/cleanup.c \
+				app/hooks.c
+
+INPUT_SRC	:=	input/keys.c
+
+UTILS_SRC	:=	utils/error.c
+
+PARSING_SRC	:=	parsing/get_next_line.c \
+				parsing/parsing.c \
+				parsing/parsing_config.c \
+				parsing/parsing_texture.c \
+				parsing/parsing_color.c \
+				parsing/parsing_map.c \
+				parsing/parsing_validate.c \
+				parsing/parsing_player.c
+
+DRAWING_SRC	:=	drawing/raycast.c \
+				drawing/image.c \
+				drawing/draw_3d.c \
+				drawing/draw_texture.c
+
+COMMON_SRC	:=	main.c \
+				$(APP_SRC) \
+				$(INPUT_SRC) \
+				$(UTILS_SRC) \
+				$(PARSING_SRC) \
+				$(DRAWING_SRC)
+MANDATORY_SRC	:=	drawing/draw_overlay.c
+BONUS_SRC		:=	drawing/bonus/draw_minimap_bonus.c \
+					drawing/bonus/draw_cell_bonus.c
 
 
-SRC				:=		$(addprefix $(SRC_DIR)/,$(SRC))
-OBJ				:=		$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+COMMON_SRC		:=	$(addprefix $(SRC_DIR)/,$(COMMON_SRC))
+MANDATORY_SRC	:=	$(addprefix $(SRC_DIR)/,$(MANDATORY_SRC))
+BONUS_SRC		:=	$(addprefix $(SRC_DIR)/,$(BONUS_SRC))
+COMMON_OBJ		:=	$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(COMMON_SRC))
+MANDATORY_OBJ	:=	$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(MANDATORY_SRC))
+BONUS_OBJ		:=	$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(BONUS_SRC))
 
 # **************************************************************************** #
 #                                   RULES                                      #
 # **************************************************************************** #
 
-all: libft $(NAME)
+all: $(NAME)
 
-.PHONY: all clean fclean re libft
+.PHONY: all mandatory bonus clean fclean re libft
+
+$(NAME): mandatory
+
+mandatory: libft $(MANDATORY_BIN)
+	@cmp -s $(MANDATORY_BIN) $(NAME) || cp $(MANDATORY_BIN) $(NAME)
+
+bonus: libft $(BONUS_BIN)
+	@cmp -s $(BONUS_BIN) $(NAME) || cp $(BONUS_BIN) $(NAME)
 
 libft:
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(LIBFT):
+	@$(MAKE) --no-print-directory -C $(LIBFT_DIR)
+
+$(BONUS_OBJ): $(BONUS_HEADER)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ) $(LIBFT)
+$(MANDATORY_BIN): $(COMMON_OBJ) $(MANDATORY_OBJ) $(LIBFT)
 	@echo "     🛠️  Linking executable..."
-	@$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(LDFLAGS) $(COMMON_OBJ) $(MANDATORY_OBJ) \
+		$(LDLIBS) -o $(MANDATORY_BIN)
+	@printf "\n%b\n\n" "$$(cat docs/banner_refined.txt)"
+
+$(BONUS_BIN): $(COMMON_OBJ) $(BONUS_OBJ) $(LIBFT)
+	@echo "     Linking bonus executable..."
+	@$(CC) $(CFLAGS) $(LDFLAGS) $(COMMON_OBJ) $(BONUS_OBJ) \
+		$(LDLIBS) -o $(BONUS_BIN)
 	@printf "\n%b\n\n" "$$(cat docs/banner_refined.txt)"
 
 clean:
@@ -96,7 +142,7 @@ clean:
 	@echo "     🧽 LIBFT 	= clean."
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(MANDATORY_BIN) $(BONUS_BIN)
 	@echo "     🧹 cub3D executable removed."
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) fclean
 	@echo "     🧹 LIBFT library removed."
