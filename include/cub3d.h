@@ -1,12 +1,13 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
+/*   By: jatanaso <jatanaso@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 00:00:00 by jatanaso          #+#    #+#             */
-/*   Updated: 2026/08/29 00:00:00 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/12 21:18:23 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +30,7 @@
 # define WINDOW_TITLE "CUB3D"
 
 # define PI 3.14159265359
+# define CAMERA_PLANE 0.66
 # define ROT_SPEED 0.05
 # define MOVE_SPEED 0.1
 
