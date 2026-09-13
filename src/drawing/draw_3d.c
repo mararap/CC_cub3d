@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_3d.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 13:16:54 by marapovi          #+#    #+#             */
-/*   Updated: 2026/08/21 18:28:56 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/13 18:09:01 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static void	calc_texture_x(t_app_state *state, t_draw_column *column)
 		wall_x = state->pos_dir.x_pos
 			+ column->ray.wall_dist * column->ray.ray_dir_x;
 	wall_x -= floor(wall_x);
-	column->tex_x = (int)(wall_x * column->texture->width);
+	column->tex_x = ((int)(wall_x * column->texture->width)
+			% column->texture->width);
 	if (column->ray.side == 0 && column->ray.ray_dir_x < 0)
 		column->tex_x = column->texture->width - column->tex_x - 1;
 	if (column->ray.side == 1 && column->ray.ray_dir_y > 0)

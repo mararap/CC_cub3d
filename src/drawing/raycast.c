@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/11 20:08:05 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/13 18:08:30 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,13 @@ static void	set_ray_steps(t_app_state *app, t_ray *ray)
 }
 
 // DDA walk until wall hit
+// ray->hit         ... flag that changes from 0 to 1 if wall get's hit
+// ray->side_dist_x ... distance to the next vertical grid line (x changed)
+// ray->side_dist_y ... distande to the next horizontal grid line (y changed)
+// side             ... flag to tell if vertical line was crossed (x changed,
+//                      side = 0) or if horizontal line was crossed
+//                      (y changed, side = 1)
+
 static void	dda_walk(t_app_state *app, t_ray *ray)
 {
 	ray->hit = 0;

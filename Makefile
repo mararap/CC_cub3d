@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+         #
+#    By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 15:27:09 by marapovi          #+#    #+#              #
-#    Updated: 2026/08/21 14:56:26 by marapovi         ###   ########.fr        #
+#    Updated: 2026/09/13 14:17:58 by marapovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ BONUS_BIN	:=	.cub3D_bonus
 HEADER		:=	./include/cub3d.h
 BONUS_HEADER	:=	./include/minimap_bonus.h
 
-CC			:=	cc
+CC			:=	gcc
 
 # C PreProcessor flags - exclusively needed when compiling src files
 CPPFLAGS	:=	-I include -I libft

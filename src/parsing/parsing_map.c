@@ -79,5 +79,7 @@ int	parser_add_map_line(t_app_state *state, char *line)
 	state->map_height++;
 	if ((int)ft_strlen(line) > state->map_width)
 		state->map_width = (int)ft_strlen(line);
+	if (state->map_height > 100 || state->map_width > 100)
+		return (report_error("The map is too big"));
 	return (1);
 }
