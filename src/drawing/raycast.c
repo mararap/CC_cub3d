@@ -6,13 +6,22 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/13 18:08:30 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/15 13:37:19 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// lines — ray direction and delta distances
+// lines — ray direction and delta distances:
+// 1) map screen_x to Normalized Device Coordinates (NDC) aka
+//    a value between -1 and 1 = camera_x
+// 2) calculate ray direction using basic vector addition with camera_x as a
+//    multiplier that shrinks/streches the plane vector, and flips it if < 0
+// 3) truncate the position of the player to (int), to get the map tile the
+//    player is standing on
+// 4) calculate delta_dist values to get the total linear distance the ray must
+//    travel to move exactly 1.0 unit in x/y direction (crossing 1 line) while
+// 5) protecting against division by zero
 static void	init_ray(t_app_state *app, t_ray *ray, int screen_x)
 {
 	double	camera_x;
