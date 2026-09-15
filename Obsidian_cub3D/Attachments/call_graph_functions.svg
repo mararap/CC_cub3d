@@ -1,0 +1,1328 @@
+
+<svg class="callgraph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2594.489990234375 3045">
+  <style>:root{--background-color: #f5fffa;--selected-color: #4fe1f4;--edge-color: #548f9e;--edge-incoming-color: #698b69;--edge-outgoing-color: #008acd;--edge-incoming-outgoing-color: black;--cluster-label-bg-color: #e8eaed;--node-bg-color: #f4f5f1;--symbol-default-bg-color: var(--node-bg-color);--symbol-default-border-color: #889f4e;--symbol-default-text-color: #363636;--interface-bg-color: #fff8dc;--interface-border-color: #a69348;--module-bg-color: #ffebcd;--module-border-color: #a67e43;--constructor-bg-color: #ffdab9;--constructor-border-color: #a66e3c;--method-bg-color: #fff8c5;--method-border-color: #d4a72c;--function-bg-color: #bafbd0;--function-border-color: #4ac26b;--struct-bg-color: #ddf4ff;--struct-border-color: #54aeff;--type-icon-color: #8969da;--property-icon-color: #5f9348}.callgraph{--bold-border: 3.2;width:100%;height:100%;outline:none;cursor:default;-webkit-user-select:none;user-select:none}.callgraph>#graph0>polygon:first-of-type{fill:var(--background-color)}.callgraph>#graph0>#faded-group>:where(.node,.cluster){opacity:.2}.callgraph>#graph0>#faded-group>.edge{opacity:.05}.callgraph .edge>path:not(.hover-path){stroke:var(--edge-color);stroke-width:3}.callgraph .edge>polygon{stroke:var(--edge-color);fill:var(--edge-color)}.callgraph .edge>path.hover-path{stroke:transparent;stroke-width:15}.callgraph .edge.impl>path{stroke-dasharray:8,3}.callgraph .edge.impl>polygon{stroke-width:2;fill:none!important}.callgraph .edge:hover{--edge-color: var(--selected-color)}.callgraph .edge.incoming{--edge-color: var(--edge-incoming-color)}.callgraph .edge.outgoing{--edge-color: var(--edge-outgoing-color)}.callgraph .edge.incoming.outgoing{--edge-color: var(--edge-incoming-outgoing-color)}.callgraph .cluster polygon{stroke-width:1.6}.callgraph .cluster .cluster-label{cursor:pointer;fill:var(--cluster-label-bg-color);rx:18px}.callgraph .cluster text{pointer-events:none}.callgraph .cluster.selected{--cluster-label-bg-color: color-mix(in srgb, var(--selected-color) 30%, transparent)}.callgraph .cluster.selected polygon{stroke-width:var(--bold-border);stroke:var(--selected-color)}.callgraph .node>rect{rx:20px;fill:var(--node-bg-color);filter:url(#shadow)}.callgraph .node.selected>rect{stroke:var(--selected-color);stroke-width:var(--bold-border)}.callgraph .node>.title{cursor:pointer}.callgraph .node>.title>text{font-weight:700}.callgraph .cell{--bg-color: var(--symbol-default-bg-color);--border-color: var(--symbol-default-border-color);--border-width: 1.6}.callgraph .cell>rect{rx:10px;fill:var(--bg-color);stroke:var(--border-color);stroke-width:var(--border-width)}.callgraph .cell>text{fill:var(--symbold-default-text-color)}.callgraph .cell:where(.highlight,.selected,:not(:has(>.cell:hover)):hover){--border-width: var(--bold-border)}.callgraph .cell.highlight>rect{stroke:url(#highlightGradient)}.callgraph .cell.selected>rect{filter:drop-shadow(3px 3px 6px var(--border-color))}.callgraph .cell.interface{--bg-color: var(--interface-bg-color);--border-color: var(--interface-border-color)}.callgraph .cell.interface>rect{stroke-dasharray:7,5}.callgraph .cell.module{--bg-color: var(--module-bg-color);--border-color: var(--module-border-color)}.callgraph .cell.constructor{--bg-color: var(--constructor-bg-color);--border-color: var(--constructor-border-color)}.callgraph .cell.function{--bg-color: var(--function-bg-color);--border-color: var(--function-border-color)}.callgraph .cell.method{--bg-color: var(--method-bg-color);--border-color: var(--method-border-color)}.callgraph .cell:where(.class,.struct,.enum){--bg-color: var(--struct-bg-color);--border-color: var(--struct-border-color)}.callgraph .cell:where(.class,.struct,.enum)>rect{rx:unset}.callgraph .cell:where(.class,.struct,.enum)>text{transform:translateY(1.5px)}.callgraph .cell:where(.class,.struct,.enum)>text:first-of-type{fill:var(--type-icon-color)}.callgraph .cell:where(.field,.property)>rect{rx:unset}.callgraph .cell:where(.field,.property)>text:first-of-type{font-style:italic;fill:var(--property-icon-color)}
+</style>
+  
+<g id="graph0" class="graph" transform="translate(0 3045)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-3041 2590.49,-3041 2590.49,4 -4,4"></polygon>
+<g id="clust1" class="cluster">
+
+<polygon fill="none" stroke="black" points="131.98,-8 131.98,-3029 2578.49,-3029 2578.49,-8 131.98,-8"></polygon>
+<rect x="1296.550048828125" y="-3025" width="117.3699951171875" height="35.199951171875" class="cluster-label"></rect>
+<text text-anchor="start" x="1304.55" y="-3002.6" font-family="Arial" font-size="16.00">CC_cub3d/src</text>
+</g>
+<g id="clust2" class="cluster">
+
+<polygon fill="none" stroke="black" points="731.23,-1433 731.23,-1920 1694.25,-1920 1694.25,-1433 731.23,-1433"></polygon>
+<rect x="1191.3900146484375" y="-1916" width="42.699951171875" height="35.199951171875" class="cluster-label"></rect>
+<text text-anchor="start" x="1199.39" y="-1893.6" font-family="Arial" font-size="16.00">app</text>
+</g>
+<g id="clust3" class="cluster">
+
+<polygon fill="none" stroke="black" points="191.55,-774 191.55,-1073 1131.86,-1073 1131.86,-774 191.55,-774"></polygon>
+<rect x="601.6699829101562" y="-1069" width="120.07000732421875" height="35.199951171875" class="cluster-label"></rect>
+<text text-anchor="start" x="609.67" y="-1046.6" font-family="Arial" font-size="16.00">drawing/bonus</text>
+</g>
+<g id="clust4" class="cluster">
+
+<polygon fill="none" stroke="black" points="139.98,-16 139.98,-657 1660.89,-657 1660.89,-16 139.98,-16"></polygon>
+<rect x="864.4199829101562" y="-653" width="72.030029296875" height="35.20001220703125" class="cluster-label"></rect>
+<text text-anchor="start" x="872.42" y="-630.6" font-family="Arial" font-size="16.00">drawing</text>
+</g>
+<g id="clust5" class="cluster">
+
+<polygon fill="none" stroke="black" points="765.46,-1126 765.46,-1425 1123,-1425 1123,-1126 765.46,-1126"></polygon>
+<rect x="918.8800048828125" y="-1421" width="50.70001220703125" height="35.199951171875" class="cluster-label"></rect>
+<text text-anchor="start" x="926.88" y="-1398.6" font-family="Arial" font-size="16.00">input</text>
+</g>
+<g id="clust6" class="cluster">
+
+<polygon fill="none" stroke="black" points="770.82,-1940 770.82,-2978 2160.99,-2978 2160.99,-1940 770.82,-1940"></polygon>
+<rect x="1431.6600341796875" y="-2974" width="68.47998046875" height="35.199951171875" class="cluster-label"></rect>
+<text text-anchor="start" x="1439.66" y="-2951.6" font-family="Arial" font-size="16.00">parsing</text>
+</g>
+<g id="clust7" class="cluster">
+
+<polygon fill="none" stroke="black" points="2292.49,-2002 2292.49,-2161 2570.49,-2161 2570.49,-2002 2292.49,-2002"></polygon>
+<rect x="2409.260009765625" y="-2157" width="44.449951171875" height="35.199951171875" class="cluster-label"></rect>
+<text text-anchor="start" x="2417.26" y="-2134.6" font-family="Arial" font-size="16.00">utils</text>
+</g>
+<!-- 5 -->
+<g id="5" class="node" data-path="/home/marapovi/CC_cub3d/src/main.c">
+
+<rect x="232.19000244140625" y="-1763.699951171875" width="262" height="99.39990234375"></rect>
+<g id="5_0" class="title">
+<text text-anchor="start" x="286.29" y="-1731.3" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;main.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="5:14_4" data-kind="12" class="cell function">
+<rect x="248.19000244140625" y="-1712.5" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="303.62" y="-1694.1" font-family="Arial" font-size="16.00">main(int, char **)</text>
+
+</g>
+</g>
+<!-- 6 -->
+<g id="6" class="node" data-path="/home/marapovi/CC_cub3d/src/app/hooks.c">
+
+<rect x="813.22998046875" y="-1645.5" width="262" height="205"></rect>
+<g id="6_1" class="title">
+<text text-anchor="start" x="863.32" y="-1613.1" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;hooks.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="6:14_11" data-kind="12" class="cell function">
+<rect x="829.22998046875" y="-1594.300048828125" width="230" height="27.2000732421875"></rect>
+<text text-anchor="start" x="846.83" y="-1575.9" font-family="Arial" font-size="16.00">on_loop_tick(t_app_state *)</text>
+
+</g>
+<g id="6:21_11" data-kind="12" class="cell function">
+<rect x="829.22998046875" y="-1559.0999755859375" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="859.73" y="-1540.7" font-family="Arial" font-size="16.00">on_close(t_app_state *)</text>
+
+</g>
+<g id="6:27_11" data-kind="12" class="cell function">
+<rect x="829.22998046875" y="-1523.9000244140625" width="230" height="27.2000732421875"></rect>
+<text text-anchor="start" x="879.75" y="-1505.5" font-family="Arial" font-size="16.00">on_expose(void *)</text>
+
+</g>
+<g id="6:36_5" data-kind="12" class="cell function">
+<rect x="829.22998046875" y="-1488.699951171875" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="839.28" y="-1470.3" font-family="Arial" font-size="16.00">register_hooks(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 5&#45;&gt;6 -->
+<g id="5:14_4-6:36_5" class="edge" data-from="5:14_4" data-to="6:36_5">
+
+<path fill="none" stroke="black" d="M479.19,-1698.9C657.8,-1698.9 644.96,-1488.66 811.79,-1475.72"></path>
+<polygon fill="black" stroke="black" points="811.93,-1480.97 826.72,-1475.16 811.53,-1470.48 811.93,-1480.97"></polygon>
+<text text-anchor="middle" x="652.15" y="-1591.2" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M479.19,-1698.9C657.8,-1698.9 644.96,-1488.66 811.79,-1475.72" class="hover-path"></path></g>
+<!-- 9 -->
+<g id="9" class="node" data-path="/home/marapovi/CC_cub3d/src/app/setup.c">
+
+<rect x="739.22998046875" y="-1868.5" width="410" height="205"></rect>
+<g id="9_2" class="title">
+<text text-anchor="start" x="865.09" y="-1836.1" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;setup.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="9:14_11" data-kind="12" class="cell function">
+<rect x="755.22998046875" y="-1817.300048828125" width="378" height="27.2000732421875"></rect>
+<text text-anchor="start" x="850.4" y="-1798.9" font-family="Arial" font-size="16.00">init_window(t_app_state *)</text>
+
+</g>
+<g id="9:26_11" data-kind="12" class="cell function">
+<rect x="755.22998046875" y="-1782.0999755859375" width="378" height="27.199951171875"></rect>
+<text text-anchor="start" x="759.23" y="-1763.7" font-family="Arial" font-size="16.00">load_texture(t_app_state *, t_image_buffer *, char *)</text>
+
+</g>
+<g id="9:41_11" data-kind="12" class="cell function">
+<rect x="755.22998046875" y="-1746.9000244140625" width="378" height="27.2000732421875"></rect>
+<text text-anchor="start" x="855.29" y="-1728.5" font-family="Arial" font-size="16.00">init_image(t_app_state *)</text>
+
+</g>
+<g id="9:58_4" data-kind="12" class="cell function">
+<rect x="755.22998046875" y="-1711.699951171875" width="378" height="27.199951171875"></rect>
+<text text-anchor="start" x="845.5" y="-1693.3" font-family="Arial" font-size="16.00">initialize_app(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 5&#45;&gt;9 -->
+<g id="5:14_4-9:58_4" class="edge" data-from="5:14_4" data-to="9:58_4">
+
+<path fill="none" stroke="black" d="M479.19,-1698.9C595.82,-1698.9 628.99,-1698.17 737.96,-1698.1"></path>
+<polygon fill="black" stroke="black" points="737.72,-1703.36 752.72,-1698.1 737.72,-1692.86 737.72,-1703.36"></polygon>
+<text text-anchor="middle" x="652.15" y="-1702.53" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M479.19,-1698.9C595.82,-1698.9 628.99,-1698.17 737.96,-1698.1" class="hover-path"></path></g>
+<!-- 14 -->
+<g id="14" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing.c">
+
+<rect x="778.8200073242188" y="-2575.10009765625" width="330.82000732421875" height="240.2001953125"></rect>
+<g id="14_3" class="title">
+<text text-anchor="start" x="858.43" y="-2542.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="14:14_11" data-kind="12" class="cell function">
+<rect x="794.8200073242188" y="-2523.89990234375" width="298.82000732421875" height="27.199951171875"></rect>
+<text text-anchor="start" x="849.06" y="-2505.5" font-family="Arial" font-size="16.00">has_cub_extension(char *)</text>
+
+</g>
+<g id="14:26_12" data-kind="12" class="cell function">
+<rect x="794.8200073242188" y="-2488.699951171875" width="298.82000732421875" height="27.199951171875"></rect>
+<text text-anchor="start" x="897.54" y="-2470.3" font-family="Arial" font-size="16.00">drain_gnl(int)</text>
+
+</g>
+<g id="14:38_11" data-kind="12" class="cell function">
+<rect x="794.8200073242188" y="-2453.5" width="298.82000732421875" height="27.199951171875"></rect>
+<text text-anchor="start" x="798.82" y="-2435.1" font-family="Arial" font-size="16.00">consume_line(t_app_state *, char *, int *)</text>
+
+</g>
+<g id="14:51_11" data-kind="12" class="cell function">
+<rect x="794.8200073242188" y="-2418.300048828125" width="298.82000732421875" height="27.199951171875"></rect>
+<text text-anchor="start" x="837.05" y="-2399.9" font-family="Arial" font-size="16.00">read_scene(int, t_app_state *)</text>
+
+</g>
+<g id="14:80_4" data-kind="12" class="cell function">
+<rect x="794.8200073242188" y="-2383.10009765625" width="298.82000732421875" height="27.2001953125"></rect>
+<text text-anchor="start" x="810.38" y="-2364.7" font-family="Arial" font-size="16.00">parse_map(int, char **, t_app_state *)</text>
+
+</g>
+</g>
+<!-- 5&#45;&gt;14 -->
+<g id="5:14_4-14:80_4" class="edge" data-from="5:14_4" data-to="14:80_4">
+
+<path fill="none" stroke="black" d="M479.19,-1698.9C802.78,-1698.9 476.15,-2346.77 777.52,-2368.92"></path>
+<polygon fill="black" stroke="black" points="777.13,-2374.16 792.3,-2369.45 777.5,-2363.66 777.13,-2374.16"></polygon>
+<text text-anchor="middle" x="652.15" y="-2268.92" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M479.19,-1698.9C802.78,-1698.9 476.15,-2346.77 777.52,-2368.92" class="hover-path"></path></g>
+<!-- 4 -->
+<g id="4" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/image.c">
+
+<rect x="1343.4200439453125" y="-605.2999877929688" width="309.469970703125" height="134.5999755859375"></rect>
+<g id="4_4" class="title">
+<text text-anchor="start" x="1416.8" y="-572.9" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;image.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="4:14_5" data-kind="12" class="cell function">
+<rect x="1359.4200439453125" y="-554.0999755859375" width="277.469970703125" height="27.199951171875"></rect>
+<text text-anchor="start" x="1363.42" y="-535.7" font-family="Arial" font-size="16.00">put_pixel(t_image_buffer *, int, int, int)</text>
+
+</g>
+<g id="4:27_5" data-kind="12" class="cell function">
+<rect x="1359.4200439453125" y="-518.9000244140625" width="277.469970703125" height="27.20001220703125"></rect>
+<text text-anchor="start" x="1396.33" y="-500.5" font-family="Arial" font-size="16.00">redraw_frame(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 5&#45;&gt;4 -->
+<g id="5:14_4-4:27_5" class="edge" data-from="5:14_4" data-to="4:27_5">
+
+<path fill="none" stroke="black" d="M479.19,-1698.9C764.93,-1698.9 493.46,-1271.39 725.9,-1105.2 805,-1048.64 1088.81,-1140.38 1162.56,-1077 1276.08,-979.44 1184.12,-888.93 1234.56,-748 1273.41,-639.44 1240.78,-517.58 1342.1,-506.17"></path>
+<polygon fill="black" stroke="black" points="1342.21,-511.42 1356.91,-505.38 1341.65,-500.93 1342.21,-511.42"></polygon>
+<text text-anchor="middle" x="944.23" y="-1109.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M479.19,-1698.9C764.93,-1698.9 493.46,-1271.39 725.9,-1105.2 805,-1048.64 1088.81,-1140.38 1162.56,-1077 1276.08,-979.44 1184.12,-888.93 1234.56,-748 1273.41,-639.44 1240.78,-517.58 1342.1,-506.17" class="hover-path"></path></g>
+<!-- 7 -->
+<g id="7" class="node" data-path="/home/marapovi/CC_cub3d/src/app/cleanup.c">
+
+<rect x="1310.06005859375" y="-1869.0999755859375" width="376.18994140625" height="240.199951171875"></rect>
+<g id="7_5" class="title">
+<text text-anchor="start" x="1410.57" y="-1836.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;cleanup.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="7:14_12" data-kind="12" class="cell function">
+<rect x="1326.06005859375" y="-1817.9000244140625" width="344.18994140625" height="27.2000732421875"></rect>
+<text text-anchor="start" x="1435.02" y="-1799.5" font-family="Arial" font-size="16.00">free_map(char **)</text>
+
+</g>
+<g id="7:29_12" data-kind="12" class="cell function">
+<rect x="1326.06005859375" y="-1782.699951171875" width="344.18994140625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1419.89" y="-1764.3" font-family="Arial" font-size="16.00">free_scene(t_scene *)</text>
+
+</g>
+<g id="7:41_12" data-kind="12" class="cell function">
+<rect x="1326.06005859375" y="-1747.5" width="344.18994140625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1330.06" y="-1729.1" font-family="Arial" font-size="16.00">destroy_image(t_app_state *, t_image_buffer *)</text>
+
+</g>
+<g id="7:50_5" data-kind="12" class="cell function">
+<rect x="1326.06005859375" y="-1712.300048828125" width="344.18994140625" height="27.2000732421875"></rect>
+<text text-anchor="start" x="1379.86" y="-1693.9" font-family="Arial" font-size="16.00">destroy_app_state(t_app_state *)</text>
+
+</g>
+<g id="7:75_5" data-kind="12" class="cell function">
+<rect x="1326.06005859375" y="-1677.0999755859375" width="344.18994140625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1409.21" y="-1658.7" font-family="Arial" font-size="16.00">close_app(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 5&#45;&gt;7 -->
+<g id="5:14_4-7:50_5" class="edge" data-from="5:14_4" data-to="7:50_5">
+
+<path fill="none" stroke="black" d="M479.19,-1698.9C614.69,-1698.9 597.03,-1836.15 725.9,-1878 818.19,-1907.97 1073.85,-1917.32 1162.56,-1878 1255.5,-1836.8 1221.83,-1713.27 1308.72,-1699.88"></path>
+<polygon fill="black" stroke="black" points="1308.97,-1705.13 1323.55,-1698.81 1308.21,-1694.65 1308.97,-1705.13"></polygon>
+<text text-anchor="middle" x="944.23" y="-1908.3" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M479.19,-1698.9C614.69,-1698.9 597.03,-1836.15 725.9,-1878 818.19,-1907.97 1073.85,-1917.32 1162.56,-1878 1255.5,-1836.8 1221.83,-1713.27 1308.72,-1699.88" class="hover-path"></path></g>
+<!-- 6&#45;&gt;4 -->
+<g id="6:14_11-4:27_5" class="edge" data-from="6:14_11" data-to="4:27_5">
+
+<path fill="none" stroke="black" d="M1060.23,-1580.7C1141.56,-1580.7 1130.8,-1503.87 1162.56,-1429 1201.49,-1337.23 1248.55,-585.88 1343.15,-511.26"></path>
+<polygon fill="black" stroke="black" points="1344.94,-516.2 1357.01,-505.85 1341.13,-506.42 1344.94,-516.2"></polygon>
+<text text-anchor="middle" x="1236.31" y="-935.13" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1060.23,-1580.7C1141.56,-1580.7 1130.8,-1503.87 1162.56,-1429 1201.49,-1337.23 1248.55,-585.88 1343.15,-511.26" class="hover-path"></path></g>
+<!-- 6&#45;&gt;7 -->
+<g id="6:21_11-7:75_5" class="edge" data-from="6:21_11" data-to="7:75_5">
+
+<path fill="none" stroke="black" d="M1060.23,-1545.5C1183.42,-1545.5 1195.34,-1653.36 1308.76,-1662.84"></path>
+<polygon fill="black" stroke="black" points="1308.35,-1668.07 1323.55,-1663.44 1308.77,-1657.58 1308.35,-1668.07"></polygon>
+<text text-anchor="middle" x="1236.31" y="-1642.21" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1060.23,-1545.5C1183.42,-1545.5 1195.34,-1653.36 1308.76,-1662.84" class="hover-path"></path></g>
+<!-- 3 -->
+<g id="3" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/draw_3d.c">
+
+<rect x="147.97999572753906" y="-435.1000061035156" width="430.42002868652344" height="240.20001220703125"></rect>
+<g id="3_6" class="title">
+<text text-anchor="start" x="272.94" y="-402.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;draw_3d.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="3:14_12" data-kind="12" class="cell function">
+<rect x="163.97999572753906" y="-383.8999938964844" width="398.42002868652344" height="27.199981689453125"></rect>
+<text text-anchor="start" x="195.1" y="-365.5" font-family="Arial" font-size="16.00">calc_texture_x(t_app_state *, t_draw_column *)</text>
+
+</g>
+<g id="3:33_12" data-kind="12" class="cell function">
+<rect x="163.97999572753906" y="-348.70001220703125" width="398.42002868652344" height="27.20001220703125"></rect>
+<text text-anchor="start" x="178.65" y="-330.3" font-family="Arial" font-size="16.00">select_wall_texture(t_app_state *, t_draw_column *)</text>
+
+</g>
+<g id="3:52_12" data-kind="12" class="cell function">
+<rect x="163.97999572753906" y="-313.5" width="398.42002868652344" height="27.20001220703125"></rect>
+<text text-anchor="start" x="245.37" y="-295.1" font-family="Arial" font-size="16.00">calc_wall_slice(t_draw_column *)</text>
+
+</g>
+<g id="3:63_12" data-kind="12" class="cell function">
+<rect x="163.97999572753906" y="-278.29998779296875" width="398.42002868652344" height="27.199981689453125"></rect>
+<text text-anchor="start" x="167.98" y="-259.9" font-family="Arial" font-size="16.00">draw_wall_column(t_app_state *, t_draw_column *, int)</text>
+
+</g>
+<g id="3:84_5" data-kind="12" class="cell function">
+<rect x="163.97999572753906" y="-243.10000610351562" width="398.42002868652344" height="27.20001220703125"></rect>
+<text text-anchor="start" x="262.69" y="-224.7" font-family="Arial" font-size="16.00">render_frame(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 3&#45;&gt;3 -->
+<g id="3:84_5-3:33_12" class="edge" data-from="3:84_5" data-to="3:33_12">
+
+<path fill="none" stroke="black" d="M164.36,-227.44C77.8,-232.65 3.5,-247.9 3.5,-282.3 3.5,-314.55 68.8,-329.97 148.29,-336.07"></path>
+<polygon fill="black" stroke="black" points="147.53,-341.28 162.85,-337.06 148.24,-330.8 147.53,-341.28"></polygon>
+<text text-anchor="middle" x="1.75" y="-310.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M164.36,-227.44C77.8,-232.65 3.5,-247.9 3.5,-282.3 3.5,-314.55 68.8,-329.97 148.29,-336.07" class="hover-path"></path></g>
+<!-- 3&#45;&gt;3 -->
+<g id="3:84_5-3:52_12" class="edge" data-from="3:84_5" data-to="3:52_12">
+
+<path fill="none" stroke="black" d="M164.36,-225.9C77.8,-229.19 3.5,-240.1 3.5,-264.7 3.5,-287.77 68.8,-298.79 148.29,-302.79"></path>
+<polygon fill="black" stroke="black" points="147.63,-308.02 162.85,-303.43 148.1,-297.53 147.63,-308.02"></polygon>
+<text text-anchor="middle" x="1.75" y="-310.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M164.36,-225.9C77.8,-229.19 3.5,-240.1 3.5,-264.7 3.5,-287.77 68.8,-298.79 148.29,-302.79" class="hover-path"></path></g>
+<!-- 3&#45;&gt;3 -->
+<g id="3:84_5-3:14_12" class="edge" data-from="3:84_5" data-to="3:14_12">
+
+<path fill="none" stroke="black" d="M164.36,-228.97C77.8,-236.11 3.5,-255.7 3.5,-299.9 3.5,-341.33 68.8,-361.15 148.29,-369.34"></path>
+<polygon fill="black" stroke="black" points="147.44,-374.53 162.86,-370.69 148.4,-364.08 147.44,-374.53"></polygon>
+<text text-anchor="middle" x="1.75" y="-310.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M164.36,-228.97C77.8,-236.11 3.5,-255.7 3.5,-299.9 3.5,-341.33 68.8,-361.15 148.29,-369.34" class="hover-path"></path></g>
+<!-- 3&#45;&gt;3 -->
+<g id="3:84_5-3:63_12" class="edge" data-from="3:84_5" data-to="3:63_12">
+
+<path fill="none" stroke="black" d="M164.36,-224.37C77.8,-225.73 3.5,-232.29 3.5,-247.1 3.5,-260.98 68.8,-267.62 148.29,-269.51"></path>
+<polygon fill="black" stroke="black" points="147.75,-274.75 162.85,-269.8 147.96,-264.26 147.75,-274.75"></polygon>
+<text text-anchor="middle" x="1.75" y="-310.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M164.36,-224.37C77.8,-225.73 3.5,-232.29 3.5,-247.1 3.5,-260.98 68.8,-267.62 148.29,-269.51" class="hover-path"></path></g>
+<!-- 2 -->
+<g id="2" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/bonus/draw_minimap_bonus.c">
+
+<rect x="199.5500030517578" y="-1022.0999755859375" width="327.28001403808594" height="240.199951171875"></rect>
+<g id="2_7" class="title">
+<text text-anchor="start" x="225.36" y="-989.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;draw_minimap_bonus.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="2:14_12" data-kind="12" class="cell function">
+<rect x="215.5500030517578" y="-970.9000244140625" width="295.2799835205078" height="27.20001220703125"></rect>
+<text text-anchor="start" x="224.9" y="-952.5" font-family="Arial" font-size="16.00">draw_player_marker(t_app_state *, int)</text>
+
+</g>
+<g id="2:36_12" data-kind="12" class="cell function">
+<rect x="215.5500030517578" y="-935.7000122070312" width="295.2799835205078" height="27.20001220703125"></rect>
+<text text-anchor="start" x="219.55" y="-917.3" font-family="Arial" font-size="16.00">draw_player_direction(t_app_state *, int)</text>
+
+</g>
+<g id="2:54_12" data-kind="12" class="cell function">
+<rect x="215.5500030517578" y="-900.5" width="295.2799835205078" height="27.20001220703125"></rect>
+<text text-anchor="start" x="237.35" y="-882.1" font-family="Arial" font-size="16.00">draw_ray(t_app_state *, t_ray *, int)</text>
+
+</g>
+<g id="2:72_12" data-kind="12" class="cell function">
+<rect x="215.5500030517578" y="-865.2999877929688" width="295.2799835205078" height="27.20001220703125"></rect>
+<text text-anchor="start" x="249.35" y="-846.9" font-family="Arial" font-size="16.00">draw_ray_fan(t_app_state *, int)</text>
+
+</g>
+<g id="2:86_5" data-kind="12" class="cell function">
+<rect x="215.5500030517578" y="-830.0999755859375" width="295.2799835205078" height="27.199951171875"></rect>
+<text text-anchor="start" x="257.35" y="-811.7" font-family="Arial" font-size="16.00">render_overlay(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 3&#45;&gt;2 -->
+<g id="3:84_5-2:86_5" class="edge" data-from="3:84_5" data-to="2:86_5">
+
+<path fill="none" stroke="black" d="M525.77,-807.75C584.14,-734.73 624.14,-229.5 563.4,-229.5"></path>
+<polygon fill="black" stroke="black" points="523.02,-803.27 513.11,-815.7 528.6,-812.16 523.02,-803.27"></polygon>
+<text text-anchor="middle" x="578.87" y="-604.3" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M525.77,-807.75C584.14,-734.73 624.14,-229.5 563.4,-229.5" class="hover-path"></path></g>
+<!-- 11 -->
+<g id="11" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/draw_texture.c">
+
+<rect x="725.9000244140625" y="-605.2999877929688" width="436.6600341796875" height="134.5999755859375"></rect>
+<g id="11_8" class="title">
+<text text-anchor="start" x="838.42" y="-572.9" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;draw_texture.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="11:14_20" data-kind="12" class="cell function">
+<rect x="741.9000244140625" y="-554.0999755859375" width="404.6600341796875" height="27.199951171875"></rect>
+<text text-anchor="start" x="793.48" y="-535.7" font-family="Arial" font-size="16.00">get_texture_pixel(t_image_buffer *, int, int)</text>
+
+</g>
+<g id="11:28_5" data-kind="12" class="cell function">
+<rect x="741.9000244140625" y="-518.9000244140625" width="404.6600341796875" height="27.20001220703125"></rect>
+<text text-anchor="start" x="745.9" y="-500.5" font-family="Arial" font-size="16.00">draw_textured_wall(t_app_state *, t_draw_column *, int)</text>
+
+</g>
+</g>
+<!-- 3&#45;&gt;11 -->
+<g id="3:63_12-11:28_5" class="edge" data-from="3:63_12" data-to="11:28_5">
+
+<path fill="none" stroke="black" d="M563.4,-264.7C690.45,-264.7 615.35,-484.62 724.63,-503.95"></path>
+<polygon fill="black" stroke="black" points="724.01,-509.16 739.39,-505.17 724.88,-498.7 724.01,-509.16"></polygon>
+<text text-anchor="middle" x="652.15" y="-396.41" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M563.4,-264.7C690.45,-264.7 615.35,-484.62 724.63,-503.95" class="hover-path"></path></g>
+<!-- 12 -->
+<g id="12" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/raycast.c">
+
+<rect x="794.3800048828125" y="-452.5" width="299.699951171875" height="205"></rect>
+<g id="12_9" class="title">
+<text text-anchor="start" x="858.88" y="-420.1" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;raycast.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="12:15_12" data-kind="12" class="cell function">
+<rect x="810.3800048828125" y="-401.29998779296875" width="267.699951171875" height="27.199981689453125"></rect>
+<text text-anchor="start" x="825.5" y="-382.9" font-family="Arial" font-size="16.00">init_ray(t_app_state *, t_ray *, int)</text>
+
+</g>
+<g id="12:35_12" data-kind="12" class="cell function">
+<rect x="810.3800048828125" y="-366.1000061035156" width="267.699951171875" height="27.20001220703125"></rect>
+<text text-anchor="start" x="814.38" y="-347.7" font-family="Arial" font-size="16.00">set_ray_steps(t_app_state *, t_ray *)</text>
+
+</g>
+<g id="12:71_12" data-kind="12" class="cell function">
+<rect x="810.3800048828125" y="-330.8999938964844" width="267.699951171875" height="27.199981689453125"></rect>
+<text text-anchor="start" x="830.39" y="-312.5" font-family="Arial" font-size="16.00">dda_walk(t_app_state *, t_ray *)</text>
+
+</g>
+<g id="12:100_5" data-kind="12" class="cell function">
+<rect x="810.3800048828125" y="-295.70001220703125" width="267.699951171875" height="27.20001220703125"></rect>
+<text text-anchor="start" x="821.06" y="-277.3" font-family="Arial" font-size="16.00">cast_ray(t_app_state *, t_ray *, int)</text>
+
+</g>
+</g>
+<!-- 3&#45;&gt;12 -->
+<g id="3:84_5-12:100_5" class="edge" data-from="3:84_5" data-to="12:100_5">
+
+<path fill="none" stroke="black" d="M563.4,-229.5C669.52,-229.5 695.08,-276.89 793.02,-281.71"></path>
+<polygon fill="black" stroke="black" points="792.75,-286.95 807.87,-282.06 793,-276.45 792.75,-286.95"></polygon>
+<text text-anchor="middle" x="652.15" y="-247.81" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M563.4,-229.5C669.52,-229.5 695.08,-276.89 793.02,-281.71" class="hover-path"></path></g>
+<!-- 3&#45;&gt;4 -->
+<g id="3:63_12-4:14_5" class="edge" data-from="3:63_12" data-to="4:14_5">
+
+<path fill="none" stroke="black" d="M563.4,-264.7C603.6,-264.7 611.5,-250.1 650.4,-240 683.77,-231.33 691.66,-226.18 725.9,-222.2 822.29,-210.99 1077.85,-174.86 1162.56,-222.2 1302.6,-300.46 1199.89,-524.46 1342.35,-539.68"></path>
+<polygon fill="black" stroke="black" points="1341.66,-544.91 1356.91,-540.42 1342.19,-534.42 1341.66,-544.91"></polygon>
+<text text-anchor="middle" x="944.23" y="-226.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M563.4,-264.7C603.6,-264.7 611.5,-250.1 650.4,-240 683.77,-231.33 691.66,-226.18 725.9,-222.2 822.29,-210.99 1077.85,-174.86 1162.56,-222.2 1302.6,-300.46 1199.89,-524.46 1342.35,-539.68" class="hover-path"></path></g>
+<!-- 10 -->
+<g id="10" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/draw_overlay.c">
+
+<rect x="813.22998046875" y="-123.69999694824219" width="262" height="99.39999771118164"></rect>
+<g id="10_10" class="title">
+<text text-anchor="start" x="837.09" y="-91.3" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;draw_overlay.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="10:14_5" data-kind="12" class="cell function">
+<rect x="829.22998046875" y="-72.5" width="230" height="27.200000762939453"></rect>
+<text text-anchor="start" x="838.39" y="-54.1" font-family="Arial" font-size="16.00">render_overlay(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 3&#45;&gt;10 -->
+<g id="3:84_5-10:14_5" class="edge" data-from="3:84_5" data-to="10:14_5">
+
+<path fill="none" stroke="black" d="M563.4,-229.5C619.45,-229.5 604.61,-170.52 650.4,-138.2 716.41,-91.62 738.74,-62.9 811.83,-59.29"></path>
+<polygon fill="black" stroke="black" points="811.85,-64.54 826.72,-58.94 811.6,-54.04 811.85,-64.54"></polygon>
+<text text-anchor="middle" x="652.15" y="-142.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M563.4,-229.5C619.45,-229.5 604.61,-170.52 650.4,-138.2 716.41,-91.62 738.74,-62.9 811.83,-59.29" class="hover-path"></path></g>
+<!-- 2&#45;&gt;2 -->
+<g id="2:86_5-2:36_12" class="edge" data-from="2:86_5" data-to="2:36_12">
+
+<path fill="none" stroke="black" d="M215.78,-813.15C132.33,-816.74 55.07,-831.4 55.07,-869.3 55.07,-904.76 122.69,-919.87 199.74,-924.61"></path>
+<polygon fill="black" stroke="black" points="199.01,-929.83 214.27,-925.37 199.56,-919.35 199.01,-929.83"></polygon>
+<text text-anchor="middle" x="53.32" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M215.78,-813.15C132.33,-816.74 55.07,-831.4 55.07,-869.3 55.07,-904.76 122.69,-919.87 199.74,-924.61" class="hover-path"></path></g>
+<!-- 2&#45;&gt;2 -->
+<g id="2:72_12-2:54_12" class="edge" data-from="2:72_12" data-to="2:54_12">
+
+<path fill="none" stroke="black" d="M215.78,-846.31C132.33,-846.68 55.07,-852.99 55.07,-869.3 55.07,-884.56 122.69,-891.07 199.74,-892.14"></path>
+<polygon fill="black" stroke="black" points="199.22,-897.39 214.26,-892.27 199.31,-886.89 199.22,-897.39"></polygon>
+<text text-anchor="middle" x="53.32" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M215.78,-846.31C132.33,-846.68 55.07,-852.99 55.07,-869.3 55.07,-884.56 122.69,-891.07 199.74,-892.14" class="hover-path"></path></g>
+<!-- 2&#45;&gt;2 -->
+<g id="2:86_5-2:14_12" class="edge" data-from="2:86_5" data-to="2:14_12">
+
+<path fill="none" stroke="black" d="M215.78,-814.17C132.33,-819.37 55.07,-838.21 55.07,-886.9 55.07,-932.46 122.69,-951.87 199.74,-958.45"></path>
+<polygon fill="black" stroke="black" points="198.92,-963.66 214.27,-959.52 199.69,-953.18 198.92,-963.66"></polygon>
+<text text-anchor="middle" x="53.32" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M215.78,-814.17C132.33,-819.37 55.07,-838.21 55.07,-886.9 55.07,-932.46 122.69,-951.87 199.74,-958.45" class="hover-path"></path></g>
+<!-- 2&#45;&gt;2 -->
+<g id="2:86_5-2:72_12" class="edge" data-from="2:86_5" data-to="2:72_12">
+
+<path fill="none" stroke="black" d="M215.78,-811.11C132.33,-811.48 55.07,-817.79 55.07,-834.1 55.07,-849.36 122.69,-855.87 199.74,-856.94"></path>
+<polygon fill="black" stroke="black" points="199.22,-862.19 214.26,-857.07 199.31,-851.69 199.22,-862.19"></polygon>
+<text text-anchor="middle" x="53.32" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M215.78,-811.11C132.33,-811.48 55.07,-817.79 55.07,-834.1 55.07,-849.36 122.69,-855.87 199.74,-856.94" class="hover-path"></path></g>
+<!-- 1 -->
+<g id="1" class="node" data-path="/home/marapovi/CC_cub3d/src/drawing/bonus/draw_cell_bonus.c">
+
+<rect x="764.5999755859375" y="-1022.0999755859375" width="359.260009765625" height="240.199951171875"></rect>
+<g id="1_11" class="title">
+<text text-anchor="start" x="824.62" y="-989.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;draw_cell_bonus.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="1:14_11" data-kind="12" class="cell function">
+<rect x="780.5999755859375" y="-970.9000244140625" width="327.260009765625" height="27.20001220703125"></rect>
+<text text-anchor="start" x="890.43" y="-952.5" font-family="Arial" font-size="16.00">get_color(char)</text>
+
+</g>
+<g id="1:24_12" data-kind="12" class="cell function">
+<rect x="780.5999755859375" y="-935.7000122070312" width="327.260009765625" height="27.20001220703125"></rect>
+<text text-anchor="start" x="818.38" y="-917.3" font-family="Arial" font-size="16.00">get_map_cell(t_app_state *, int, int)</text>
+
+</g>
+<g id="1:33_4" data-kind="12" class="cell function">
+<rect x="780.5999755859375" y="-900.5" width="327.260009765625" height="27.20001220703125"></rect>
+<text text-anchor="start" x="826.39" y="-882.1" font-family="Arial" font-size="16.00">minimap_cell_size(t_app_state *)</text>
+
+</g>
+<g id="1:51_11" data-kind="12" class="cell function">
+<rect x="780.5999755859375" y="-865.2999877929688" width="327.260009765625" height="27.20001220703125"></rect>
+<text text-anchor="start" x="871.31" y="-846.9" font-family="Arial" font-size="16.00">is_border(int, int, int)</text>
+
+</g>
+<g id="1:56_5" data-kind="12" class="cell function">
+<rect x="780.5999755859375" y="-830.0999755859375" width="327.260009765625" height="27.199951171875"></rect>
+<text text-anchor="start" x="784.6" y="-811.7" font-family="Arial" font-size="16.00">draw_minimap_cell(t_app_state *, int, int, int)</text>
+
+</g>
+</g>
+<!-- 2&#45;&gt;1 -->
+<g id="2:86_5-1:56_5" class="edge" data-from="2:86_5" data-to="1:56_5">
+
+<path fill="none" stroke="black" d="M511.83,-816.5C625.14,-816.5 657.54,-816.5 763.11,-816.5"></path>
+<polygon fill="black" stroke="black" points="763.08,-821.75 778.08,-816.5 763.08,-811.25 763.08,-821.75"></polygon>
+<text text-anchor="middle" x="652.15" y="-820.7" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M511.83,-816.5C625.14,-816.5 657.54,-816.5 763.11,-816.5" class="hover-path"></path></g>
+<!-- 2&#45;&gt;1 -->
+<g id="2:86_5-1:33_4" class="edge" data-from="2:86_5" data-to="1:33_4">
+
+<path fill="none" stroke="black" d="M511.83,-816.5C629.23,-816.5 654.34,-880.59 763.27,-886.47"></path>
+<polygon fill="black" stroke="black" points="762.95,-891.71 778.08,-886.86 763.23,-881.22 762.95,-891.71"></polygon>
+<text text-anchor="middle" x="652.15" y="-859.06" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M511.83,-816.5C629.23,-816.5 654.34,-880.59 763.27,-886.47" class="hover-path"></path></g>
+<!-- 2&#45;&gt;12 -->
+<g id="2:72_12-12:100_5" class="edge" data-from="2:72_12" data-to="12:100_5">
+
+<path fill="none" stroke="black" d="M511.83,-851.7C649.06,-851.7 665.44,-325.73 793.23,-284.64"></path>
+<polygon fill="black" stroke="black" points="793.89,-289.85 807.89,-282.34 792.25,-279.48 793.89,-289.85"></polygon>
+<text text-anchor="middle" x="652.15" y="-605.2" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M511.83,-851.7C649.06,-851.7 665.44,-325.73 793.23,-284.64" class="hover-path"></path></g>
+<!-- 2&#45;&gt;4 -->
+<g id="2:36_12-4:14_5" class="edge" data-from="2:36_12" data-to="4:14_5">
+
+<path fill="none" stroke="black" d="M511.83,-922.1C612.82,-922.1 571.11,-804.55 650.4,-742 858.17,-578.09 1001.43,-764.5 1238.06,-646 1296.32,-616.82 1289.15,-552.58 1342.21,-541.99"></path>
+<polygon fill="black" stroke="black" points="1342.45,-547.24 1356.91,-540.64 1341.49,-536.78 1342.45,-547.24"></polygon>
+<text text-anchor="middle" x="944.23" y="-697.77" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M511.83,-922.1C612.82,-922.1 571.11,-804.55 650.4,-742 858.17,-578.09 1001.43,-764.5 1238.06,-646 1296.32,-616.82 1289.15,-552.58 1342.21,-541.99" class="hover-path"></path></g>
+<!-- 2&#45;&gt;4 -->
+<g id="2:14_12-4:14_5" class="edge" data-from="2:14_12" data-to="4:14_5">
+
+<path fill="none" stroke="black" d="M511.83,-957.3C600.75,-957.3 583.87,-871.98 650.4,-813 681.82,-785.14 686.76,-771.41 725.9,-756.2 907.63,-685.57 982.66,-789.18 1162.56,-714 1202.88,-697.15 1205.17,-679.79 1238.06,-651 1288.22,-607.09 1286.52,-550.68 1342.07,-541.72"></path>
+<polygon fill="black" stroke="black" points="1342.34,-546.97 1356.91,-540.61 1341.56,-536.5 1342.34,-546.97"></polygon>
+<text text-anchor="middle" x="944.23" y="-760.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M511.83,-957.3C600.75,-957.3 583.87,-871.98 650.4,-813 681.82,-785.14 686.76,-771.41 725.9,-756.2 907.63,-685.57 982.66,-789.18 1162.56,-714 1202.88,-697.15 1205.17,-679.79 1238.06,-651 1288.22,-607.09 1286.52,-550.68 1342.07,-541.72" class="hover-path"></path></g>
+<!-- 2&#45;&gt;4 -->
+<g id="2:54_12-4:14_5" class="edge" data-from="2:54_12" data-to="4:14_5">
+
+<path fill="none" stroke="black" d="M511.83,-886.9C653.67,-886.9 598.75,-713.06 725.9,-650.2 813.19,-607.05 1067.56,-635.33 1162.56,-614 1247.78,-594.87 1263.68,-546.81 1342.38,-541.07"></path>
+<polygon fill="black" stroke="black" points="1342.1,-546.33 1356.91,-540.55 1341.73,-535.84 1342.1,-546.33"></polygon>
+<text text-anchor="middle" x="944.23" y="-654.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M511.83,-886.9C653.67,-886.9 598.75,-713.06 725.9,-650.2 813.19,-607.05 1067.56,-635.33 1162.56,-614 1247.78,-594.87 1263.68,-546.81 1342.38,-541.07" class="hover-path"></path></g>
+<!-- 1&#45;&gt;1 -->
+<g id="1:56_5-1:24_12" class="edge" data-from="1:56_5" data-to="1:24_12">
+
+<path fill="none" stroke="black" d="M780.85,-813.49C695.6,-817.6 618.56,-832.49 618.56,-869.3 618.56,-903.74 685.99,-918.99 764.49,-924.18"></path>
+<polygon fill="black" stroke="black" points="764.07,-929.41 779.34,-925.03 764.66,-918.93 764.07,-929.41"></polygon>
+<text text-anchor="middle" x="616.81" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M780.85,-813.49C695.6,-817.6 618.56,-832.49 618.56,-869.3 618.56,-903.74 685.99,-918.99 764.49,-924.18" class="hover-path"></path></g>
+<!-- 1&#45;&gt;1 -->
+<g id="1:56_5-1:14_11" class="edge" data-from="1:56_5" data-to="1:14_11">
+
+<path fill="none" stroke="black" d="M780.85,-814.65C695.6,-820.48 618.56,-839.6 618.56,-886.9 618.56,-931.15 685.99,-950.74 764.49,-957.85"></path>
+<polygon fill="black" stroke="black" points="763.97,-963.08 779.34,-959.03 764.8,-952.61 763.97,-963.08"></polygon>
+<text text-anchor="middle" x="616.81" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M780.85,-814.65C695.6,-820.48 618.56,-839.6 618.56,-886.9 618.56,-931.15 685.99,-950.74 764.49,-957.85" class="hover-path"></path></g>
+<!-- 1&#45;&gt;1 -->
+<g id="1:56_5-1:51_11" class="edge" data-from="1:56_5" data-to="1:51_11">
+
+<path fill="none" stroke="black" d="M780.85,-811.16C695.6,-811.85 618.56,-818.25 618.56,-834.1 618.56,-848.92 685.99,-855.49 764.49,-856.83"></path>
+<polygon fill="black" stroke="black" points="764.27,-862.08 779.34,-857.02 764.4,-851.58 764.27,-862.08"></polygon>
+<text text-anchor="middle" x="616.81" y="-897.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M780.85,-811.16C695.6,-811.85 618.56,-818.25 618.56,-834.1 618.56,-848.92 685.99,-855.49 764.49,-856.83" class="hover-path"></path></g>
+<!-- 1&#45;&gt;4 -->
+<g id="1:56_5-4:14_5" class="edge" data-from="1:56_5" data-to="4:14_5">
+
+<path fill="none" stroke="black" d="M1108.86,-816.5C1173.04,-816.5 1191.46,-796.13 1238.06,-752 1312.29,-681.7 1257.08,-555.31 1342.19,-541.7"></path>
+<polygon fill="black" stroke="black" points="1342.34,-546.95 1356.91,-540.61 1341.56,-536.48 1342.34,-546.95"></polygon>
+<text text-anchor="middle" x="1236.31" y="-758.82" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1108.86,-816.5C1173.04,-816.5 1191.46,-796.13 1238.06,-752 1312.29,-681.7 1257.08,-555.31 1342.19,-541.7" class="hover-path"></path></g>
+<!-- 9&#45;&gt;9 -->
+<g id="9:58_4-9:14_11" class="edge" data-from="9:58_4" data-to="9:14_11">
+
+<path fill="none" stroke="black" d="M755.54,-1695.72C668.79,-1700.61 593.19,-1715.78 593.19,-1750.9 593.19,-1783.83 659.63,-1799.21 739.42,-1805.04"></path>
+<polygon fill="black" stroke="black" points="738.72,-1810.25 754.02,-1805.98 739.39,-1799.78 738.72,-1810.25"></polygon>
+<text text-anchor="middle" x="591.44" y="-1761.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M755.54,-1695.72C668.79,-1700.61 593.19,-1715.78 593.19,-1750.9 593.19,-1783.83 659.63,-1799.21 739.42,-1805.04" class="hover-path"></path></g>
+<!-- 9&#45;&gt;9 -->
+<g id="9:58_4-9:26_11" class="edge" data-from="9:58_4" data-to="9:26_11">
+
+<path fill="none" stroke="black" d="M755.54,-1694.31C668.79,-1697.34 593.19,-1708.18 593.19,-1733.3 593.19,-1756.85 659.63,-1767.85 739.42,-1771.63"></path>
+<polygon fill="black" stroke="black" points="738.82,-1776.86 754.02,-1772.23 739.25,-1766.37 738.82,-1776.86"></polygon>
+<text text-anchor="middle" x="591.44" y="-1761.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M755.54,-1694.31C668.79,-1697.34 593.19,-1708.18 593.19,-1733.3 593.19,-1756.85 659.63,-1767.85 739.42,-1771.63" class="hover-path"></path></g>
+<!-- 9&#45;&gt;9 -->
+<g id="9:58_4-9:41_11" class="edge" data-from="9:58_4" data-to="9:41_11">
+
+<path fill="none" stroke="black" d="M755.54,-1692.89C668.79,-1694.06 593.19,-1700.58 593.19,-1715.7 593.19,-1729.87 659.63,-1736.49 739.42,-1738.23"></path>
+<polygon fill="black" stroke="black" points="738.93,-1743.47 754.02,-1738.48 739.12,-1732.97 738.93,-1743.47"></polygon>
+<text text-anchor="middle" x="591.44" y="-1761.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M755.54,-1692.89C668.79,-1694.06 593.19,-1700.58 593.19,-1715.7 593.19,-1729.87 659.63,-1736.49 739.42,-1738.23" class="hover-path"></path></g>
+<!-- 21 -->
+<g id="21" class="node" data-path="/home/marapovi/CC_cub3d/src/utils/error.c">
+
+<rect x="2300.489990234375" y="-2109.699951171875" width="262" height="99.39990234375"></rect>
+<g id="21_12" class="title">
+<text text-anchor="start" x="2355.03" y="-2077.3" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;error.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="21:14_4" data-kind="12" class="cell function">
+<rect x="2316.489990234375" y="-2058.5" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="2363.02" y="-2040.1" font-family="Arial" font-size="16.00">report_error(char *)</text>
+
+</g>
+</g>
+<!-- 9&#45;&gt;21 -->
+<g id="9:41_11-21:14_4" class="edge" data-from="9:41_11" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1134.23,-1733.3C1221.31,-1733.3 1160.27,-1610.43 1234.56,-1565 1611.43,-1334.54 1899.86,-1269.8 2228.49,-1565 2385.41,-1705.97 2114.03,-2027.04 2299.1,-2044.19"></path>
+<polygon fill="black" stroke="black" points="2298.76,-2049.43 2313.98,-2044.83 2299.22,-2038.94 2298.76,-2049.43"></polygon>
+<text text-anchor="middle" x="1760" y="-1371.62" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1134.23,-1733.3C1221.31,-1733.3 1160.27,-1610.43 1234.56,-1565 1611.43,-1334.54 1899.86,-1269.8 2228.49,-1565 2385.41,-1705.97 2114.03,-2027.04 2299.1,-2044.19" class="hover-path"></path></g>
+<!-- 9&#45;&gt;21 -->
+<g id="9:26_11-21:14_4" class="edge" data-from="9:26_11" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1134.23,-1768.5C1231.1,-1768.5 1151.97,-1625.62 1234.56,-1575 1422.96,-1459.53 2062.93,-1458.64 2228.49,-1605 2373.43,-1733.13 2131.17,-2027.01 2299.14,-2044.12"></path>
+<polygon fill="black" stroke="black" points="2298.74,-2049.36 2313.98,-2044.83 2299.24,-2038.87 2298.74,-2049.36"></polygon>
+<text text-anchor="middle" x="1760" y="-1496.44" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1134.23,-1768.5C1231.1,-1768.5 1151.97,-1625.62 1234.56,-1575 1422.96,-1459.53 2062.93,-1458.64 2228.49,-1605 2373.43,-1733.13 2131.17,-2027.01 2299.14,-2044.12" class="hover-path"></path></g>
+<!-- 9&#45;&gt;21 -->
+<g id="9:14_11-21:14_4" class="edge" data-from="9:14_11" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1134.23,-1803.7C1221.85,-1803.7 1162.75,-1684.2 1234.56,-1634 1329.99,-1567.29 1374.42,-1535.37 1694.25,-1620 1958.35,-1689.88 2025.31,-1741.37 2228.49,-1924 2273.11,-1964.11 2253.94,-2030.81 2299.22,-2042.97"></path>
+<polygon fill="black" stroke="black" points="2298.47,-2048.17 2313.99,-2044.72 2299.71,-2037.74 2298.47,-2048.17"></polygon>
+<text text-anchor="middle" x="1760" y="-1642.42" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1134.23,-1803.7C1221.85,-1803.7 1162.75,-1684.2 1234.56,-1634 1329.99,-1567.29 1374.42,-1535.37 1694.25,-1620 1958.35,-1689.88 2025.31,-1741.37 2228.49,-1924 2273.11,-1964.11 2253.94,-2030.81 2299.22,-2042.97" class="hover-path"></path></g>
+<!-- 14&#45;&gt;14 -->
+<g id="14:80_4-14:14_11" class="edge" data-from="14:80_4" data-to="14:14_11">
+
+<path fill="none" stroke="black" d="M794.82,-2367.19C710.62,-2372.43 632.78,-2391.28 632.78,-2439.9 632.78,-2485.38 700.91,-2504.81 778.64,-2511.42"></path>
+<polygon fill="black" stroke="black" points="777.96,-2516.63 793.31,-2512.5 778.73,-2506.16 777.96,-2516.63"></polygon>
+<text text-anchor="middle" x="631.03" y="-2450.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M794.82,-2367.19C710.62,-2372.43 632.78,-2391.28 632.78,-2439.9 632.78,-2485.38 700.91,-2504.81 778.64,-2511.42" class="hover-path"></path></g>
+<!-- 14&#45;&gt;14 -->
+<g id="14:80_4-14:51_11" class="edge" data-from="14:80_4" data-to="14:51_11">
+
+<path fill="none" stroke="black" d="M794.82,-2364.12C710.62,-2364.5 632.78,-2370.81 632.78,-2387.1 632.78,-2402.34 700.91,-2408.85 778.64,-2409.93"></path>
+<polygon fill="black" stroke="black" points="778.26,-2415.18 793.3,-2410.07 778.35,-2404.68 778.26,-2415.18"></polygon>
+<text text-anchor="middle" x="631.03" y="-2450.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M794.82,-2364.12C710.62,-2364.5 632.78,-2370.81 632.78,-2387.1 632.78,-2402.34 700.91,-2408.85 778.64,-2409.93" class="hover-path"></path></g>
+<!-- 14&#45;&gt;14 -->
+<g id="14:51_11-14:26_12" class="edge" data-from="14:51_11" data-to="14:26_12">
+
+<path fill="none" stroke="black" d="M794.82,-2400.34C710.62,-2402.34 632.78,-2412.84 632.78,-2439.9 632.78,-2465.22 700.91,-2476.04 778.64,-2478.96"></path>
+<polygon fill="black" stroke="black" points="778.15,-2484.2 793.3,-2479.41 778.47,-2473.71 778.15,-2484.2"></polygon>
+<text text-anchor="middle" x="631.03" y="-2450.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M794.82,-2400.34C710.62,-2402.34 632.78,-2412.84 632.78,-2439.9 632.78,-2465.22 700.91,-2476.04 778.64,-2478.96" class="hover-path"></path></g>
+<!-- 14&#45;&gt;14 -->
+<g id="14:51_11-14:38_11" class="edge" data-from="14:51_11" data-to="14:38_11">
+
+<path fill="none" stroke="black" d="M794.82,-2399.32C710.62,-2399.7 632.78,-2406.01 632.78,-2422.3 632.78,-2437.54 700.91,-2444.05 778.64,-2445.13"></path>
+<polygon fill="black" stroke="black" points="778.26,-2450.38 793.3,-2445.27 778.35,-2439.88 778.26,-2450.38"></polygon>
+<text text-anchor="middle" x="631.03" y="-2450.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M794.82,-2399.32C710.62,-2399.7 632.78,-2406.01 632.78,-2422.3 632.78,-2437.54 700.91,-2444.05 778.64,-2445.13" class="hover-path"></path></g>
+<!-- 13 -->
+<g id="13" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/get_next_line.c">
+
+<rect x="1367.1600341796875" y="-2927.10009765625" width="262" height="240.2001953125"></rect>
+<g id="13_13" class="title">
+<text text-anchor="start" x="1391" y="-2894.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;get_next_line.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="13:14_13" data-kind="12" class="cell function">
+<rect x="1383.1600341796875" y="-2875.89990234375" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="1401.23" y="-2857.5" font-family="Arial" font-size="16.00">fill_buffer(int, char *, char *)</text>
+
+</g>
+<g id="13:35_13" data-kind="12" class="cell function">
+<rect x="1383.1600341796875" y="-2840.699951171875" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="1392.32" y="-2822.3" font-family="Arial" font-size="16.00">read_until_newline(int, char *)</text>
+
+</g>
+<g id="13:51_13" data-kind="12" class="cell function">
+<rect x="1383.1600341796875" y="-2805.5" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="1425.24" y="-2787.1" font-family="Arial" font-size="16.00">substr_buffer(char *)</text>
+
+</g>
+<g id="13:71_13" data-kind="12" class="cell function">
+<rect x="1383.1600341796875" y="-2770.300048828125" width="230" height="27.199951171875"></rect>
+<text text-anchor="start" x="1431.02" y="-2751.9" font-family="Arial" font-size="16.00">extract_line(char *)</text>
+
+</g>
+<g id="13:89_6" data-kind="12" class="cell function">
+<rect x="1383.1600341796875" y="-2735.10009765625" width="230" height="27.2001953125"></rect>
+<text text-anchor="start" x="1436.79" y="-2716.7" font-family="Arial" font-size="16.00">get_next_line(int)</text>
+
+</g>
+</g>
+<!-- 14&#45;&gt;13 -->
+<g id="14:26_12-13:89_6" class="edge" data-from="14:26_12" data-to="13:89_6">
+
+<path fill="none" stroke="black" d="M1094.64,-2475.1C1257.35,-2475.1 1216.89,-2705.41 1366.1,-2720.7"></path>
+<polygon fill="black" stroke="black" points="1365.4,-2725.93 1380.64,-2721.42 1365.92,-2715.44 1365.4,-2725.93"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2595.11" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2475.1C1257.35,-2475.1 1216.89,-2705.41 1366.1,-2720.7" class="hover-path"></path></g>
+<!-- 14&#45;&gt;13 -->
+<g id="14:51_11-13:89_6" class="edge" data-from="14:51_11" data-to="13:89_6">
+
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1171.72,-2404.7 1189.52,-2442.33 1238.06,-2502.2 1307.84,-2588.28 1269.81,-2708.77 1365.91,-2720.56"></path>
+<polygon fill="black" stroke="black" points="1365.37,-2725.79 1380.65,-2721.41 1365.97,-2715.31 1365.37,-2725.79"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2506.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1171.72,-2404.7 1189.52,-2442.33 1238.06,-2502.2 1307.84,-2588.28 1269.81,-2708.77 1365.91,-2720.56" class="hover-path"></path></g>
+<!-- 16 -->
+<g id="16" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing_config.c">
+
+<rect x="1327.4000244140625" y="-2669.10009765625" width="341.510009765625" height="240.2001953125"></rect>
+<g id="16_14" class="title">
+<text text-anchor="start" x="1386.55" y="-2636.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing_config.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="16:14_13" data-kind="12" class="cell function">
+<rect x="1343.4000244140625" y="-2617.89990234375" width="309.510009765625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1431.91" y="-2599.5" font-family="Arial" font-size="16.00">skip_space(char *)</text>
+
+</g>
+<g id="16:21_11" data-kind="12" class="cell function">
+<rect x="1343.4000244140625" y="-2582.699951171875" width="309.510009765625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1393.23" y="-2564.3" font-family="Arial" font-size="16.00">is_identifier(char *, char *, int)</text>
+
+</g>
+<g id="16:28_4" data-kind="12" class="cell function">
+<rect x="1343.4000244140625" y="-2547.5" width="309.510009765625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1384.75" y="-2529.1" font-family="Arial" font-size="16.00">parser_all_config(t_app_state *)</text>
+
+</g>
+<g id="16:35_11" data-kind="12" class="cell function">
+<rect x="1343.4000244140625" y="-2512.300048828125" width="309.510009765625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1360.74" y="-2493.9" font-family="Arial" font-size="16.00">parse_texture_id(t_app_state *, char *)</text>
+
+</g>
+<g id="16:52_4" data-kind="12" class="cell function">
+<rect x="1343.4000244140625" y="-2477.10009765625" width="309.510009765625" height="27.2001953125"></rect>
+<text text-anchor="start" x="1347.4" y="-2458.7" font-family="Arial" font-size="16.00">parser_parse_config(t_app_state *, char *)</text>
+
+</g>
+</g>
+<!-- 14&#45;&gt;16 -->
+<g id="14:80_4-16:28_4" class="edge" data-from="14:80_4" data-to="16:28_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2369.5C1158.81,-2369.5 1182.88,-2353.44 1238.06,-2386.2 1301.9,-2424.11 1268.24,-2518.03 1326.11,-2532.12"></path>
+<polygon fill="black" stroke="black" points="1325.42,-2537.32 1340.9,-2533.74 1326.56,-2526.89 1325.42,-2537.32"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2390.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2369.5C1158.81,-2369.5 1182.88,-2353.44 1238.06,-2386.2 1301.9,-2424.11 1268.24,-2518.03 1326.11,-2532.12" class="hover-path"></path></g>
+<!-- 14&#45;&gt;16 -->
+<g id="14:38_11-16:52_4" class="edge" data-from="14:38_11" data-to="16:52_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1199.64,-2439.9 1228.88,-2461.16 1326.18,-2463.32"></path>
+<polygon fill="black" stroke="black" points="1325.83,-2468.57 1340.89,-2463.48 1325.95,-2458.07 1325.83,-2468.57"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2458.71" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1199.64,-2439.9 1228.88,-2461.16 1326.18,-2463.32" class="hover-path"></path></g>
+<!-- 14&#45;&gt;16 -->
+<g id="14:38_11-16:28_4" class="edge" data-from="14:38_11" data-to="16:28_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1166.97,-2439.9 1165.87,-2500.36 1234.56,-2523 1274.77,-2536.25 1290.39,-2534.63 1326.29,-2534.04"></path>
+<polygon fill="black" stroke="black" points="1325.94,-2539.3 1340.89,-2533.91 1325.84,-2528.8 1325.94,-2539.3"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2528.08" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1166.97,-2439.9 1165.87,-2500.36 1234.56,-2523 1274.77,-2536.25 1290.39,-2534.63 1326.29,-2534.04" class="hover-path"></path></g>
+<!-- 14&#45;&gt;21 -->
+<g id="14:80_4-21:14_4" class="edge" data-from="14:80_4" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2369.5C1364.01,-2369.5 1088.31,-2783.08 1310.06,-2936 1345.2,-2960.23 1652.15,-2943.02 1694.25,-2936 1748.33,-2926.99 2124.66,-2817.06 2160.99,-2776 2186.32,-2747.37 2260.81,-2151.46 2304.86,-2057.36"></path>
+<polygon fill="black" stroke="black" points="2308.77,-2060.87 2314.51,-2046.05 2300.78,-2054.06 2308.77,-2060.87"></polygon>
+<text text-anchor="middle" x="1760" y="-2924.04" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2369.5C1364.01,-2369.5 1088.31,-2783.08 1310.06,-2936 1345.2,-2960.23 1652.15,-2943.02 1694.25,-2936 1748.33,-2926.99 2124.66,-2817.06 2160.99,-2776 2186.32,-2747.37 2260.81,-2151.46 2304.86,-2057.36" class="hover-path"></path></g>
+<!-- 14&#45;&gt;21 -->
+<g id="14:51_11-21:14_4" class="edge" data-from="14:51_11" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1353.99,-2404.7 1077.91,-2831.39 1310.06,-2947 1480.61,-3031.94 2029.46,-2979.85 2160.99,-2842 2189.79,-2811.82 2258.88,-2155.73 2304.78,-2057.23"></path>
+<polygon fill="black" stroke="black" points="2308.63,-2060.81 2314.5,-2046.04 2300.7,-2053.93 2308.63,-2060.81"></polygon>
+<text text-anchor="middle" x="1760" y="-2981.08" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1353.99,-2404.7 1077.91,-2831.39 1310.06,-2947 1480.61,-3031.94 2029.46,-2979.85 2160.99,-2842 2189.79,-2811.82 2258.88,-2155.73 2304.78,-2057.23" class="hover-path"></path></g>
+<!-- 14&#45;&gt;21 -->
+<g id="14:38_11-21:14_4" class="edge" data-from="14:38_11" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1336.98,-2439.9 1109.17,-2074.54 1310.06,-1939 1378.59,-1892.76 2159.96,-1971.73 2160.99,-1972 2228.85,-1989.74 2238.39,-2036.92 2299.31,-2044"></path>
+<polygon fill="black" stroke="black" points="2298.71,-2049.23 2313.98,-2044.82 2299.29,-2038.75 2298.71,-2049.23"></polygon>
+<text text-anchor="middle" x="1760" y="-1942.26" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1336.98,-2439.9 1109.17,-2074.54 1310.06,-1939 1378.59,-1892.76 2159.96,-1971.73 2160.99,-1972 2228.85,-1989.74 2238.39,-2036.92 2299.31,-2044" class="hover-path"></path></g>
+<!-- 18 -->
+<g id="18" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing_map.c">
+
+<rect x="1322.949951171875" y="-2411.10009765625" width="350.4100341796875" height="240.2001953125"></rect>
+<g id="18_15" class="title">
+<text text-anchor="start" x="1392.34" y="-2378.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing_map.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="18:14_4" data-kind="12" class="cell function">
+<rect x="1338.949951171875" y="-2359.89990234375" width="318.4100341796875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1415.45" y="-2341.5" font-family="Arial" font-size="16.00">parser_is_blank(char *)</text>
+
+</g>
+<g id="18:25_5" data-kind="12" class="cell function">
+<rect x="1338.949951171875" y="-2324.699951171875" width="318.4100341796875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1398.11" y="-2306.3" font-family="Arial" font-size="16.00">parser_strip_newline(char *)</text>
+
+</g>
+<g id="18:36_11" data-kind="12" class="cell function">
+<rect x="1338.949951171875" y="-2289.5" width="318.4100341796875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1431.46" y="-2271.1" font-family="Arial" font-size="16.00">is_map_char(char)</text>
+
+</g>
+<g id="18:42_4" data-kind="12" class="cell function">
+<rect x="1338.949951171875" y="-2254.300048828125" width="318.4100341796875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1402.11" y="-2235.9" font-family="Arial" font-size="16.00">parser_is_map_line(char *)</text>
+
+</g>
+<g id="18:58_4" data-kind="12" class="cell function">
+<rect x="1338.949951171875" y="-2219.10009765625" width="318.4100341796875" height="27.2001953125"></rect>
+<text text-anchor="start" x="1342.95" y="-2200.7" font-family="Arial" font-size="16.00">parser_add_map_line(t_app_state *, char *)</text>
+
+</g>
+</g>
+<!-- 14&#45;&gt;18 -->
+<g id="14:51_11-18:25_5" class="edge" data-from="14:51_11" data-to="18:25_5">
+
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1170.69,-2404.7 1162.06,-2329.16 1234.56,-2306.2 1272.76,-2294.1 1287.95,-2306.8 1321.64,-2310.27"></path>
+<polygon fill="black" stroke="black" points="1321.19,-2315.51 1336.44,-2311.02 1321.72,-2305.02 1321.19,-2315.51"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2310.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1170.69,-2404.7 1162.06,-2329.16 1234.56,-2306.2 1272.76,-2294.1 1287.95,-2306.8 1321.64,-2310.27" class="hover-path"></path></g>
+<!-- 14&#45;&gt;18 -->
+<g id="14:38_11-18:42_4" class="edge" data-from="14:38_11" data-to="18:42_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1160.46,-2439.9 1185.09,-2442.06 1238.06,-2403 1301.3,-2356.36 1260.27,-2256.57 1321.65,-2242.39"></path>
+<polygon fill="black" stroke="black" points="1322.06,-2247.62 1336.44,-2240.86 1320.98,-2237.18 1322.06,-2247.62"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2409.49" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1160.46,-2439.9 1185.09,-2442.06 1238.06,-2403 1301.3,-2356.36 1260.27,-2256.57 1321.65,-2242.39" class="hover-path"></path></g>
+<!-- 14&#45;&gt;18 -->
+<g id="14:38_11-18:58_4" class="edge" data-from="14:38_11" data-to="18:58_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1239.08,-2439.9 1191.84,-2223.01 1321.67,-2206.49"></path>
+<polygon fill="black" stroke="black" points="1321.79,-2211.75 1336.44,-2205.59 1321.15,-2201.27 1321.79,-2211.75"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2278.96" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2439.9C1239.08,-2439.9 1191.84,-2223.01 1321.67,-2206.49" class="hover-path"></path></g>
+<!-- 14&#45;&gt;18 -->
+<g id="14:51_11-18:14_4" class="edge" data-from="14:51_11" data-to="18:14_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1159.51,-2404.7 1171.33,-2377.68 1234.56,-2363.2 1274.09,-2354.14 1287.87,-2348.04 1321.55,-2346.62"></path>
+<polygon fill="black" stroke="black" points="1321.54,-2351.87 1336.44,-2346.33 1321.34,-2341.37 1321.54,-2351.87"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2367.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2404.7C1159.51,-2404.7 1171.33,-2377.68 1234.56,-2363.2 1274.09,-2354.14 1287.87,-2348.04 1321.55,-2346.62" class="hover-path"></path></g>
+<!-- 20 -->
+<g id="20" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing_validate.c">
+
+<rect x="1350.969970703125" y="-2152.5" width="294.3699951171875" height="205"></rect>
+<g id="20_16" class="title">
+<text text-anchor="start" x="1380.33" y="-2120.1" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing_validate.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="20:14_12" data-kind="12" class="cell function">
+<rect x="1366.969970703125" y="-2101.300048828125" width="262.3699951171875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1393.21" y="-2082.9" font-family="Arial" font-size="16.00">map_at(t_app_state *, int, int)</text>
+
+</g>
+<g id="20:23_11" data-kind="12" class="cell function">
+<rect x="1366.969970703125" y="-2066.10009765625" width="262.3699951171875" height="27.2000732421875"></rect>
+<text text-anchor="start" x="1434.57" y="-2047.7" font-family="Arial" font-size="16.00">is_open_tile(char)</text>
+
+</g>
+<g id="20:29_11" data-kind="12" class="cell function">
+<rect x="1366.969970703125" y="-2030.9000244140625" width="262.3699951171875" height="27.2000732421875"></rect>
+<text text-anchor="start" x="1390.53" y="-2012.5" font-family="Arial" font-size="16.00">validate_closed(t_app_state *)</text>
+
+</g>
+<g id="20:51_4" data-kind="12" class="cell function">
+<rect x="1366.969970703125" y="-1995.699951171875" width="262.3699951171875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1370.97" y="-1977.3" font-family="Arial" font-size="16.00">parser_validate_map(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 14&#45;&gt;20 -->
+<g id="14:80_4-20:51_4" class="edge" data-from="14:80_4" data-to="20:51_4">
+
+<path fill="none" stroke="black" d="M1094.64,-2369.5C1299.1,-2369.5 1163.65,-2003 1349.52,-1982.95"></path>
+<polygon fill="black" stroke="black" points="1349.75,-1988.2 1364.46,-1982.18 1349.21,-1977.71 1349.75,-1988.2"></polygon>
+<text text-anchor="middle" x="1236.31" y="-2145.3" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1094.64,-2369.5C1299.1,-2369.5 1163.65,-2003 1349.52,-1982.95" class="hover-path"></path></g>
+<!-- 11&#45;&gt;11 -->
+<g id="11:28_5-11:14_20" class="edge" data-from="11:28_5" data-to="11:14_20">
+
+<path fill="none" stroke="black" d="M742.36,-500.18C654.87,-501.55 579.86,-508.12 579.86,-522.9 579.86,-536.74 645.65,-543.38 725.86,-545.3"></path>
+<polygon fill="black" stroke="black" points="725.74,-550.55 740.84,-545.59 725.95,-540.05 725.74,-550.55"></polygon>
+<text text-anchor="middle" x="578.11" y="-533.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M742.36,-500.18C654.87,-501.55 579.86,-508.12 579.86,-522.9 579.86,-536.74 645.65,-543.38 725.86,-545.3" class="hover-path"></path></g>
+<!-- 11&#45;&gt;4 -->
+<g id="11:28_5-4:14_5" class="edge" data-from="11:28_5" data-to="4:14_5">
+
+<path fill="none" stroke="black" d="M1147.56,-505.3C1188.07,-505.3 1198.06,-509.76 1238.06,-516.2 1286.04,-523.92 1300.74,-537.16 1341.93,-539.97"></path>
+<polygon fill="black" stroke="black" points="1341.74,-545.22 1356.91,-540.45 1342.08,-534.72 1341.74,-545.22"></polygon>
+<text text-anchor="middle" x="1236.31" y="-520.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1147.56,-505.3C1188.07,-505.3 1198.06,-509.76 1238.06,-516.2 1286.04,-523.92 1300.74,-537.16 1341.93,-539.97" class="hover-path"></path></g>
+<!-- 8 -->
+<g id="8" class="node" data-path="/home/marapovi/CC_cub3d/src/input/keys.c">
+
+<rect x="773.4600219726562" y="-1374.0999755859375" width="341.53997802734375" height="240.199951171875"></rect>
+<g id="8_17" class="title">
+<text text-anchor="start" x="868.21" y="-1341.7" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;keys.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="8:14_11" data-kind="12" class="cell function">
+<rect x="789.4600219726562" y="-1322.9000244140625" width="309.53997802734375" height="27.2000732421875"></rect>
+<text text-anchor="start" x="793.46" y="-1304.5" font-family="Arial" font-size="16.00">is_walkable(double, double, t_app_state *)</text>
+
+</g>
+<g id="8:32_11" data-kind="12" class="cell function">
+<rect x="789.4600219726562" y="-1287.699951171875" width="309.53997802734375" height="27.199951171875"></rect>
+<text text-anchor="start" x="801.92" y="-1269.3" font-family="Arial" font-size="16.00">try_move(t_app_state *, double, double)</text>
+
+</g>
+<g id="8:54_11" data-kind="12" class="cell function">
+<rect x="789.4600219726562" y="-1252.5" width="309.53997802734375" height="27.199951171875"></rect>
+<text text-anchor="start" x="833.06" y="-1234.1" font-family="Arial" font-size="16.00">move_player(t_app_state *, int)</text>
+
+</g>
+<g id="8:75_12" data-kind="12" class="cell function">
+<rect x="789.4600219726562" y="-1217.300048828125" width="309.53997802734375" height="27.2000732421875"></rect>
+<text text-anchor="start" x="822.38" y="-1198.9" font-family="Arial" font-size="16.00">rotate_view(t_app_state *, double)</text>
+
+</g>
+<g id="8:96_4" data-kind="12" class="cell function">
+<rect x="789.4600219726562" y="-1182.0999755859375" width="309.53997802734375" height="27.199951171875"></rect>
+<text text-anchor="start" x="829.05" y="-1163.7" font-family="Arial" font-size="16.00">on_key_press(int, t_app_state *)</text>
+
+</g>
+</g>
+<!-- 8&#45;&gt;8 -->
+<g id="8:32_11-8:14_11" class="edge" data-from="8:32_11" data-to="8:14_11">
+
+<path fill="none" stroke="black" d="M789.79,-1268.73C705.1,-1269.22 627.42,-1275.57 627.42,-1291.7 627.42,-1306.79 695.41,-1313.32 773.52,-1314.5"></path>
+<polygon fill="black" stroke="black" points="773.22,-1319.75 788.28,-1314.66 773.33,-1309.25 773.22,-1319.75"></polygon>
+<text text-anchor="middle" x="625.67" y="-1249.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M789.79,-1268.73C705.1,-1269.22 627.42,-1275.57 627.42,-1291.7 627.42,-1306.79 695.41,-1313.32 773.52,-1314.5" class="hover-path"></path></g>
+<!-- 8&#45;&gt;8 -->
+<g id="8:96_4-8:54_11" class="edge" data-from="8:96_4" data-to="8:54_11">
+
+<path fill="none" stroke="black" d="M789.79,-1164.2C705.1,-1166.35 627.42,-1176.9 627.42,-1203.7 627.42,-1228.78 695.41,-1239.63 773.52,-1242.68"></path>
+<polygon fill="black" stroke="black" points="773.12,-1247.92 788.28,-1243.15 773.45,-1237.42 773.12,-1247.92"></polygon>
+<text text-anchor="middle" x="625.67" y="-1249.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M789.79,-1164.2C705.1,-1166.35 627.42,-1176.9 627.42,-1203.7 627.42,-1228.78 695.41,-1239.63 773.52,-1242.68" class="hover-path"></path></g>
+<!-- 8&#45;&gt;8 -->
+<g id="8:54_11-8:32_11" class="edge" data-from="8:54_11" data-to="8:32_11">
+
+<path fill="none" stroke="black" d="M789.79,-1233.53C705.1,-1234.02 627.42,-1240.37 627.42,-1256.5 627.42,-1271.59 695.41,-1278.12 773.52,-1279.3"></path>
+<polygon fill="black" stroke="black" points="773.22,-1284.55 788.28,-1279.46 773.33,-1274.05 773.22,-1284.55"></polygon>
+<text text-anchor="middle" x="625.67" y="-1249.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M789.79,-1233.53C705.1,-1234.02 627.42,-1240.37 627.42,-1256.5 627.42,-1271.59 695.41,-1278.12 773.52,-1279.3" class="hover-path"></path></g>
+<!-- 8&#45;&gt;8 -->
+<g id="8:96_4-8:75_12" class="edge" data-from="8:96_4" data-to="8:75_12">
+
+<path fill="none" stroke="black" d="M789.79,-1163.13C705.1,-1163.62 627.42,-1169.97 627.42,-1186.1 627.42,-1201.19 695.41,-1207.72 773.52,-1208.9"></path>
+<polygon fill="black" stroke="black" points="773.22,-1214.15 788.28,-1209.06 773.33,-1203.65 773.22,-1214.15"></polygon>
+<text text-anchor="middle" x="625.67" y="-1249.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M789.79,-1163.13C705.1,-1163.62 627.42,-1169.97 627.42,-1186.1 627.42,-1201.19 695.41,-1207.72 773.52,-1208.9" class="hover-path"></path></g>
+<!-- 8&#45;&gt;7 -->
+<g id="8:96_4-7:75_5" class="edge" data-from="8:96_4" data-to="7:75_5">
+
+<path fill="none" stroke="black" d="M1100,-1168.5C1215.17,-1168.5 1205.48,-1618.18 1308.94,-1660.34"></path>
+<polygon fill="black" stroke="black" points="1307.84,-1665.47 1323.57,-1663.21 1309.86,-1655.17 1307.84,-1665.47"></polygon>
+<text text-anchor="middle" x="1236.31" y="-1521.43" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1100,-1168.5C1215.17,-1168.5 1205.48,-1618.18 1308.94,-1660.34" class="hover-path"></path></g>
+<!-- 13&#45;&gt;13 -->
+<g id="13:89_6-13:51_13" class="edge" data-from="13:89_6" data-to="13:51_13">
+
+<path fill="none" stroke="black" d="M1383.38,-2716.9C1308.55,-2718.12 1236.23,-2728.25 1236.23,-2756.7 1236.23,-2783.09 1298.48,-2793.72 1367.22,-2796.09"></path>
+<polygon fill="black" stroke="black" points="1366.74,-2801.33 1381.87,-2796.46 1367,-2790.84 1366.74,-2801.33"></polygon>
+<text text-anchor="middle" x="1234.48" y="-2802.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1383.38,-2716.9C1308.55,-2718.12 1236.23,-2728.25 1236.23,-2756.7 1236.23,-2783.09 1298.48,-2793.72 1367.22,-2796.09" class="hover-path"></path></g>
+<!-- 13&#45;&gt;13 -->
+<g id="13:89_6-13:71_13" class="edge" data-from="13:89_6" data-to="13:71_13">
+
+<path fill="none" stroke="black" d="M1383.38,-2716.1C1308.55,-2715.88 1236.23,-2721.98 1236.23,-2739.1 1236.23,-2754.98 1298.48,-2761.38 1367.22,-2762.04"></path>
+<polygon fill="black" stroke="black" points="1366.85,-2767.29 1381.86,-2762.09 1366.88,-2756.79 1366.85,-2767.29"></polygon>
+<text text-anchor="middle" x="1234.48" y="-2802.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1383.38,-2716.1C1308.55,-2715.88 1236.23,-2721.98 1236.23,-2739.1 1236.23,-2754.98 1298.48,-2761.38 1367.22,-2762.04" class="hover-path"></path></g>
+<!-- 13&#45;&gt;13 -->
+<g id="13:35_13-13:14_13" class="edge" data-from="13:35_13" data-to="13:14_13">
+
+<path fill="none" stroke="black" d="M1383.38,-2821.7C1308.55,-2821.48 1236.23,-2827.58 1236.23,-2844.7 1236.23,-2860.58 1298.48,-2866.98 1367.22,-2867.64"></path>
+<polygon fill="black" stroke="black" points="1366.85,-2872.89 1381.86,-2867.69 1366.88,-2862.39 1366.85,-2872.89"></polygon>
+<text text-anchor="middle" x="1234.48" y="-2802.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1383.38,-2821.7C1308.55,-2821.48 1236.23,-2827.58 1236.23,-2844.7 1236.23,-2860.58 1298.48,-2866.98 1367.22,-2867.64" class="hover-path"></path></g>
+<!-- 13&#45;&gt;13 -->
+<g id="13:89_6-13:35_13" class="edge" data-from="13:89_6" data-to="13:35_13">
+
+<path fill="none" stroke="black" d="M1383.38,-2717.7C1308.55,-2720.35 1236.23,-2734.53 1236.23,-2774.3 1236.23,-2811.2 1298.48,-2826.07 1367.22,-2830.14"></path>
+<polygon fill="black" stroke="black" points="1366.64,-2835.37 1381.87,-2830.83 1367.13,-2824.88 1366.64,-2835.37"></polygon>
+<text text-anchor="middle" x="1234.48" y="-2802.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1383.38,-2717.7C1308.55,-2720.35 1236.23,-2734.53 1236.23,-2774.3 1236.23,-2811.2 1298.48,-2826.07 1367.22,-2830.14" class="hover-path"></path></g>
+<!-- 16&#45;&gt;16 -->
+<g id="16:52_4-16:14_13" class="edge" data-from="16:52_4" data-to="16:14_13">
+
+<path fill="none" stroke="black" d="M1343.71,-2461.89C1265.99,-2467.98 1196.48,-2487.22 1196.48,-2533.9 1196.48,-2577.3 1256.56,-2596.97 1327.46,-2604.43"></path>
+<polygon fill="black" stroke="black" points="1326.79,-2609.64 1342.2,-2605.78 1327.74,-2599.18 1326.79,-2609.64"></polygon>
+<text text-anchor="middle" x="1194.73" y="-2544.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1343.71,-2461.89C1265.99,-2467.98 1196.48,-2487.22 1196.48,-2533.9 1196.48,-2577.3 1256.56,-2596.97 1327.46,-2604.43" class="hover-path"></path></g>
+<!-- 16&#45;&gt;16 -->
+<g id="16:35_11-16:21_11" class="edge" data-from="16:35_11" data-to="16:21_11">
+
+<path fill="none" stroke="black" d="M1343.71,-2494.62C1265.99,-2497.21 1196.48,-2507.92 1196.48,-2533.9 1196.48,-2558.06 1256.56,-2569.01 1327.46,-2572.51"></path>
+<polygon fill="black" stroke="black" points="1327,-2577.74 1342.2,-2573.12 1327.43,-2567.25 1327,-2577.74"></polygon>
+<text text-anchor="middle" x="1194.73" y="-2544.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1343.71,-2494.62C1265.99,-2497.21 1196.48,-2507.92 1196.48,-2533.9 1196.48,-2558.06 1256.56,-2569.01 1327.46,-2572.51" class="hover-path"></path></g>
+<!-- 16&#45;&gt;16 -->
+<g id="16:52_4-16:21_11" class="edge" data-from="16:52_4" data-to="16:21_11">
+
+<path fill="none" stroke="black" d="M1343.71,-2460.65C1265.99,-2465 1196.48,-2479.97 1196.48,-2516.3 1196.48,-2550.08 1256.56,-2565.39 1327.46,-2570.87"></path>
+<polygon fill="black" stroke="black" points="1326.89,-2576.09 1342.2,-2571.85 1327.58,-2565.62 1326.89,-2576.09"></polygon>
+<text text-anchor="middle" x="1194.73" y="-2544.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1343.71,-2460.65C1265.99,-2465 1196.48,-2479.97 1196.48,-2516.3 1196.48,-2550.08 1256.56,-2565.39 1327.46,-2570.87" class="hover-path"></path></g>
+<!-- 16&#45;&gt;16 -->
+<g id="16:52_4-16:35_11" class="edge" data-from="16:52_4" data-to="16:35_11">
+
+<path fill="none" stroke="black" d="M1343.71,-2458.19C1265.99,-2459.02 1196.48,-2465.46 1196.48,-2481.1 1196.48,-2495.64 1256.56,-2502.23 1327.46,-2503.75"></path>
+<polygon fill="black" stroke="black" points="1327.12,-2509 1342.2,-2503.99 1327.28,-2498.5 1327.12,-2509"></polygon>
+<text text-anchor="middle" x="1194.73" y="-2544.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1343.71,-2458.19C1265.99,-2459.02 1196.48,-2465.46 1196.48,-2481.1 1196.48,-2495.64 1256.56,-2502.23 1327.46,-2503.75" class="hover-path"></path></g>
+<!-- 15 -->
+<g id="15" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing_color.c">
+
+<rect x="1851.0999755859375" y="-2464.5" width="284.5399169921875" height="205"></rect>
+<g id="15_18" class="title">
+<text text-anchor="start" x="1885.78" y="-2432.1" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing_color.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="15:14_12" data-kind="12" class="cell function">
+<rect x="1867.0999755859375" y="-2413.300048828125" width="252.5399169921875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1924.01" y="-2394.9" font-family="Arial" font-size="16.00">skip_space(char **)</text>
+
+</g>
+<g id="15:20_11" data-kind="12" class="cell function">
+<rect x="1867.0999755859375" y="-2378.10009765625" width="252.5399169921875" height="27.2001953125"></rect>
+<text text-anchor="start" x="1881.76" y="-2359.7" font-family="Arial" font-size="16.00">parse_component(char **, int *)</text>
+
+</g>
+<g id="15:40_11" data-kind="12" class="cell function">
+<rect x="1867.0999755859375" y="-2342.89990234375" width="252.5399169921875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1907.11" y="-2324.5" font-family="Arial" font-size="16.00">parse_rgb(char *, int [3])</text>
+
+</g>
+<g id="15:58_4" data-kind="12" class="cell function">
+<rect x="1867.0999755859375" y="-2307.699951171875" width="252.5399169921875" height="27.199951171875"></rect>
+<text text-anchor="start" x="1871.1" y="-2289.3" font-family="Arial" font-size="16.00">parser_set_color(char *, int *, int *)</text>
+
+</g>
+</g>
+<!-- 16&#45;&gt;15 -->
+<g id="16:52_4-15:58_4" class="edge" data-from="16:52_4" data-to="15:58_4">
+
+<path fill="none" stroke="black" d="M1653.91,-2463.5C1768.81,-2463.5 1747.87,-2309.92 1849.77,-2295.23"></path>
+<polygon fill="black" stroke="black" points="1849.98,-2300.47 1864.59,-2294.2 1849.26,-2290 1849.98,-2300.47"></polygon>
+<text text-anchor="middle" x="1760" y="-2383" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1653.91,-2463.5C1768.81,-2463.5 1747.87,-2309.92 1849.77,-2295.23" class="hover-path"></path></g>
+<!-- 16&#45;&gt;21 -->
+<g id="16:52_4-21:14_4" class="edge" data-from="16:52_4" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1653.91,-2463.5C1686.66,-2463.5 1804.37,-2682.54 1833.75,-2697 1964.25,-2761.21 2046.91,-2787.21 2160.99,-2697 2215.52,-2653.88 2237.99,-2122.9 2301.33,-2052.57"></path>
+<polygon fill="black" stroke="black" points="2303.47,-2057.38 2314.16,-2045.62 2298.47,-2048.15 2303.47,-2057.38"></polygon>
+<text text-anchor="middle" x="1993.37" y="-2759.51" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1653.91,-2463.5C1686.66,-2463.5 1804.37,-2682.54 1833.75,-2697 1964.25,-2761.21 2046.91,-2787.21 2160.99,-2697 2215.52,-2653.88 2237.99,-2122.9 2301.33,-2052.57" class="hover-path"></path></g>
+<!-- 17 -->
+<g id="17" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing_texture.c">
+
+<rect x="1833.75" y="-2687.5" width="319.239990234375" height="205"></rect>
+<g id="17_19" class="title">
+<text text-anchor="start" x="1878.66" y="-2655.1" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing_texture.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="17:14_13" data-kind="12" class="cell function">
+<rect x="1849.75" y="-2636.300048828125" width="287.239990234375" height="27.199951171875"></rect>
+<text text-anchor="start" x="1927.12" y="-2617.9" font-family="Arial" font-size="16.00">skip_space(char *)</text>
+
+</g>
+<g id="17:21_11" data-kind="12" class="cell function">
+<rect x="1849.75" y="-2601.10009765625" width="287.239990234375" height="27.2001953125"></rect>
+<text text-anchor="start" x="1920.45" y="-2582.7" font-family="Arial" font-size="16.00">path_is_valid(char *)</text>
+
+</g>
+<g id="17:36_13" data-kind="12" class="cell function">
+<rect x="1849.75" y="-2565.89990234375" width="287.239990234375" height="27.199951171875"></rect>
+<text text-anchor="start" x="1930.23" y="-2547.5" font-family="Arial" font-size="16.00">copy_path(char *)</text>
+
+</g>
+<g id="17:55_4" data-kind="12" class="cell function">
+<rect x="1849.75" y="-2530.699951171875" width="287.239990234375" height="27.199951171875"></rect>
+<text text-anchor="start" x="1853.75" y="-2512.3" font-family="Arial" font-size="16.00">parser_set_texture(char *, char **, int *)</text>
+
+</g>
+</g>
+<!-- 16&#45;&gt;17 -->
+<g id="16:35_11-17:55_4" class="edge" data-from="16:35_11" data-to="17:55_4">
+
+<path fill="none" stroke="black" d="M1653.91,-2498.7C1735.12,-2498.7 1758.71,-2514.74 1832.26,-2516.87"></path>
+<polygon fill="black" stroke="black" points="1832.17,-2522.12 1847.24,-2517.08 1832.32,-2511.62 1832.17,-2522.12"></polygon>
+<text text-anchor="middle" x="1760" y="-2513.75" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1653.91,-2498.7C1735.12,-2498.7 1758.71,-2514.74 1832.26,-2516.87" class="hover-path"></path></g>
+<!-- 16&#45;&gt;17 -->
+<g id="16:52_4-17:14_13" class="edge" data-from="16:52_4" data-to="17:14_13">
+
+<path fill="none" stroke="black" d="M1653.91,-2463.5C1678.43,-2463.5 1788.29,-2585.93 1833.81,-2616.06"></path>
+<polygon fill="black" stroke="black" points="1831.53,-2620.8 1847.37,-2622.09 1835.79,-2611.2 1831.53,-2620.8"></polygon>
+<text text-anchor="middle" x="1760" y="-2556.83" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1653.91,-2463.5C1678.43,-2463.5 1788.29,-2585.93 1833.81,-2616.06" class="hover-path"></path></g>
+<!-- 15&#45;&gt;15 -->
+<g id="15:58_4-15:40_11" class="edge" data-from="15:58_4" data-to="15:40_11">
+
+<path fill="none" stroke="black" d="M1867.13,-2288.73C1797.91,-2289.22 1734.41,-2295.57 1734.41,-2311.7 1734.41,-2326.54 1788.14,-2333.1 1850.64,-2334.44"></path>
+<polygon fill="black" stroke="black" points="1850.55,-2339.69 1865.62,-2334.65 1850.7,-2329.19 1850.55,-2339.69"></polygon>
+<text text-anchor="middle" x="1732.66" y="-2357.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1867.13,-2288.73C1797.91,-2289.22 1734.41,-2295.57 1734.41,-2311.7 1734.41,-2326.54 1788.14,-2333.1 1850.64,-2334.44" class="hover-path"></path></g>
+<!-- 15&#45;&gt;15 -->
+<g id="15:20_11-15:14_12" class="edge" data-from="15:20_11" data-to="15:14_12">
+
+<path fill="none" stroke="black" d="M1867.13,-2359.13C1797.91,-2359.62 1734.41,-2365.97 1734.41,-2382.1 1734.41,-2396.94 1788.14,-2403.5 1850.64,-2404.84"></path>
+<polygon fill="black" stroke="black" points="1850.55,-2410.09 1865.62,-2405.05 1850.7,-2399.59 1850.55,-2410.09"></polygon>
+<text text-anchor="middle" x="1732.66" y="-2357.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1867.13,-2359.13C1797.91,-2359.62 1734.41,-2365.97 1734.41,-2382.1 1734.41,-2396.94 1788.14,-2403.5 1850.64,-2404.84" class="hover-path"></path></g>
+<!-- 15&#45;&gt;15 -->
+<g id="15:40_11-15:20_11" class="edge" data-from="15:40_11" data-to="15:20_11">
+
+<path fill="none" stroke="black" d="M1867.13,-2323.93C1797.91,-2324.42 1734.41,-2330.77 1734.41,-2346.9 1734.41,-2361.74 1788.14,-2368.3 1850.64,-2369.64"></path>
+<polygon fill="black" stroke="black" points="1850.55,-2374.89 1865.62,-2369.85 1850.7,-2364.39 1850.55,-2374.89"></polygon>
+<text text-anchor="middle" x="1732.66" y="-2357.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1867.13,-2323.93C1797.91,-2324.42 1734.41,-2330.77 1734.41,-2346.9 1734.41,-2361.74 1788.14,-2368.3 1850.64,-2369.64" class="hover-path"></path></g>
+<!-- 15&#45;&gt;21 -->
+<g id="15:58_4-21:14_4" class="edge" data-from="15:58_4" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M2120.64,-2294.1C2255.47,-2294.1 2181.6,-2064.92 2299.3,-2046.12"></path>
+<polygon fill="black" stroke="black" points="2299.42,-2051.38 2313.98,-2045.01 2298.63,-2040.91 2299.42,-2051.38"></polygon>
+<text text-anchor="middle" x="2226.74" y="-2136.82" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M2120.64,-2294.1C2255.47,-2294.1 2181.6,-2064.92 2299.3,-2046.12" class="hover-path"></path></g>
+<!-- 12&#45;&gt;12 -->
+<g id="12:100_5-12:35_12" class="edge" data-from="12:100_5" data-to="12:35_12">
+
+<path fill="none" stroke="black" d="M810.72,-277.56C727.58,-279.03 648.34,-289.29 648.34,-317.3 648.34,-343.45 717.41,-354.13 794.23,-356.63"></path>
+<polygon fill="black" stroke="black" points="794.08,-361.87 809.21,-357 794.35,-351.38 794.08,-361.87"></polygon>
+<text text-anchor="middle" x="646.59" y="-345.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M810.72,-277.56C727.58,-279.03 648.34,-289.29 648.34,-317.3 648.34,-343.45 717.41,-354.13 794.23,-356.63" class="hover-path"></path></g>
+<!-- 12&#45;&gt;12 -->
+<g id="12:100_5-12:15_12" class="edge" data-from="12:100_5" data-to="12:15_12">
+
+<path fill="none" stroke="black" d="M810.72,-278.43C727.58,-281.39 648.34,-295.73 648.34,-334.9 648.34,-371.47 717.41,-386.4 794.23,-390.63"></path>
+<polygon fill="black" stroke="black" points="793.99,-395.87 809.21,-391.31 794.46,-385.38 793.99,-395.87"></polygon>
+<text text-anchor="middle" x="646.59" y="-345.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M810.72,-278.43C727.58,-281.39 648.34,-295.73 648.34,-334.9 648.34,-371.47 717.41,-386.4 794.23,-390.63" class="hover-path"></path></g>
+<!-- 12&#45;&gt;12 -->
+<g id="12:100_5-12:71_12" class="edge" data-from="12:100_5" data-to="12:71_12">
+
+<path fill="none" stroke="black" d="M810.72,-276.7C727.58,-276.67 648.34,-282.84 648.34,-299.7 648.34,-315.44 717.41,-321.87 794.23,-322.62"></path>
+<polygon fill="black" stroke="black" points="794.19,-327.87 809.21,-322.7 794.24,-317.37 794.19,-327.87"></polygon>
+<text text-anchor="middle" x="646.59" y="-345.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M810.72,-276.7C727.58,-276.67 648.34,-282.84 648.34,-299.7 648.34,-315.44 717.41,-321.87 794.23,-322.62" class="hover-path"></path></g>
+<!-- 18&#45;&gt;21 -->
+<g id="18:58_4-21:14_4" class="edge" data-from="18:58_4" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1658.36,-2205.5C1730.7,-2205.5 1694.48,-2111.14 1758.25,-2077 1783.38,-2063.55 2206.7,-2047.71 2299.23,-2045.23"></path>
+<polygon fill="black" stroke="black" points="2299.09,-2050.49 2313.98,-2044.93 2298.87,-2039.99 2299.09,-2050.49"></polygon>
+<text text-anchor="middle" x="1993.37" y="-2071.25" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1658.36,-2205.5C1730.7,-2205.5 1694.48,-2111.14 1758.25,-2077 1783.38,-2063.55 2206.7,-2047.71 2299.23,-2045.23" class="hover-path"></path></g>
+<!-- 18&#45;&gt;18 -->
+<g id="18:42_4-18:36_11" class="edge" data-from="18:42_4" data-to="18:36_11">
+
+<path fill="none" stroke="black" d="M1339.08,-2235.42C1261.16,-2236.35 1192.03,-2242.82 1192.03,-2258.3 1192.03,-2272.69 1251.78,-2279.3 1322.79,-2280.9"></path>
+<polygon fill="black" stroke="black" points="1322.47,-2286.15 1337.56,-2281.16 1322.65,-2275.65 1322.47,-2286.15"></polygon>
+<text text-anchor="middle" x="1190.28" y="-2286.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1339.08,-2235.42C1261.16,-2236.35 1192.03,-2242.82 1192.03,-2258.3 1192.03,-2272.69 1251.78,-2279.3 1322.79,-2280.9" class="hover-path"></path></g>
+<!-- 18&#45;&gt;18 -->
+<g id="18:58_4-18:36_11" class="edge" data-from="18:58_4" data-to="18:36_11">
+
+<path fill="none" stroke="black" d="M1339.08,-2201.5C1261.16,-2204.22 1192.03,-2214.97 1192.03,-2240.7 1192.03,-2264.62 1251.78,-2275.59 1322.79,-2279.2"></path>
+<polygon fill="black" stroke="black" points="1322.35,-2284.44 1337.56,-2279.83 1322.8,-2273.95 1322.35,-2284.44"></polygon>
+<text text-anchor="middle" x="1190.28" y="-2286.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1339.08,-2201.5C1261.16,-2204.22 1192.03,-2214.97 1192.03,-2240.7 1192.03,-2264.62 1251.78,-2275.59 1322.79,-2279.2" class="hover-path"></path></g>
+<!-- 4&#45;&gt;3 -->
+<g id="4:27_5-3:84_5" class="edge" data-from="4:27_5" data-to="3:84_5">
+
+<path fill="none" stroke="black" d="M1358.42,-505.3C1188.59,-505.3 1310.25,-261.04 1162.56,-177.2 1078.17,-129.3 821.76,-162.15 725.9,-177.2 656.66,-188.07 641.42,-223.49 579.68,-228.83"></path>
+<polygon fill="black" stroke="black" points="579.68,-223.57 564.91,-229.44 580.12,-234.06 579.68,-223.57"></polygon>
+<text text-anchor="middle" x="944.23" y="-181.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1358.42,-505.3C1188.59,-505.3 1310.25,-261.04 1162.56,-177.2 1078.17,-129.3 821.76,-162.15 725.9,-177.2 656.66,-188.07 641.42,-223.49 579.68,-228.83" class="hover-path"></path></g>
+<!-- 7&#45;&gt;7 -->
+<g id="7:75_5-7:50_5" class="edge" data-from="7:75_5" data-to="7:50_5">
+
+<path fill="none" stroke="black" d="M1326.27,-1658.3C1247.6,-1659.48 1179.13,-1666.01 1179.13,-1681.1 1179.13,-1695.13 1238.31,-1701.76 1309.84,-1703.57"></path>
+<polygon fill="black" stroke="black" points="1309.65,-1708.82 1324.75,-1703.87 1309.86,-1698.32 1309.65,-1708.82"></polygon>
+<text text-anchor="middle" x="1177.38" y="-1744.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1326.27,-1658.3C1247.6,-1659.48 1179.13,-1666.01 1179.13,-1681.1 1179.13,-1695.13 1238.31,-1701.76 1309.84,-1703.57" class="hover-path"></path></g>
+<!-- 7&#45;&gt;7 -->
+<g id="7:50_5-7:41_12" class="edge" data-from="7:50_5" data-to="7:41_12">
+
+<path fill="none" stroke="black" d="M1326.27,-1693.5C1247.6,-1694.68 1179.13,-1701.21 1179.13,-1716.3 1179.13,-1730.33 1238.31,-1736.96 1309.84,-1738.77"></path>
+<polygon fill="black" stroke="black" points="1309.65,-1744.02 1324.75,-1739.07 1309.86,-1733.52 1309.65,-1744.02"></polygon>
+<text text-anchor="middle" x="1177.38" y="-1744.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1326.27,-1693.5C1247.6,-1694.68 1179.13,-1701.21 1179.13,-1716.3 1179.13,-1730.33 1238.31,-1736.96 1309.84,-1738.77" class="hover-path"></path></g>
+<!-- 7&#45;&gt;7 -->
+<g id="7:50_5-7:14_12" class="edge" data-from="7:50_5" data-to="7:14_12">
+
+<path fill="none" stroke="black" d="M1326.27,-1696.35C1247.6,-1701.27 1179.13,-1716.44 1179.13,-1751.5 1179.13,-1784.1 1238.31,-1799.5 1309.84,-1805.46"></path>
+<polygon fill="black" stroke="black" points="1309.41,-1810.69 1324.76,-1806.54 1310.18,-1800.22 1309.41,-1810.69"></polygon>
+<text text-anchor="middle" x="1177.38" y="-1744.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1326.27,-1696.35C1247.6,-1701.27 1179.13,-1716.44 1179.13,-1751.5 1179.13,-1784.1 1238.31,-1799.5 1309.84,-1805.46" class="hover-path"></path></g>
+<!-- 7&#45;&gt;7 -->
+<g id="7:50_5-7:29_12" class="edge" data-from="7:50_5" data-to="7:29_12">
+
+<path fill="none" stroke="black" d="M1326.27,-1694.92C1247.6,-1697.97 1179.13,-1708.82 1179.13,-1733.9 1179.13,-1757.22 1238.31,-1768.23 1309.84,-1772.12"></path>
+<polygon fill="black" stroke="black" points="1309.53,-1777.36 1324.75,-1772.81 1310.01,-1766.87 1309.53,-1777.36"></polygon>
+<text text-anchor="middle" x="1177.38" y="-1744.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1326.27,-1694.92C1247.6,-1697.97 1179.13,-1708.82 1179.13,-1733.9 1179.13,-1757.22 1238.31,-1768.23 1309.84,-1772.12" class="hover-path"></path></g>
+<!-- 17&#45;&gt;16 -->
+<g id="17:36_13-16:14_13" class="edge" data-from="17:36_13" data-to="16:14_13">
+
+<path fill="none" stroke="black" d="M1848.75,-2552.3C1764.9,-2552.3 1745.86,-2597.81 1670.36,-2603.68"></path>
+<polygon fill="black" stroke="black" points="1670.21,-2598.43 1655.42,-2604.24 1670.61,-2608.92 1670.21,-2598.43"></polygon>
+<text text-anchor="middle" x="1760" y="-2577.84" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1848.75,-2552.3C1764.9,-2552.3 1745.86,-2597.81 1670.36,-2603.68" class="hover-path"></path></g>
+<!-- 17&#45;&gt;21 -->
+<g id="17:55_4-21:14_4" class="edge" data-from="17:55_4" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M2137.99,-2517.1C2244.4,-2517.1 2207.72,-2091.64 2299.6,-2048.43"></path>
+<polygon fill="black" stroke="black" points="2300.51,-2053.61 2314.01,-2045.23 2298.23,-2043.36 2300.51,-2053.61"></polygon>
+<text text-anchor="middle" x="2226.74" y="-2285.2" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M2137.99,-2517.1C2244.4,-2517.1 2207.72,-2091.64 2299.6,-2048.43" class="hover-path"></path></g>
+<!-- 17&#45;&gt;17 -->
+<g id="17:55_4-17:21_11" class="edge" data-from="17:55_4" data-to="17:21_11">
+
+<path fill="none" stroke="black" d="M1849.79,-2513.1C1779.47,-2515.82 1717.07,-2526.57 1717.07,-2552.3 1717.07,-2576.02 1770.1,-2587.01 1833.48,-2590.71"></path>
+<polygon fill="black" stroke="black" points="1833.04,-2595.95 1848.28,-2591.43 1833.55,-2585.46 1833.04,-2595.95"></polygon>
+<text text-anchor="middle" x="1715.32" y="-2580.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1849.79,-2513.1C1779.47,-2515.82 1717.07,-2526.57 1717.07,-2552.3 1717.07,-2576.02 1770.1,-2587.01 1833.48,-2590.71" class="hover-path"></path></g>
+<!-- 17&#45;&gt;17 -->
+<g id="17:36_13-17:14_13" class="edge" data-from="17:36_13" data-to="17:14_13">
+
+<path fill="none" stroke="black" d="M1849.79,-2548.3C1779.47,-2551.02 1717.07,-2561.77 1717.07,-2587.5 1717.07,-2611.22 1770.1,-2622.21 1833.48,-2625.91"></path>
+<polygon fill="black" stroke="black" points="1833.04,-2631.15 1848.28,-2626.63 1833.55,-2620.66 1833.04,-2631.15"></polygon>
+<text text-anchor="middle" x="1715.32" y="-2580.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1849.79,-2548.3C1779.47,-2551.02 1717.07,-2561.77 1717.07,-2587.5 1717.07,-2611.22 1770.1,-2622.21 1833.48,-2625.91" class="hover-path"></path></g>
+<!-- 17&#45;&gt;17 -->
+<g id="17:55_4-17:36_13" class="edge" data-from="17:55_4" data-to="17:36_13">
+
+<path fill="none" stroke="black" d="M1849.79,-2511.82C1779.47,-2512.75 1717.07,-2519.22 1717.07,-2534.7 1717.07,-2548.97 1770.1,-2555.59 1833.48,-2557.26"></path>
+<polygon fill="black" stroke="black" points="1833.18,-2562.51 1848.28,-2557.55 1833.38,-2552.01 1833.18,-2562.51"></polygon>
+<text text-anchor="middle" x="1715.32" y="-2580.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1849.79,-2511.82C1779.47,-2512.75 1717.07,-2519.22 1717.07,-2534.7 1717.07,-2548.97 1770.1,-2555.59 1833.48,-2557.26" class="hover-path"></path></g>
+<!-- 20&#45;&gt;21 -->
+<g id="20:29_11-21:14_4" class="edge" data-from="20:29_11" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1630.34,-2017.3C1866.29,-2017.3 1925.37,-2020.75 2160.99,-2033.2 2223.98,-2036.53 2243.43,-2043.58 2299.18,-2044.74"></path>
+<polygon fill="black" stroke="black" points="2298.92,-2049.98 2313.97,-2044.88 2299.03,-2039.48 2298.92,-2049.98"></polygon>
+<text text-anchor="middle" x="1993.37" y="-2037.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1630.34,-2017.3C1866.29,-2017.3 1925.37,-2020.75 2160.99,-2033.2 2223.98,-2036.53 2243.43,-2043.58 2299.18,-2044.74" class="hover-path"></path></g>
+<!-- 20&#45;&gt;21 -->
+<g id="20:51_4-21:14_4" class="edge" data-from="20:51_4" data-to="21:14_4">
+
+<path fill="none" stroke="black" d="M1630.34,-1982.1C1866.29,-1982.1 1928.12,-1960.16 2160.99,-1998.2 2226.12,-2008.84 2241.46,-2039.42 2299.34,-2044.25"></path>
+<polygon fill="black" stroke="black" points="2298.78,-2049.49 2313.98,-2044.84 2299.2,-2038.99 2298.78,-2049.49"></polygon>
+<text text-anchor="middle" x="1993.37" y="-2002.4" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1630.34,-1982.1C1866.29,-1982.1 1928.12,-1960.16 2160.99,-1998.2 2226.12,-2008.84 2241.46,-2039.42 2299.34,-2044.25" class="hover-path"></path></g>
+<!-- 20&#45;&gt;20 -->
+<g id="20:29_11-20:23_11" class="edge" data-from="20:29_11" data-to="20:23_11">
+
+<path fill="none" stroke="black" d="M1367.26,-2011.91C1291.12,-2012.16 1220.04,-2018.43 1220.04,-2034.9 1220.04,-2050.18 1281.22,-2056.68 1350.86,-2057.74"></path>
+<polygon fill="black" stroke="black" points="1350.7,-2062.99 1365.74,-2057.88 1350.79,-2052.49 1350.7,-2062.99"></polygon>
+<text text-anchor="middle" x="1218.29" y="-2045.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1367.26,-2011.91C1291.12,-2012.16 1220.04,-2018.43 1220.04,-2034.9 1220.04,-2050.18 1281.22,-2056.68 1350.86,-2057.74" class="hover-path"></path></g>
+<!-- 20&#45;&gt;20 -->
+<g id="20:51_4-20:29_11" class="edge" data-from="20:51_4" data-to="20:29_11">
+
+<path fill="none" stroke="black" d="M1367.26,-1976.71C1291.12,-1976.96 1220.04,-1983.23 1220.04,-1999.7 1220.04,-2014.98 1281.22,-2021.48 1350.86,-2022.54"></path>
+<polygon fill="black" stroke="black" points="1350.7,-2027.79 1365.74,-2022.68 1350.79,-2017.29 1350.7,-2027.79"></polygon>
+<text text-anchor="middle" x="1218.29" y="-2045.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1367.26,-1976.71C1291.12,-1976.96 1220.04,-1983.23 1220.04,-1999.7 1220.04,-2014.98 1281.22,-2021.48 1350.86,-2022.54" class="hover-path"></path></g>
+<!-- 20&#45;&gt;20 -->
+<g id="20:29_11-20:14_12" class="edge" data-from="20:29_11" data-to="20:14_12">
+
+<path fill="none" stroke="black" d="M1367.26,-2012.88C1291.12,-2014.71 1220.04,-2025.13 1220.04,-2052.5 1220.04,-2077.89 1281.22,-2088.69 1350.86,-2091.59"></path>
+<polygon fill="black" stroke="black" points="1350.58,-2096.83 1365.75,-2092.07 1350.92,-2086.34 1350.58,-2096.83"></polygon>
+<text text-anchor="middle" x="1218.29" y="-2045.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1367.26,-2012.88C1291.12,-2014.71 1220.04,-2025.13 1220.04,-2052.5 1220.04,-2077.89 1281.22,-2088.69 1350.86,-2091.59" class="hover-path"></path></g>
+<!-- 19 -->
+<g id="19" class="node" data-path="/home/marapovi/CC_cub3d/src/parsing/parsing_player.c">
+
+<rect x="1854.6300048828125" y="-2241.300048828125" width="277.4801025390625" height="134.60009765625"></rect>
+<g id="19_20" class="title">
+<text text-anchor="start" x="1881.33" y="-2208.9" font-family="Arial" font-size="16.00"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;parsing_player.c &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+
+</g>
+<g id="19:15_12" data-kind="12" class="cell function">
+<rect x="1870.6300048828125" y="-2190.10009765625" width="245.4801025390625" height="27.2001953125"></rect>
+<text text-anchor="start" x="1884.43" y="-2171.7" font-family="Arial" font-size="16.00">set_direction(t_pos_dir *, char)</text>
+
+</g>
+<g id="19:23_4" data-kind="12" class="cell function">
+<rect x="1870.6300048828125" y="-2154.89990234375" width="245.4801025390625" height="27.199951171875"></rect>
+<text text-anchor="start" x="1874.63" y="-2136.5" font-family="Arial" font-size="16.00">parser_find_player(t_app_state *)</text>
+
+</g>
+</g>
+<!-- 20&#45;&gt;19 -->
+<g id="20:51_4-19:23_4" class="edge" data-from="20:51_4" data-to="19:23_4">
+
+<path fill="none" stroke="black" d="M1630.34,-1982.1C1752.34,-1982.1 1743.06,-2127.32 1853.26,-2140.37"></path>
+<polygon fill="black" stroke="black" points="1852.85,-2145.6 1868.12,-2141.21 1853.45,-2135.12 1852.85,-2145.6"></polygon>
+<text text-anchor="middle" x="1760" y="-2080.16" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1630.34,-1982.1C1752.34,-1982.1 1743.06,-2127.32 1853.26,-2140.37" class="hover-path"></path></g>
+<!-- 19&#45;&gt;19 -->
+<g id="19:23_4-19:15_12" class="edge" data-from="19:23_4" data-to="19:15_12">
+
+<path fill="none" stroke="black" d="M1870.84,-2135.92C1801.79,-2136.3 1737.95,-2142.61 1737.95,-2158.9 1737.95,-2173.88 1791.98,-2180.43 1854.38,-2181.68"></path>
+<polygon fill="black" stroke="black" points="1854.26,-2186.92 1869.32,-2181.86 1854.39,-2176.43 1854.26,-2186.92"></polygon>
+<text text-anchor="middle" x="1736.2" y="-2169.8" font-family="Times,serif" font-size="14.00"> </text>
+<path fill="none" stroke="black" d="M1870.84,-2135.92C1801.79,-2136.3 1737.95,-2142.61 1737.95,-2158.9 1737.95,-2173.88 1791.98,-2180.43 1854.38,-2181.68" class="hover-path"></path></g>
+<g id="faded-group"></g></g>
+<defs><filter id="shadow"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-opacity="0.5"></feDropShadow></filter>
+    <linearGradient id="highlightGradient">
+      <stop offset="0%" stop-color="var(--edge-incoming-color)"></stop>
+      <stop offset="100%" stop-color="var(--edge-outgoing-color)"></stop>
+    </linearGradient></defs>
+</svg>
