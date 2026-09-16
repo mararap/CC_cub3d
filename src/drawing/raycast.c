@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/16 19:31:08 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/16 21:08:27 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 // 1) Maps screen_x to Normalized Device Coordinates (NDC) aka
 //    a value between -1 and 1 = camera_x; the camera plane is basically
 //    what we see on the screen, or, thinking about analog photography,
-//    the equivalent to the flat sensor behind the lens;
+//    the equivalent to the flat sensor behind the lens.
 // 2) Calculates ray direction using basic vector addition with camera_x as a
-//    multiplier that shrinks/stretches the plane vector, and flips it if < 0
+//    multiplier that shrinks/stretches the plane vector, and flips it if < 0.
 // 3) Truncates the position of the player to (int), to get the map tile the
 //    player is standing on, and stores the value in map_x/map_y for further
 //    use and manipulation in dda_walk.

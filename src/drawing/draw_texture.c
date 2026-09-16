@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 00:00:00 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/13 15:35:51 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/16 22:02:14 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ static unsigned int	get_texture_pixel(t_image_buffer *texture,
 	bytes_per_pixel = texture->bits_per_pixel / 8;
 	if (x < 0 || x >= texture->width || y < 0 || y >= texture->height)
 		return (0);
-	pixel = texture->pixels + y * texture->line_stride
-		+ x * bytes_per_pixel;
+	pixel = texture->pixels + y * texture->line_stride + x * bytes_per_pixel;
 	return (*(unsigned int *)pixel);
 }
 
