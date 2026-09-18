@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/18 21:14:13 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/18 21:48:33 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 // Ray direction and delta distances:
 // screen_x ... index between 0 and WINDOW_WIDTH used in render_frame to draw
-//              each column of the app window from 0 to WINDOW_WIDTH (1280).
-// camera_x ... a ratio/multiplier 
-//              
-// 1) Maps screen_x to Normalized Device Coordinates (NDC) aka
-//    a value between -1 and 1 = camera_x; the camera plane is basically
-//    what we see on the screen, or, thinking about analog photography,
-//    the equivalent to the flat sensor behind the lens. It gives us a human-
-//    like field of view.
-// 2) Calculates ray direction using basic vector addition with camera_x as a
-//    multiplier that shrinks/stretches the plane vector, and flips it if < 0.
+//              each column of the app window from 0 to WINDOW_WIDTH -1.
+// 1) Maps screen_x to the current players field of view, with the players view
+//    direction being the center (0), -1 being the left edge and 1 being the
+//    right edge of the frame, resulting in a value between -1 and 1 stored in
+//    camera_x;
+// 2) Calculates ray direction using basic vector addition, with camera_x as a
+//    multiplier that shrinks/stretches the plane vector, and flips it if < 0,
+//    in order to create a human-like field of view with an angle of ~66 deg.
 // 3) Truncates the position of the player to (int), to get the map tile the
 //    player is standing on, and stores the value in map_x/map_y for further
 //    use and manipulation in dda_walk.
