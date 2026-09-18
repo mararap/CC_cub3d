@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/18 15:18:55 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/18 21:14:13 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 // Ray direction and delta distances:
 // screen_x ... index between 0 and WINDOW_WIDTH used in render_frame to draw
 //              each column of the app window from 0 to WINDOW_WIDTH (1280).
-// camera_x ... 
+// camera_x ... a ratio/multiplier 
+//              
 // 1) Maps screen_x to Normalized Device Coordinates (NDC) aka
 //    a value between -1 and 1 = camera_x; the camera plane is basically
 //    what we see on the screen, or, thinking about analog photography,

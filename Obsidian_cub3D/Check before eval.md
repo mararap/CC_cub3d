@@ -7,3 +7,4 @@
 - [ ] filenames, directories
 - [ ] Norminette 
 - [ ] Pushed to Vogsphere?
+- [ ] removed -g from Makefile?
