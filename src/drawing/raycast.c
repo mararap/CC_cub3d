@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/16 21:08:27 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/17 11:34:02 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static void	set_ray_steps(t_app_state *app, t_ray *ray)
 //    linear tile-crossing along the ray (delta_dist_y) to the distance from
 //    the player to the current grid line (side_dist_y) and increases/decreases
 //    map_y according to the value of step_y.
-// 4) Before it checks if we reached a wall, it makes sure
+// 4) Before it checks if we hit a wall, it makes sure
 //    a) Are the coordinates of that tile inside the maze boundaries?
 //    b) Does the pointer to that row exist in memory?
 //    Only then, it checks the value of the character in that position inside
