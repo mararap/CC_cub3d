@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/17 11:34:02 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/18 15:18:55 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 // Ray direction and delta distances:
+// screen_x ... index between 0 and WINDOW_WIDTH used in render_frame to draw
+//              each column of the app window from 0 to WINDOW_WIDTH (1280).
+// camera_x ... 
 // 1) Maps screen_x to Normalized Device Coordinates (NDC) aka
 //    a value between -1 and 1 = camera_x; the camera plane is basically
 //    what we see on the screen, or, thinking about analog photography,
-//    the equivalent to the flat sensor behind the lens.
+//    the equivalent to the flat sensor behind the lens. It gives us a human-
+//    like field of view.
 // 2) Calculates ray direction using basic vector addition with camera_x as a
 //    multiplier that shrinks/stretches the plane vector, and flips it if < 0.
 // 3) Truncates the position of the player to (int), to get the map tile the
