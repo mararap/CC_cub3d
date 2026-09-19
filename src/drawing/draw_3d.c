@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 13:16:54 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/19 16:40:34 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/19 18:22:45 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Selecting wall texture file:
 // Selects the right texture file depending on ray.side and ray_dir_x or
-// ray_dir_y and stores its address in column-> texture:
+// ray_dir_y and stores its address in column->texture:
 // If ray.side == 0, the ray stopped at a vertical line, so the wall is facing
 // either east (ray_dir_x > 0) or west (ray_dir_x < 0).
 // If ray.side == 1, the ray stopped at a horizontal line, so the wall is
@@ -65,7 +65,8 @@ static void	calc_texture_x(t_app_state *state, t_draw_column *column)
 	if (column->ray.side == 1 && column->ray.ray_dir_y > 0)
 		column->tex_x = column->texture->width - column->tex_x - 1;
 }
-// Calculates what to paint:
+
+// Calculates what color/texture to use where:
 // line_height ... visible wall height on the screen
 // draw_start ... top pixel of the wall
 // draw_end ... bottom pixel of the wall
@@ -82,8 +83,8 @@ static void	calc_wall_slice(t_draw_column *column)
 
 // Draws the pixels for one vertical pixel column to the screen:
 // From top to bottom, first paints the ceiling color until y reaches
-// draw_start, then paints the texture of the wall until draw_end, then finally
-// paints the floor color.
+// draw_start, then paints the texture of the wall until draw_end, then
+// finally paints the floor color.
 static void	draw_wall_column(t_app_state *state, t_draw_column *column,
 		int screen_x)
 {
@@ -107,8 +108,8 @@ static void	draw_wall_column(t_app_state *state, t_draw_column *column,
 
 // Renders one frame:
 // From left window edge (screen_x = 0) to right window edge
-// (screen_x = WINDOW_WIDTH), renders the current frame, one pixel row at a
-// time.
+// (screen_x = WINDOW_WIDTH), renders the current frame, one
+// pixel column at a time.
 // In case of bonus, render_overlay will create the minimap.
 void	render_frame(t_app_state *state)
 {

@@ -6,7 +6,7 @@
 /*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/19 15:54:13 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/19 18:22:28 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ static void	set_ray_steps(t_app_state *state, t_ray *ray)
 //    tile-crossing along the ray (delta_dist_x) to the distance from the
 //    player to the current grid line (side_dist_x) and increases/decreases
 //    map_x according to the value of step_x.
-//    ray->side = 0 because no horizontal line was crossed (in computer graphics,
-//    0 is commonly used for x-axis-events, 1 for y-axis-events).
+//    ray->side = 0 because no horizontal line was crossed (in computer
+//    graphics, 0 is commonly used for x-axis-events, 1 for y-axis-events).
 // 3) If the player is closer to a horizontal grid-line, adds one total
 //    linear tile-crossing along the ray (delta_dist_y) to the distance from
 //    the player to the current grid line (side_dist_y) and increases/decreases
@@ -127,7 +127,8 @@ static void	dda_walk(t_app_state *state, t_ray *ray)
 		}
 		if (ray->map_y >= 0 && ray->map_y < state->map_height && ray->map_x >= 0
 			&& ray->map_x < (int)ft_strlen(state->map[ray->map_y])
-			&& state->map[ray->map_y] && state->map[ray->map_y][ray->map_x] == '1')
+			&& state->map[ray->map_y]
+			&& state->map[ray->map_y][ray->map_x] == '1')
 			ray->hit = 1;
 	}
 	if (ray->side == 0)
