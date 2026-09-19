@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marapovi <marapovi@student.42vienna.com>   +#+  +:+       +#+        */
+/*   By: marapovi <marapovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:33:42 by marapovi          #+#    #+#             */
-/*   Updated: 2026/09/18 21:48:33 by marapovi         ###   ########.fr       */
+/*   Updated: 2026/09/19 15:54:13 by marapovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@
 // 4) Calculates delta_dist values to get the total linear distance the ray must
 //    travel to move exactly 1.0 unit in x/y direction (crossing 1 line) while
 // 5) Protecting against division by zero.
-static void	init_ray(t_app_state *app, t_ray *ray, int screen_x)
+static void	init_ray(t_app_state *state, t_ray *ray, int screen_x)
 {
 	double	camera_x;
 
 	camera_x = 2.0 * screen_x / (double)WINDOW_WIDTH - 1.0;
-	ray->ray_dir_x = app->pos_dir.x_dir + app->pos_dir.x_plane * camera_x;
-	ray->ray_dir_y = app->pos_dir.y_dir + app->pos_dir.y_plane * camera_x;
-	ray->map_x = (int)app->pos_dir.x_pos;
-	ray->map_y = (int)app->pos_dir.y_pos;
+	ray->ray_dir_x = state->pos_dir.x_dir + state->pos_dir.x_plane * camera_x;
+	ray->ray_dir_y = state->pos_dir.y_dir + state->pos_dir.y_plane * camera_x;
+	ray->map_x = (int)state->pos_dir.x_pos;
+	ray->map_y = (int)state->pos_dir.y_pos;
 	if (ray->ray_dir_x == 0)
 		ray->delta_dist_x = 1e30;
 	else
@@ -60,30 +60,30 @@ static void	init_ray(t_app_state *app, t_ray *ray, int screen_x)
 //    distance along the ray from player to grid-line (works because we are
 //    dealing with Similar Triangles).
 // 3) Evaluates the same parameters for ray_dir_y, step_y and side_dist_y.
-static void	set_ray_steps(t_app_state *app, t_ray *ray)
+static void	set_ray_steps(t_app_state *state, t_ray *ray)
 {
 	if (ray->ray_dir_x < 0)
 	{
 		ray->step_x = -1;
-		ray->side_dist_x = (app->pos_dir.x_pos - ray->map_x)
+		ray->side_dist_x = (state->pos_dir.x_pos - ray->map_x)
 			* ray->delta_dist_x;
 	}
 	else
 	{
 		ray->step_x = 1;
-		ray->side_dist_x = (ray->map_x + 1.0 - app->pos_dir.x_pos)
+		ray->side_dist_x = (ray->map_x + 1.0 - state->pos_dir.x_pos)
 			* ray->delta_dist_x;
 	}
 	if (ray->ray_dir_y < 0)
 	{
 		ray->step_y = -1;
-		ray->side_dist_y = (app->pos_dir.y_pos - ray->map_y)
+		ray->side_dist_y = (state->pos_dir.y_pos - ray->map_y)
 			* ray->delta_dist_y;
 	}
 	else
 	{
 		ray->step_y = 1;
-		ray->side_dist_y = (ray->map_y + 1.0 - app->pos_dir.y_pos)
+		ray->side_dist_y = (ray->map_y + 1.0 - state->pos_dir.y_pos)
 			* ray->delta_dist_y;
 	}
 }
@@ -108,7 +108,7 @@ static void	set_ray_steps(t_app_state *app, t_ray *ray)
 //    the map and eventually sets ray->hit to 1.
 // 5) Finally, once the flag is set to 1, it "steps out of the wall" by
 //    subtracting delta_dist_x or delta_dist_y accordingly.  
-static void	dda_walk(t_app_state *app, t_ray *ray)
+static void	dda_walk(t_app_state *state, t_ray *ray)
 {
 	ray->hit = 0;
 	while (!ray->hit)
@@ -125,9 +125,9 @@ static void	dda_walk(t_app_state *app, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		if (ray->map_y >= 0 && ray->map_y < app->map_height && ray->map_x >= 0
-			&& ray->map_x < (int)ft_strlen(app->map[ray->map_y])
-			&& app->map[ray->map_y] && app->map[ray->map_y][ray->map_x] == '1')
+		if (ray->map_y >= 0 && ray->map_y < state->map_height && ray->map_x >= 0
+			&& ray->map_x < (int)ft_strlen(state->map[ray->map_y])
+			&& state->map[ray->map_y] && state->map[ray->map_y][ray->map_x] == '1')
 			ray->hit = 1;
 	}
 	if (ray->side == 0)
@@ -138,9 +138,9 @@ static void	dda_walk(t_app_state *app, t_ray *ray)
 
 // Calls the three previous functions one after the other.
 // Gets called once per screen column by render_frame.
-void	cast_ray(t_app_state *app, t_ray *ray, int screen_x)
+void	cast_ray(t_app_state *state, t_ray *ray, int screen_x)
 {
-	init_ray(app, ray, screen_x);
-	set_ray_steps(app, ray);
-	dda_walk(app, ray);
+	init_ray(state, ray, screen_x);
+	set_ray_steps(state, ray);
+	dda_walk(state, ray);
 }
